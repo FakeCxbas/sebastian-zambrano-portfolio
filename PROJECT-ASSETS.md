@@ -1,5 +1,17 @@
 # Portfolio asset provenance
 
+## User-supplied screenshots added 2026-09-04
+
+The user explicitly authorized deterministic local cropping and opaque redaction, without generative AI. The originals remain outside the deployed directory.
+
+- contanova-dashboard.png: cropped user screenshot; browser, account header and customer amounts excluded.
+- jeldes-dashboard.png: cropped user screenshot; account name/company covered with opaque pixels and bottom company label excluded.
+- smartdocs-dashboard.png: cropped user screenshot; email covered with opaque pixels. New verified URL: https://smartdocs-phi.vercel.app.
+- mxcorreo.png: user screenshot of empty interface, no contacts or credentials visible.
+- TechView: no screenshot per user request; GitHub link retained. Strawberry remains without a screenshot.
+
+Older notes below describe the previous version and are retained as provenance only.
+
 - `public/projects/contanova.png`: captured from https://contanova.org/login on 2026-09-04. Public login screen; no customer account opened.
 - `public/projects/actuariosa.png`: captured from the existing Actuariosa project running locally, original source in Documents/ChatGPT/Mx/actuariosa-web. Demonstration proposal, not an adopted corporate website.
 - `public/projects/billar.png`: unedited existing screenshot qa-dashboard-tabla-productos-vendidos.png from Documents/FacturacionBillarClub. Archived interface, not current business metrics. No individual customer identifiers visible.
