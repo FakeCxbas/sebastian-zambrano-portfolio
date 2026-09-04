@@ -1,23 +1,28 @@
-import { FileText, FolderOpen, MailCheck, ScanEye, ClipboardCheck, ShoppingBag, Receipt, ChartNoAxesCombined } from 'lucide-react';
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
+'use client';
+import { ArrowUpRight, X } from 'lucide-react';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
 
-const demos = [
-  { title: 'ContaNova', icon: Receipt, accent: '#90bfae', subtitle: 'Gestión comercial', stats: [['Ventas', '$ 840'], ['Comprobantes', '12'], ['Productos', '48']], rows: [['FAC-001', 'Cliente de ejemplo', '$ 120'], ['FAC-002', 'Consumidor final', '$ 65']], columns: ['Comprobante', 'Cliente', 'Total'] },
-  { title: 'Taller Jeldes', icon: ClipboardCheck, accent: '#a5baf5', subtitle: 'Registro de actividades', stats: [['Actividades', '8'], ['En revisión', '2'], ['Informes', '3']], rows: [['Inspección', 'Equipo de muestra', 'Revisado'], ['Mantenimiento', 'Equipo de muestra', 'Borrador']], columns: ['Actividad', 'Equipo', 'Estado'] },
-  { title: 'MxCorreo', icon: MailCheck, accent: '#9fc8ec', subtitle: 'Revisión de contactos', stats: [['Importados', '100'], ['Únicos', '92'], ['Duplicados', '8']], rows: [['contacto@example.com', 'Sintaxis', 'Correcta'], ['correo sin formato', 'Sintaxis', 'Revisar']], columns: ['Registro de ejemplo', 'Control', 'Resultado'] },
-  { title: 'San Viernes / Billar Club', icon: ShoppingBag, accent: '#d8b38c', subtitle: 'Ventas e inventario', stats: [['Venta actual', '$ 18'], ['Artículos', '3'], ['Existencias', '72']], rows: [['Producto A', '2 unidades', '$ 12'], ['Producto B', '1 unidad', '$ 6']], columns: ['Producto', 'Cantidad', 'Subtotal'] },
-  { title: 'SmartDocs', icon: FolderOpen, accent: '#b9a4ed', subtitle: 'Biblioteca documental', stats: [['Documentos', '24'], ['Carpetas', '4'], ['Versiones', '6']], rows: [['Informe-demo.pdf', 'Documento PDF', 'v2'], ['Contrato-ejemplo.pdf', 'Texto con OCR', 'v1']], columns: ['Archivo', 'Tipo', 'Versión'] },
-  { title: 'TechView', icon: ScanEye, accent: '#97c8b6', subtitle: 'Asistencia visual', stats: [['Entrada', 'Cámara'], ['Proceso', 'Detección'], ['Salida', 'Voz']], rows: [['Objeto identificado', 'Silla', 'Izquierda'], ['Indicación espacial', 'Persona', 'Al frente']], columns: ['Evento simulado', 'Objeto', 'Ubicación'] },
-  { title: 'Strawberry Sweet Serve', icon: ShoppingBag, accent: '#e9a9b7', subtitle: 'Seguimiento de pedidos', stats: [['Recibidos', '4'], ['Preparando', '2'], ['Listos', '1']], rows: [['Pedido #01', 'Fresas + crema', 'Preparando'], ['Pedido #02', 'Extra chocolate', 'Listo']], columns: ['Pedido', 'Personalización', 'Estado'] },
-  { title: 'Actuariosa', icon: ChartNoAxesCombined, accent: '#b6c6da', subtitle: 'Consultoría actuarial', stats: [['Servicios', 'Consultoría'], ['Empresas', 'Asesoría'], ['Contacto', 'Cotización']], rows: [['Servicios profesionales', 'Conocer servicios', '→'], ['Consulta personalizada', 'Solicitar información', '→']], columns: ['Contenido', 'Acción', ''] },
+const previews = [
+  { name:'ContaNova', image:'/projects/contanova.png', kind:'Captura real · Acceso a la aplicación', short:'Facturación electrónica', text:'Pantalla de acceso actual de ContaNova. El panel operativo requiere una cuenta autorizada; esta imagen no muestra información de empresas.', color:'#91aefe' },
+  { name:'Taller Jeldes', image:'/projects/jeldes.png', kind:'Identidad original de la aplicación', short:'Trabajo de campo, conectado.', text:'Icono original recuperado de la aplicación. Registro de actividades, fotografías e informes técnicos. No se incluyen pantallas internas con información del personal.', color:'#e7c663', logo:true },
+  { name:'MxCorreo', kind:'Herramienta de escritorio', short:'Del correo al dato limpio.', text:'Aplicación de Windows para importar, revisar y clasificar contactos. La captura de su interfaz está pendiente; no se muestran listas de correo ni resultados de clientes.', color:'#92c1cf' },
+  { name:'San Viernes & Billar Club', image:'/projects/billar.png', kind:'Captura archivada · Billar Club', short:'Control comercial', text:'Captura existente del dashboard de Billar Club recuperada del proyecto. Corresponde a una versión anterior; las cifras visibles pertenecen a esa captura y no representan resultados actuales ni logros del portafolio.', color:'#d8b38c' },
+  { name:'SmartDocs', kind:'Gestión documental', short:'Documentos en su lugar.', text:'Plataforma documental con búsqueda, OCR y versiones. El despliegue enlazado anteriormente ya no está disponible. Capturas pendientes de recuperar.', color:'#b7a3e7' },
+  { name:'TechView', kind:'Visión por computadora', short:'Ver. Detectar. Orientar.', text:'Software de asistencia visual con detección de objetos y alertas por voz. El repositorio público no incluye capturas en su presentación; no se ha recreado una interfaz ficticia.', color:'#8cb8aa' },
+  { name:'Strawberry Sweet Serve', kind:'Gestión de pedidos', short:'Cada pedido, a su ritmo.', text:'Personalización de pedidos y seguimiento de preparación. Pendiente una captura del proyecto original; esta tarjeta presenta únicamente el nombre del proyecto.', color:'#d99bab' },
+  { name:'Actuariosa Web', image:'/projects/actuariosa.png', kind:'Captura real · Propuesta web', short:'Consultoría actuarial', text:'Captura de la propuesta original ejecutada localmente. Es una demostración de diseño y desarrollo web, no una afirmación de adopción como sitio corporativo.', color:'#88acd2' },
 ];
-
-export function ProjectPreview({index}: {index:number}) {
-  const demo=demos[index]; const Icon=demo.icon;
-  return <figure className="project-preview" style={{'--preview-accent':demo.accent} as React.CSSProperties} aria-label={`Vista conceptual de ${demo.title}`}>
-    <div className="preview-top"><span><Icon size={18} aria-hidden="true"/>{demo.title}</span><FileText size={16} aria-hidden="true"/></div>
-    <div className="preview-body"><p className="preview-heading">{demo.subtitle}</p><div className="preview-stats">{demo.stats.map(([label,value])=><div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>
-    <Table className="preview-table" aria-label={`Datos ficticios de ${demo.title}`}><TableHeader><TableRow>{demo.columns.map((label,i)=><TableHead key={i}>{label}</TableHead>)}</TableRow></TableHeader><TableBody>{demo.rows.map((row,i)=><TableRow key={i}>{row.map((cell,j)=><TableCell key={j}>{cell}</TableCell>)}</TableRow>)}</TableBody></Table></div>
-    <figcaption>Vista conceptual · Datos ficticios · No es una captura del producto</figcaption>
-  </figure>;
+export function ProjectPreview({index}:{index:number}) {
+  const p=previews[index];
+  return <Dialog>
+    <DialogTrigger className={`project-cover ${p.image?'has-image':'identity-cover'} ${p.logo?'logo-cover':''}`} style={{'--cover-accent':p.color} as React.CSSProperties} aria-label={`Ver proyecto: ${p.name}`}>
+      {p.image ? <img src={p.image} alt={p.kind+' de '+p.name} loading="lazy" width={1280} height={720}/> : <span className="cover-identity"><span className="identity-category">{p.kind}</span><strong>{p.name}</strong><span>{p.short}</span></span>}
+      <span className="cover-label">{p.kind}</span><span className="cover-action">Ver proyecto <ArrowUpRight size={19} aria-hidden="true"/></span>
+    </DialogTrigger>
+    <DialogContent className="project-lightbox" showCloseButton={false}>
+      <div className="lightbox-header"><div><span className="lightbox-kind">{p.kind}</span><DialogTitle>{p.name}</DialogTitle></div><DialogClose className="lightbox-close" aria-label="Cerrar vista del proyecto"><X size={22}/></DialogClose></div>
+      {p.image ? <div className={`lightbox-image ${p.logo?'is-logo':''}`}><img src={p.image} alt={p.kind+' de '+p.name}/></div> : <div className="lightbox-identity" style={{color:p.color}}><strong>{p.name}</strong><span>Captura no disponible todavía</span></div>}
+      <DialogDescription className="lightbox-description">{p.text}</DialogDescription>
+    </DialogContent>
+  </Dialog>;
 }
