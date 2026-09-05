@@ -27,12 +27,13 @@ export function MotionLayer() {
 }
 
 export function HeroVisual() {
-  return <div className="hero-visual" aria-hidden="true">
-    <div className="orbital orbital-one"/><div className="orbital orbital-two"/><div className="orbital orbital-three"/>
-    <div className="orb-core"><span>sz.</span></div>
-    <span className="orbit-tag tag-web">&lt;/&gt; Web</span><span className="orbit-tag tag-mobile">✳ Mobile</span><span className="orbit-tag tag-desktop">⌘ Desktop</span>
-    <span className="visual-caption">IDEA → CÓDIGO → REALIDAD</span>
-  </div>;
+  return <aside className="personal-note" aria-label="El origen de mi trabajo">
+    <span className="note-kicker">UN POCO DE CONTEXTO / 01</span>
+    <p>Antes de desarrollar<br/>para un negocio,<br/><em>trabajé en uno.</em></p>
+    <div className="note-detail">Atendí clientes, vendí repuestos y manejé inventarios. De esa experiencia en un taller nació ContaNova.</div>
+    <a href="#proyectos" className="note-link">Esa historia sigue aquí <span aria-hidden="true">↘</span></a>
+    <span className="note-signoff">Sebastián / Guayaquil</span>
+  </aside>;
 }
 
 export function TechMarquee() {
