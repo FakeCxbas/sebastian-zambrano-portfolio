@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 export function MotionLayer() {
-  const progress = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const targets = document.querySelectorAll('.section-title, .project, .about > div, .timeline article, .contact > *');
@@ -15,15 +14,13 @@ export function MotionLayer() {
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const length = document.documentElement.scrollHeight - window.innerHeight;
-        if (progress.current) progress.current.style.transform = `scaleX(${length > 0 ? window.scrollY / length : 0})`;
         document.body.classList.toggle('scrolled', window.scrollY > 30);
       });
     };
     update(); window.addEventListener('scroll', update, { passive: true });
     return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('scroll', update); targets.forEach(t => t.classList.remove('reveal')); };
   }, []);
-  return <div className="scroll-progress" ref={progress} aria-hidden="true"/>;
+  return null;
 }
 
 export function HeroVisual() {
