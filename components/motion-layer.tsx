@@ -28,11 +28,13 @@ export function MotionLayer() {
 
 export function HeroVisual() {
   return <aside className="personal-note" aria-label="El origen de mi trabajo">
-    <span className="note-kicker">UN POCO DE CONTEXTO / 01</span>
-    <p>Antes de desarrollar<br/>para un negocio,<br/><em>trabajé en uno.</em></p>
-    <div className="note-detail">Atendí clientes, vendí repuestos y manejé inventarios. De esa experiencia en un taller nació ContaNova.</div>
-    <a href="#proyectos" className="note-link">Esa historia sigue aquí <span aria-hidden="true">↘</span></a>
-    <span className="note-signoff">Sebastián / Guayaquil</span>
+    <span className="note-number">01</span>
+    <div className="note-body">
+      <span className="note-kicker">DE DÓNDE VENGO</span>
+      <p>Antes de desarrollar para un negocio, <em>trabajé en uno.</em></p>
+      <div className="note-detail">Atendí clientes, vendí repuestos y manejé inventarios. De esa experiencia nació ContaNova.</div>
+      <a href="#proyectos" className="note-link">Conoce la historia <span aria-hidden="true">↘</span></a>
+    </div>
   </aside>;
 }
 
