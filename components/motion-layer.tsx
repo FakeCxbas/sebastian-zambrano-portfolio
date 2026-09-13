@@ -11,16 +11,23 @@ export function MotionLayer() {
     }), { threshold: 0.08 });
     if (!reduced.matches) targets.forEach(target => { target.classList.add('reveal'); observer.observe(target); });
     let frame = 0;
+    const progressEl = document.getElementById('scroll-progress');
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        document.body.classList.toggle('scrolled', window.scrollY > 30);
+        const scrollY = window.scrollY;
+        document.body.classList.toggle('scrolled', scrollY > 30);
+        if (progressEl) {
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+          progressEl.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+        }
       });
     };
     update(); window.addEventListener('scroll', update, { passive: true });
     return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('scroll', update); targets.forEach(t => t.classList.remove('reveal')); };
   }, []);
-  return null;
+  return <div id="scroll-progress" className="scroll-progress-bar" aria-hidden="true" />;
 }
 
 export function HeroVisual() {
