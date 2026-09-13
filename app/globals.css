@@ -150,9 +150,14 @@ body{background:radial-gradient(ellipse at 90% 3%,#344a2022,transparent 30%),var
   background: rgba(20, 25, 20, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding-bottom: 8px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.project-spotlight .project-cover {
+  border-radius: 13px 13px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .project-spotlight::before {
   content: '';
@@ -178,28 +183,77 @@ body{background:radial-gradient(ellipse at 90% 3%,#344a2022,transparent 30%),var
   opacity: 1;
 }
 
+/* Project Content Container with Generous Padding */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px 28px 26px;
+}
+.project-content > .project-meta {
+  margin: 0 !important;
+  color: #a4b497;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+.project-content > h3 {
+  margin: 16px 0 12px !important;
+  font-size: 1.85rem;
+  line-height: 1.15;
+}
+.project-content > p {
+  margin: 0 !important;
+  color: #aab4aa;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 100%;
+}
+.project-content > .tech-badge-container {
+  margin: 18px 0 0 0 !important;
+}
+.project-content > .project-footer {
+  margin-top: auto !important;
+  padding-top: 22px !important;
+  padding-bottom: 0 !important;
+  display: flex;
+  justify-content: flex-end;
+}
+.project-link-action {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198, 250, 120, 0.4);
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.project-link-action:hover {
+  color: #dbffa7;
+  border-color: var(--primary);
+  transform: translateX(2px);
+}
+
 /* Tech Badges */
 .tech-badge-container {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 16px 20px 4px;
 }
 .tech-badge {
   display: inline-flex;
   align-items: center;
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   color: #9baa90;
   transition: border-color 0.2s, color 0.2s;
 }
 .project-spotlight:hover .tech-badge {
-  border-color: rgba(198, 250, 120, 0.18);
-  color: #c0cfb6;
+  border-color: rgba(198, 250, 120, 0.22);
+  color: #d2e4c7;
 }
 
 /* Contact Actions & Copy Button */

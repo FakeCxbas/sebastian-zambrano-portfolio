@@ -97,38 +97,39 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
             >
               <ProjectPreview index={project.originalIndex} />
               
-              <div className="project-meta">
-                <span>{project.type}</span>
-                <span>{String(project.originalIndex + 1).padStart(2, '0')}</span>
-              </div>
+              <div className="project-content">
+                <div className="project-meta">
+                  <span>{project.type}</span>
+                  <span>{String(project.originalIndex + 1).padStart(2, '0')}</span>
+                </div>
 
-              <h3>
-                {project.name}
-                {project.aside && <span className="project-aside">{project.aside}</span>}
-              </h3>
+                <h3>
+                  {project.name}
+                  {project.aside && <span className="project-aside">{project.aside}</span>}
+                </h3>
 
-              <p>{project.text}</p>
+                <p>{project.text}</p>
 
-              {/* Micro-badges de stack tecnológico */}
-              <div className="tech-badge-container" aria-label="Tecnologías utilizadas">
-                {techList.map(tech => (
-                  <span key={tech} className="tech-badge">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+                {/* Micro-badges de stack tecnológico */}
+                <div className="tech-badge-container" aria-label="Tecnologías utilizadas">
+                  {techList.map(tech => (
+                    <span key={tech} className="tech-badge">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="project-footer">
-                <span className="project-stack-text">{project.stack}</span>
                 {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link-action"
-                  >
-                    {project.url.includes('github.com') ? 'Ver repositorio' : 'Visitar proyecto'} ↗
-                  </a>
+                  <div className="project-footer">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link-action"
+                    >
+                      {project.url.includes('github.com') ? 'Ver repositorio' : 'Visitar proyecto'} ↗
+                    </a>
+                  </div>
                 )}
               </div>
             </article>
