@@ -2,6 +2,7 @@ import { ProjectsSection, Project } from '@/components/projects-section';
 import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer';
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
+import { ContactForm } from '@/components/contact-form';
 
 export const dynamic = 'force-static';
 
@@ -309,6 +310,8 @@ export default function Home() {
           <h2>Cuéntame qué<br /><em>tienes en mente.</em></h2>
           <p>Busco mi siguiente oportunidad para aprender y aportar: un puesto junior, una pasantía o un proyecto tecnológico para tu negocio.</p>
           
+          <ContactForm />
+
           <div className="contact-cards-grid">
             <div className="contact-card">
               <div className="contact-card-label">CORREO ELECTRÓNICO</div>
