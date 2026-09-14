@@ -29,7 +29,7 @@ const projects: Project[] = [
     name: 'MxCorreo',
     type: 'AUTOMATIZACIÓN · WINDOWS',
     category: 'desktop',
-    text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 36.000 registros procesados para Actuariosa, con detección de duplicados e informes. La revisión DNS no confirma la existencia de cada buzón.',
+    text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 132.000 registros procesados para Actuariosa, con detección de duplicados e informes. La revisión DNS no confirma la existencia de cada buzón.',
     stack: 'Python / Tkinter / SQLite / DNS',
     originalIndex: 2,
   },
@@ -137,7 +137,7 @@ export default function Home() {
                 <span className="metric-desc">ContaNova, Billar Club, Jeldes, MxCorreo y Strawberry</span>
               </div>
               <div className="metric-box">
-                <span className="metric-number">36k+</span>
+                <span className="metric-number">132k+</span>
                 <span className="metric-title">Registros procesados</span>
                 <span className="metric-desc">Automatización y depuración con Python</span>
               </div>
@@ -196,7 +196,7 @@ export default function Home() {
                   <span className="timeline-badge badge-active">Actual · Consultoría</span>
                 </div>
                 <h3>Actuariosa</h3>
-                <p>Desarrollo de herramientas internas de automatización, saneamiento de bases de datos de correo (más de 36.000 registros procesados) y apoyo analítico actuarial.</p>
+                <p>Desarrollo de herramientas internas de automatización, saneamiento de bases de datos de correo (más de 132.000 registros procesados) y apoyo analítico actuarial.</p>
               </div>
             </article>
 

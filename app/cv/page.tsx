@@ -120,7 +120,7 @@ export default function CvPage() {
               <span className="cv-job-dates">Marzo 2025 — Actualidad</span>
             </div>
             <ul className="cv-bullets">
-              <li>Construcción de scripts y herramientas de automatización con Python (MxCorreo) para depuración y validación DNS/SMTP de más de 36.000 registros de correo.</li>
+              <li>Construcción de scripts y herramientas de automatización con Python (MxCorreo) para depuración y validación DNS/SMTP de más de 132.000 registros de correo.</li>
               <li>Desarrollo de la propuesta web corporativa institucional e integración de canales de cotización en línea.</li>
               <li>Apoyo analítico en el procesamiento de bases de datos para estudios actuariales y comerciales.</li>
             </ul>

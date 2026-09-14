@@ -157,7 +157,7 @@ export const PROJECTS_DETAILS: Record<string, ProjectDetail> = {
     type: 'HERRAMIENTA DE ESCRITORIO & AUTOMATIZACIÓN',
     category: 'desktop',
     tagline: 'Software portable en Python para depuración, saneamiento y validación DNS masiva de bases de datos.',
-    badge: '+36.000 Registros Procesados',
+    badge: '+132.000 Registros Procesados',
     badgeVariant: 'production',
     image: '/projects/mxcorreo.png',
     stack: ['Python', 'Tkinter / CustomTkinter', 'dnspython', 'SQLite', 'Pandas'],
@@ -177,7 +177,7 @@ export const PROJECTS_DETAILS: Record<string, ProjectDetail> = {
     challenges:
       'Evitar el bloqueo por rate-limiting en resolvedores DNS al comprobar miles de dominios en pocos minutos, implementando backoff exponencial y pools de conexiones concurrentes.',
     impactMetrics: [
-      { label: 'Registros saneados', value: '+36.000' },
+      { label: 'Registros saneados', value: '+132.000' },
       { label: 'Reducción de rebotes', value: '> 85%' },
       { label: 'Velocidad de procesamiento', value: '500 reg/min' },
     ],
