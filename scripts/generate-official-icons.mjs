@@ -23,6 +23,7 @@ const ICON_SOURCES = [
   { id: 'docker', name: 'DockerIcon', url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', color: '#2496ED' },
   { id: 'html5', name: 'Html5Icon', url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg', color: '#E34F26' },
   { id: 'css3', name: 'Css3Icon', url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg', color: '#1572B6' },
+  { id: 'nextjs', name: 'NextjsIcon', url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg', color: '#FFFFFF' },
   { id: 'github', name: 'GitHubIcon', url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg', color: '#FFFFFF' },
   { id: 'linkedin', name: 'LinkedInIcon', url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg', color: '#0A66C2' },
   { id: 'whatsapp', name: 'WhatsAppIcon', url: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/whatsapp.svg', color: '#25D366' },
@@ -39,6 +40,11 @@ function cleanSvg(rawSvg, prefix) {
     .replace(/<svg[^>]*>/i, '')
     .replace(/<\/svg>\s*$/i, '')
     .trim();
+
+  if (prefix === 'github') {
+    inner = inner.replace(/fill="#181616"/g, 'fill="#FFFFFF"');
+    inner = inner.replace(/fill="#000000"/g, 'fill="#FFFFFF"');
+  }
 
   // Prefix IDs to avoid collisions between multiple SVGs
   const idRegex = /id=["']([^"']+)["']/g;
@@ -282,6 +288,7 @@ export function CvFileIcon({ size = 15, className = '' }: { size?: number; class
 
 export const GithubIcon = GitHubIcon;
 export const LinkedinIcon = LinkedInIcon;
+export const NextJsIcon = NextjsIcon;
 
 export function DefaultCodeIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
   return (
@@ -369,6 +376,14 @@ export function getTechMeta(rawName: string): TechMeta {
   if (norm.includes('fastapi') || norm.includes('api') || norm.includes('rest')) {
     return { name: rawName, color: '#009688', hoverBg: '#00968818', glow: '#00968835', Icon: FastApiIcon };
   }
+  // Next.js
+  if (norm.includes('next')) {
+    return { name: rawName, color: '#FFFFFF', hoverBg: '#FFFFFF18', glow: '#FFFFFF35', Icon: NextjsIcon };
+  }
+  // GitHub
+  if (norm.includes('github')) {
+    return { name: rawName, color: '#FFFFFF', hoverBg: '#FFFFFF18', glow: '#FFFFFF35', Icon: GitHubIcon };
+  }
   // Git
   if (norm.includes('git')) {
     return { name: rawName, color: '#F05032', hoverBg: '#F0503218', glow: '#F0503235', Icon: GitIcon };
@@ -392,10 +407,6 @@ export function getTechMeta(rawName: string): TechMeta {
   // WhatsApp
   if (norm.includes('whatsapp')) {
     return { name: rawName, color: '#25D366', hoverBg: '#25D36618', glow: '#25D36635', Icon: WhatsAppIcon };
-  }
-  // GitHub
-  if (norm.includes('github')) {
-    return { name: rawName, color: '#FFFFFF', hoverBg: '#FFFFFF18', glow: '#FFFFFF35', Icon: GitHubIcon };
   }
   // LinkedIn
   if (norm.includes('linkedin')) {

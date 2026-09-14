@@ -45,6 +45,7 @@ export function HeroVisual() {
 
 const TECH_MARQUEE_ITEMS = [
   'React',
+  'Next.js',
   'TypeScript',
   'Python',
   'Flutter',
@@ -58,6 +59,8 @@ const TECH_MARQUEE_ITEMS = [
   'Vite',
   'Capacitor',
   'Linux',
+  'Git',
+  'GitHub',
   'FastAPI',
 ] as const;
 
