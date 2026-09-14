@@ -53,11 +53,12 @@ const TECH_MARQUEE_ITEMS = [
   'OpenCV',
   'Tailwind CSS',
   'SQLite',
+  'Docker',
   'Raspberry Pi',
   'Vite',
   'Capacitor',
   'Linux',
-  'API REST',
+  'FastAPI',
 ] as const;
 
 export function TechMarquee() {
