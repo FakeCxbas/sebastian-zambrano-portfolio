@@ -3,6 +3,7 @@ import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer'
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
 import { SkillsGrid } from '@/components/skills-grid';
+import { GithubIcon, LinkedinIcon, CvFileIcon } from '@/components/tech-icons';
 
 export const dynamic = 'force-static';
 
@@ -272,15 +273,24 @@ export default function Home() {
               <div className="contact-card-label">REDES & CURRÍCULUM</div>
               <div className="social-links-grid">
                 <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer" className="social-btn">
-                  <span>GitHub</span>
+                  <span className="social-btn-left">
+                    <GithubIcon size={16} />
+                    <span>GitHub</span>
+                  </span>
                   <span className="social-handle">@FakeCxbas ↗</span>
                 </a>
                 <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer" className="social-btn">
-                  <span>LinkedIn</span>
+                  <span className="social-btn-left">
+                    <LinkedinIcon size={16} />
+                    <span>LinkedIn</span>
+                  </span>
                   <span className="social-handle">Sebastián Zambrano ↗</span>
                 </a>
                 <a href="/cv" target="_blank" rel="noopener noreferrer" className="social-btn">
-                  <span>Hoja de Vida</span>
+                  <span className="social-btn-left">
+                    <CvFileIcon size={16} />
+                    <span>Hoja de Vida</span>
+                  </span>
                   <span className="social-handle">Ver CV (PDF) ↗</span>
                 </a>
               </div>

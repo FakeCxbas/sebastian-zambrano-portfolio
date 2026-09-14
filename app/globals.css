@@ -318,18 +318,37 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 .tech-badge {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  color: #9baa90;
-  transition: border-color 0.2s, color 0.2s;
+  font-size: 0.69rem;
+  font-weight: 500;
+  color: #b8c8b5;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+.tech-badge svg {
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.25s ease;
+}
+.tech-badge:hover,
+.project-spotlight:hover .tech-badge:hover {
+  background: var(--pill-hover-bg, rgba(255, 255, 255, 0.09));
+  border-color: var(--pill-color, var(--primary));
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), 0 0 10px var(--pill-glow, transparent);
+}
+.tech-badge:hover svg {
+  transform: scale(1.18);
 }
 .project-spotlight:hover .tech-badge {
-  border-color: rgba(198, 250, 120, 0.22);
-  color: #d2e4c7;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #d2ded0;
 }
 
 /* Contact Actions & Copy Button */
@@ -787,11 +806,24 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   color: #e5ede0;
   transition: all 0.25s ease;
 }
+.social-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-btn-left svg {
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.25s ease;
+}
 .social-btn:hover {
   background: rgba(198, 250, 120, 0.1);
   border-color: rgba(198, 250, 120, 0.35);
   color: var(--primary);
   transform: translateX(4px);
+}
+.social-btn:hover .social-btn-left svg {
+  transform: scale(1.15);
 }
 .social-handle {
   font-family: var(--font-geist-mono), monospace;
@@ -1190,13 +1222,33 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 .modal-tech-pill {
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
+  gap: 8px;
+  padding: 6px 13px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
+  font-weight: 500;
   color: #dbe4d8;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  user-select: none;
+}
+.modal-tech-pill svg {
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.25s ease;
+}
+.modal-tech-pill:hover {
+  background: var(--pill-hover-bg, rgba(255, 255, 255, 0.09));
+  border-color: var(--pill-color, var(--primary));
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 12px var(--pill-glow, transparent);
+}
+.modal-tech-pill:hover svg {
+  transform: scale(1.18);
 }
 
 /* Modal Footer & Buttons */

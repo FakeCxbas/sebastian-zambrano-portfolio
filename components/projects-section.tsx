@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ProjectPreview } from '@/components/project-preview';
 import { ProjectModal } from '@/components/project-modal';
+import { TechBadge } from '@/components/tech-icons';
 import { Layers, Sparkles, Monitor, Smartphone, Cpu, FileText, ExternalLink } from 'lucide-react';
 
 export interface Project {
@@ -137,9 +138,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                 {/* Micro-badges de stack tecnológico */}
                 <div className="tech-badge-container" aria-label="Tecnologías utilizadas">
                   {techList.map(tech => (
-                    <span key={tech} className="tech-badge">
-                      {tech}
-                    </span>
+                    <TechBadge key={tech} name={tech} variant="card" />
                   ))}
                 </div>
 

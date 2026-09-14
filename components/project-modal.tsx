@@ -11,6 +11,8 @@ import {
   Clock,
   ShieldCheck,
 } from 'lucide-react';
+import { TechBadge } from './tech-icons';
+
 
 function GithubIcon({ size = 15 }: { size?: number }) {
   return (
@@ -522,9 +524,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
               <span className="tech-stack-title">TECNOLOGÍAS & HERRAMIENTAS</span>
               <div className="tech-tags-list">
                 {detail.stack.map((tech) => (
-                  <span key={tech} className="modal-tech-pill">
-                    {tech}
-                  </span>
+                  <TechBadge key={tech} name={tech} variant="modal" />
                 ))}
               </div>
             </div>
