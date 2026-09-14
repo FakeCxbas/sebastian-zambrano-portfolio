@@ -87,13 +87,15 @@ export default function Home() {
       <MotionLayer />
       <a className="skip" href="#contenido">Saltar al contenido</a>
       <header className="topbar">
-        <a className="brand" href="#inicio" aria-label="Sebastián Zambrano, inicio">sz<span>.</span></a>
-        <nav aria-label="Navegación principal">
-          <a href="#proyectos">Proyectos</a>
-          <a href="#sobre-mi">Sobre mí</a>
-          <a href="#trayectoria">Trayectoria</a>
-          <a href="#contacto">Contacto ↗</a>
-        </nav>
+        <div className="topbar-inner">
+          <a className="brand" href="#inicio" aria-label="Sebastián Zambrano, inicio">sz<span>.</span></a>
+          <nav aria-label="Navegación principal">
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#trayectoria">Trayectoria</a>
+            <a href="#contacto">Contacto ↗</a>
+          </nav>
+        </div>
       </header>
       <main id="contenido">
         <section className="hero" id="inicio">
