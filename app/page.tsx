@@ -2,9 +2,7 @@ import { ProjectsSection, Project } from '@/components/projects-section';
 import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer';
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
-import { CommandPalette } from '@/components/command-palette';
 import { WorkPhilosophy } from '@/components/work-philosophy';
-import { CvButton } from '@/components/cv-button';
 
 export const dynamic = 'force-static';
 
@@ -89,16 +87,12 @@ export default function Home() {
       <a className="skip" href="#contenido">Saltar al contenido</a>
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Sebastián Zambrano, inicio">sz<span>.</span></a>
-        <div className="topbar-right">
-          <CommandPalette />
-          <nav aria-label="Navegación principal">
-            <a href="#proyectos">Proyectos</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#trayectoria">Trayectoria</a>
-            <CvButton variant="header" />
-            <a href="#contacto">Contacto ↗</a>
-          </nav>
-        </div>
+        <nav aria-label="Navegación principal">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#trayectoria">Trayectoria</a>
+          <a href="#contacto">Contacto ↗</a>
+        </nav>
       </header>
       <main id="contenido">
         <section className="hero" id="inicio">
@@ -317,31 +311,15 @@ export default function Home() {
           <h2>Cuéntame qué<br /><em>tienes en mente.</em></h2>
           <p>Busco mi siguiente oportunidad para aprender y aportar: un puesto junior, una pasantía o un proyecto tecnológico para tu negocio.</p>
           
-          <div className="contact-availability-banner">
-            <span className="availability-dot" />
-            <span>Disponible para incorporación inmediata · Guayaquil (UTC-5) / Remoto</span>
-          </div>
-
-          <div className="contact-cards-grid executive">
+          <div className="contact-cards-grid">
             <div className="contact-card">
-              <div className="contact-card-label">CORREO DIRECTO</div>
+              <div className="contact-card-label">CORREO ELECTRÓNICO</div>
               <a className="contact-card-main email" href="mailto:sebastianzambrano2818@gmail.com">
                 sebastianzambrano2818@gmail.com ↗
               </a>
               <div className="contact-card-sub">
                 <CopyEmailButton />
-                <span className="contact-availability">● Respuesta en menos de 24h</span>
-              </div>
-            </div>
-
-            <div className="contact-card">
-              <div className="contact-card-label">CURRÍCULUM VITAE</div>
-              <a className="contact-card-main cv-link" href="/cv" target="_blank" rel="noopener noreferrer">
-                Ver Hoja de Vida (PDF) ↗
-              </a>
-              <div className="contact-card-sub">
-                <CvButton variant="pill" />
-                <span className="contact-availability">● Formato ATS</span>
+                <span className="contact-availability">● Respuesta rápida</span>
               </div>
             </div>
 
