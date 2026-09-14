@@ -3,6 +3,8 @@ import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer'
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
 
+export const dynamic = 'force-static';
+
 const projects: Project[] = [
   {
     name: 'ContaNova',

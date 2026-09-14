@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Image from 'next/image';
 import {
   X,
   ExternalLink,
@@ -425,13 +424,13 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
           <div className="project-modal-visual">
             <div className="project-modal-visual-glow" aria-hidden="true" />
             <div className="project-modal-image-wrapper">
-              <Image
+              <img
                 src={detail.image}
                 alt={`Captura del sistema ${detail.name}`}
                 width={1200}
                 height={675}
                 className="project-modal-img"
-                priority
+                loading="eager"
               />
             </div>
           </div>
