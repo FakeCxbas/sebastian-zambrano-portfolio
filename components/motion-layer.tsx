@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { getTechMeta } from '@/components/tech-icons';
 
 export function MotionLayer() {
   useEffect(() => {
@@ -42,7 +43,57 @@ export function HeroVisual() {
   </aside>;
 }
 
+const TECH_MARQUEE_ITEMS = [
+  'React',
+  'TypeScript',
+  'Python',
+  'Flutter',
+  'PostgreSQL',
+  'Electron',
+  'OpenCV',
+  'Tailwind CSS',
+  'SQLite',
+  'Raspberry Pi',
+  'Vite',
+  'Capacitor',
+  'Linux',
+  'API REST',
+] as const;
+
 export function TechMarquee() {
-  const items = ['React', 'TypeScript', 'Python', 'Flutter', 'PostgreSQL', 'Electron'];
-  return <div className="tech-marquee" aria-label={`Tecnologías: ${items.join(', ')}`}><div className="marquee-track" aria-hidden="true">{[0,1].map(copy => <div className="marquee-group" key={copy}>{items.map(item => <span key={item}>{item}<i>✳</i></span>)}</div>)}</div></div>;
+  return (
+    <div
+      className="tech-marquee"
+      aria-label={`Tecnologías clave: ${TECH_MARQUEE_ITEMS.join(', ')}`}
+    >
+      <div className="marquee-track" aria-hidden="true">
+        {[0, 1].map((copy) => (
+          <div className="marquee-group" key={copy}>
+            {TECH_MARQUEE_ITEMS.map((item) => {
+              const meta = getTechMeta(item);
+              const Icon = meta.Icon;
+              return (
+                <div key={`${copy}-${item}`} className="marquee-unit">
+                  <div
+                    className="marquee-item"
+                    style={{
+                      '--item-color': meta.color,
+                      '--item-hover-bg': meta.hoverBg,
+                      '--item-glow': meta.glow,
+                    } as React.CSSProperties}
+                  >
+                    <span className="marquee-item-icon">
+                      <Icon size={22} />
+                    </span>
+                    <span className="marquee-item-name">{item}</span>
+                  </div>
+                  <span className="marquee-separator" aria-hidden="true">✦</span>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

@@ -305,6 +305,157 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   color: #d2ded0;
 }
 
+/* --- High-End Kinetic Tech Marquee --- */
+.tech-marquee {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(13, 18, 14, 0.72) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  margin: 30px 0 45px !important;
+  padding: 16px 0;
+  width: 100%;
+  transform: none !important;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.tech-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 22px;
+  padding-right: 22px;
+}
+
+.marquee-unit {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  user-select: none;
+}
+
+.marquee-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+.marquee-item-icon svg {
+  display: block;
+}
+
+.marquee-item-name {
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #d6e0d3;
+  white-space: nowrap;
+  transition: color 0.22s ease;
+}
+
+.marquee-item:hover {
+  background: var(--item-hover-bg, rgba(255, 255, 255, 0.09));
+  border-color: var(--item-color, var(--primary));
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 16px var(--item-glow, rgba(198, 250, 120, 0.25));
+}
+
+.marquee-item:hover .marquee-item-icon {
+  transform: scale(1.18) rotate(3deg);
+  filter: drop-shadow(0 0 6px var(--item-glow, var(--primary)));
+}
+
+.marquee-item:hover .marquee-item-name {
+  color: #ffffff;
+}
+
+.marquee-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--primary);
+  opacity: 0.5;
+  user-select: none;
+  text-shadow: 0 0 8px rgba(198, 250, 120, 0.45);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .tech-marquee {
+    margin: 18px 0 28px !important;
+    padding: 12px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  }
+  .marquee-group,
+  .marquee-unit {
+    gap: 16px;
+    padding-right: 16px;
+  }
+  .marquee-item {
+    padding: 7px 14px;
+    gap: 8px;
+  }
+  .marquee-item-name {
+    font-size: 0.92rem;
+  }
+  .marquee-item-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .marquee-separator {
+    font-size: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .marquee-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .marquee-group:nth-child(2) {
+    display: none !important;
+  }
+}
+
 /* Contact Actions & Copy Button */
 .contact-actions {
   display: flex;
