@@ -519,30 +519,41 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   padding-top: 30px;
 }
 .skill-card {
-  background: linear-gradient(135deg, rgba(23, 31, 22, 0.6), rgba(14, 19, 13, 0.6));
+  background: linear-gradient(135deg, rgba(23, 31, 22, 0.65), rgba(14, 19, 13, 0.75));
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 20px;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  padding: 22px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
 }
 .skill-card:hover {
-  border-color: rgba(198, 250, 120, 0.28);
+  border-color: rgba(198, 250, 120, 0.32);
   transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 .skill-card-head {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
-.skill-icon {
-  font-size: 1.1rem;
+.skill-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .skill-card-head h3 {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: #e5ede0;
+  color: #f4f6ee;
   margin: 0;
+  letter-spacing: -0.015em;
 }
 .skill-pills {
   display: flex;
@@ -550,20 +561,35 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   gap: 8px;
 }
 .skill-pill {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.72rem;
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 6px 11px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  color: #c1cfbd;
-  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #d2ded0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  user-select: none;
+}
+.skill-pill svg {
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.25s ease;
 }
 .skill-pill:hover {
-  background: rgba(198, 250, 120, 0.1);
-  border-color: rgba(198, 250, 120, 0.3);
+  background: var(--pill-hover-bg, rgba(198, 250, 120, 0.12));
+  border-color: var(--pill-color, var(--primary));
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 10px var(--pill-glow, transparent);
+}
+.skill-pill:hover svg {
+  transform: scale(1.15);
 }
 
 /* Timeline Vertical System */

@@ -2,6 +2,7 @@ import { ProjectsSection, Project } from '@/components/projects-section';
 import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer';
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
+import { SkillsGrid } from '@/components/skills-grid';
 
 export const dynamic = 'force-static';
 
@@ -157,61 +158,7 @@ export default function Home() {
             <p>Estudio Ciencias de la Computación en la Universidad Espíritu Santo y trabajo de forma independiente en el desarrollo y soporte de aplicaciones. También colaboro con Actuariosa en herramientas internas, gestión de correo y apoyo actuarial.</p>
             <p>Me interesa crecer en desarrollo de software y soporte de aplicaciones, en Guayaquil o de forma remota.</p>
             
-            <div className="skills-grid">
-              <div className="skill-card">
-                <div className="skill-card-head">
-                  <span className="skill-icon">⚡</span>
-                  <h3>Desarrollo Frontend & Móvil</h3>
-                </div>
-                <div className="skill-pills">
-                  <span className="skill-pill">React</span>
-                  <span className="skill-pill">TypeScript</span>
-                  <span className="skill-pill">Flutter</span>
-                  <span className="skill-pill">Dart</span>
-                  <span className="skill-pill">JavaScript</span>
-                  <span className="skill-pill">Tailwind & CSS</span>
-                </div>
-              </div>
-              <div className="skill-card">
-                <div className="skill-card-head">
-                  <span className="skill-icon">🛠️</span>
-                  <h3>Backend, Datos & IA</h3>
-                </div>
-                <div className="skill-pills">
-                  <span className="skill-pill">Python</span>
-                  <span className="skill-pill">OpenCV</span>
-                  <span className="skill-pill">YOLO</span>
-                  <span className="skill-pill">PostgreSQL</span>
-                  <span className="skill-pill">SQLite</span>
-                  <span className="skill-pill">APIs REST</span>
-                </div>
-              </div>
-              <div className="skill-card">
-                <div className="skill-card-head">
-                  <span className="skill-icon">📦</span>
-                  <h3>Herramientas & Entornos</h3>
-                </div>
-                <div className="skill-pills">
-                  <span className="skill-pill">Git & GitHub</span>
-                  <span className="skill-pill">Electron</span>
-                  <span className="skill-pill">Capacitor</span>
-                  <span className="skill-pill">Vite & Next.js</span>
-                  <span className="skill-pill">Raspberry Pi</span>
-                </div>
-              </div>
-              <div className="skill-card">
-                <div className="skill-card-head">
-                  <span className="skill-icon">💼</span>
-                  <h3>Negocio & Soporte</h3>
-                </div>
-                <div className="skill-pills">
-                  <span className="skill-pill">Facturación SRI</span>
-                  <span className="skill-pill">Atención y Ventas</span>
-                  <span className="skill-pill">Capacitación</span>
-                  <span className="skill-pill">Inglés Intermedio</span>
-                </div>
-              </div>
-            </div>
+            <SkillsGrid />
           </div>
         </section>
 
