@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   X,
   ExternalLink,
@@ -324,13 +324,26 @@ interface ProjectModalProps {
 export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectModalProps) {
   const projectKeys = Object.keys(PROJECTS_DETAILS);
   const detail = projectName ? PROJECTS_DETAILS[projectName] : null;
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const currentIndex = projectName ? projectKeys.indexOf(projectName) : -1;
   const prevProject = currentIndex > 0 ? projectKeys[currentIndex - 1] : null;
   const nextProject = currentIndex >= 0 && currentIndex < projectKeys.length - 1 ? projectKeys[currentIndex + 1] : null;
 
   useEffect(() => {
-    if (!projectName) return;
+    if (!projectName) {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      return;
+    }
+
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+
+    // Bloquear scroll de la página mientras el modal esté abierto
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -342,14 +355,11 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
       }
     };
 
-    // Bloquear scroll de la página mientras el modal esté abierto
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = originalOverflow;
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [projectName, onClose, prevProject, nextProject, onSelectProject]);
 
@@ -413,7 +423,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
         </div>
 
         {/* Contenido desplazable del modal */}
-        <div className="project-modal-scroll-body">
+        <div className="project-modal-scroll-body" ref={scrollContainerRef}>
           {/* Título y Tagline */}
           <div className="project-modal-hero-title">
             <h2 id="modal-project-title">{detail.name}</h2>

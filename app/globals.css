@@ -213,6 +213,9 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   margin: 18px 0 0 0 !important;
 }
 /* Clickable Preview Trigger and Hover Hint */
+.cover-action {
+  display: none !important;
+}
 .project-preview-trigger {
   position: relative;
   cursor: pointer;
