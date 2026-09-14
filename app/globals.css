@@ -1453,39 +1453,40 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   border: none;
 }
 
-.form-action-btn.primary-wa {
-  background: linear-gradient(135deg, #25D366 0%, #1da851 100%);
-  color: #ffffff;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
+.form-action-btn.primary-action {
+  background: var(--primary);
+  color: #101412;
+  border: 1px solid var(--primary);
+  box-shadow: 0 4px 18px rgba(198, 250, 120, 0.22);
 }
 
-.form-action-btn.primary-wa:hover {
-  background: linear-gradient(135deg, #2ef377 0%, #20be5c 100%);
+.form-action-btn.primary-action:hover {
+  background: #dbffa7;
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.42);
+  box-shadow: 0 6px 24px rgba(198, 250, 120, 0.35);
 }
 
-.form-action-btn.secondary-email {
+.form-action-btn.secondary-action {
   background: rgba(255, 255, 255, 0.07);
   color: #f4f6ee;
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.form-action-btn.secondary-email:hover {
+.form-action-btn.secondary-action:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: var(--primary);
   color: #ffffff;
   transform: translateY(-2px);
 }
 
-.form-action-btn.ghost-copy {
+.form-action-btn.ghost-action {
   background: transparent;
   color: #9baa96;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin-left: auto;
 }
 
-.form-action-btn.ghost-copy:hover {
+.form-action-btn.ghost-action:hover {
   color: #f4f6ee;
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.22);
@@ -1510,7 +1511,7 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   .form-action-btn {
     width: 100%;
   }
-  .form-action-btn.ghost-copy {
+  .form-action-btn.ghost-action {
     margin-left: 0;
   }
 }
