@@ -221,37 +221,6 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   cursor: pointer;
   display: block;
 }
-.preview-hover-hint {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background: rgba(16, 20, 18, 0.88);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f4f6ee;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.72rem;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s;
-  pointer-events: none;
-  z-index: 5;
-}
-.project-preview-trigger:hover .preview-hover-hint,
-.project-preview-trigger:focus-visible .preview-hover-hint {
-  opacity: 1;
-  transform: translateY(0);
-  background: rgba(198, 250, 120, 0.95);
-  color: #101412;
-  border-color: var(--primary);
-  font-weight: 500;
-}
-
 /* Clickable Title */
 .project-title-clickable {
   cursor: pointer;
@@ -264,32 +233,11 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 /* Project Footer Actions Bar */
 .project-footer-actions {
   margin-top: auto !important;
-  padding-top: 22px !important;
+  padding-top: 18px !important;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
-}
-.project-action-modal-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #dbe4d8;
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.74rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.project-action-modal-btn:hover {
-  background: rgba(198, 250, 120, 0.12);
-  border-color: rgba(198, 250, 120, 0.35);
-  color: var(--primary);
-  transform: translateY(-1px);
 }
 .project-link-action {
   display: inline-flex;

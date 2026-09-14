@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ProjectPreview } from '@/components/project-preview';
 import { ProjectModal } from '@/components/project-modal';
 import { TechBadge } from '@/components/tech-icons';
-import { Layers, Sparkles, Monitor, Smartphone, Cpu, FileText, ExternalLink } from 'lucide-react';
+import { Layers, Sparkles, Monitor, Smartphone, Cpu, ExternalLink } from 'lucide-react';
 
 export interface Project {
   name: string;
@@ -112,10 +112,6 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                 }}
               >
                 <ProjectPreview index={project.originalIndex} />
-                <span className="preview-hover-hint">
-                  <FileText size={13} />
-                  <span>Ver ficha técnica</span>
-                </span>
               </div>
               
               <div className="project-content">
@@ -142,19 +138,9 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   ))}
                 </div>
 
-                {/* Acciones de la tarjeta */}
-                <div className="project-footer-actions">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedProject(project.name)}
-                    className="project-action-modal-btn"
-                    title={`Ver ficha técnica completa de ${project.name}`}
-                  >
-                    <FileText size={13} />
-                    <span>Ficha técnica</span>
-                  </button>
-
-                  {project.url && (
+                {/* Enlace externo si existe */}
+                {project.url && (
+                  <div className="project-footer-actions">
                     <a
                       href={project.url}
                       target="_blank"
@@ -165,8 +151,8 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                       <span>{project.url.includes('github.com') ? 'GitHub' : 'Visitar'}</span>
                       <ExternalLink size={12} />
                     </a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </article>
           );
