@@ -1263,109 +1263,6 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   }
 }
 
-/* Work Philosophy Block */
-.work-philosophy-wrapper {
-  grid-column: 1 / -1;
-  margin-top: 55px;
-  padding-top: 48px;
-  border-top: 1px solid var(--border);
-}
-
-.work-philosophy-header {
-  margin-bottom: 32px;
-}
-
-.work-philosophy-header .eyebrow {
-  color: var(--primary);
-}
-
-.work-philosophy-title {
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  color: #f4f6ee;
-  margin: 12px 0 8px;
-}
-
-.work-philosophy-subtitle {
-  font-size: 0.95rem;
-  color: #9baa96;
-}
-
-.work-philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.philosophy-card {
-  background: linear-gradient(145deg, rgba(24, 32, 25, 0.75) 0%, rgba(14, 18, 15, 0.85) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 18px;
-  padding: 30px 26px;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.philosophy-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(198, 250, 120, 0.38);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 25px rgba(198, 250, 120, 0.06);
-}
-
-.philosophy-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-
-.philosophy-num {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: rgba(198, 250, 120, 0.4);
-}
-
-.philosophy-icon-wrap {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(198, 250, 120, 0.08);
-  border: 1px solid rgba(198, 250, 120, 0.2);
-  display: grid;
-  place-items: center;
-  color: var(--primary);
-}
-
-.philosophy-badge {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
-.philosophy-heading {
-  font-size: 1.12rem;
-  font-weight: 600;
-  color: #f4f6ee;
-  letter-spacing: -0.025em;
-  line-height: 1.35;
-  margin: 0 0 12px;
-}
-
-.philosophy-desc {
-  font-size: 0.88rem;
-  color: #a4b3a2;
-  line-height: 1.7;
-  margin: 0;
-}
-
 /* Dedicated CV Page Styles */
 .cv-page-container {
   min-height: 100vh;
@@ -1601,9 +1498,6 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-  .work-philosophy-grid {
-    grid-template-columns: 1fr;
-  }
   .cv-skill-row {
     grid-template-columns: 1fr;
     gap: 2px;

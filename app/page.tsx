@@ -2,7 +2,6 @@ import { ProjectsSection, Project } from '@/components/projects-section';
 import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer';
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
-import { WorkPhilosophy } from '@/components/work-philosophy';
 
 export const dynamic = 'force-static';
 
@@ -214,7 +213,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <WorkPhilosophy />
         </section>
 
         <section className="section experience" id="trayectoria">
