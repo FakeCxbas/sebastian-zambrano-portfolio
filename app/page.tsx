@@ -322,7 +322,7 @@ export default function Home() {
             </div>
 
             <div className="contact-card">
-              <div className="contact-card-label">REDES PROFESIONALES</div>
+              <div className="contact-card-label">REDES & CURRÍCULUM</div>
               <div className="social-links-grid">
                 <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer" className="social-btn">
                   <span>GitHub</span>
@@ -331,6 +331,10 @@ export default function Home() {
                 <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer" className="social-btn">
                   <span>LinkedIn</span>
                   <span className="social-handle">Sebastián Zambrano ↗</span>
+                </a>
+                <a href="/cv" target="_blank" rel="noopener noreferrer" className="social-btn">
+                  <span>Hoja de Vida</span>
+                  <span className="social-handle">Ver CV (PDF) ↗</span>
                 </a>
               </div>
             </div>
