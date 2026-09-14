@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { ProjectPreview } from '@/components/project-preview';
-import { Layers, Sparkles, Monitor, Smartphone, Cpu } from 'lucide-react';
+import { ProjectModal } from '@/components/project-modal';
+import { Layers, Sparkles, Monitor, Smartphone, Cpu, FileText, ExternalLink } from 'lucide-react';
 
 export interface Project {
   name: string;
@@ -25,6 +26,7 @@ const CATEGORIES = [
 
 export function ProjectsSection({ projects }: { projects: Project[] }) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -95,7 +97,25 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
               className={`project project-${project.originalIndex} project-spotlight ${isFeatured ? 'is-featured' : ''}`}
               key={project.name}
             >
-              <ProjectPreview index={project.originalIndex} />
+              <div
+                className="project-preview-trigger"
+                onClick={() => setSelectedProject(project.name)}
+                title="Haz clic para abrir la ficha técnica"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedProject(project.name);
+                  }
+                }}
+              >
+                <ProjectPreview index={project.originalIndex} />
+                <span className="preview-hover-hint">
+                  <FileText size={13} />
+                  <span>Ver ficha técnica</span>
+                </span>
+              </div>
               
               <div className="project-content">
                 <div className="project-meta">
@@ -103,7 +123,11 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   <span>{String(project.originalIndex + 1).padStart(2, '0')}</span>
                 </div>
 
-                <h3>
+                <h3
+                  className="project-title-clickable"
+                  onClick={() => setSelectedProject(project.name)}
+                  title="Haz clic para ver detalles del proyecto"
+                >
                   {project.name}
                   {project.aside && <span className="project-aside">{project.aside}</span>}
                 </h3>
@@ -119,23 +143,43 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   ))}
                 </div>
 
-                {project.url && (
-                  <div className="project-footer">
+                {/* Acciones de la tarjeta */}
+                <div className="project-footer-actions">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project.name)}
+                    className="project-action-modal-btn"
+                    title={`Ver ficha técnica completa de ${project.name}`}
+                  >
+                    <FileText size={13} />
+                    <span>Ficha técnica</span>
+                  </button>
+
+                  {project.url && (
                     <a
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-link-action"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      {project.url.includes('github.com') ? 'Ver repositorio' : 'Visitar proyecto'} ↗
+                      <span>{project.url.includes('github.com') ? 'GitHub' : 'Visitar'}</span>
+                      <ExternalLink size={12} />
                     </a>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </article>
           );
         })}
       </div>
+
+      {/* Modal interactivo de ficha técnica */}
+      <ProjectModal
+        projectName={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        onSelectProject={(name) => setSelectedProject(name)}
+      />
     </section>
   );
 }
