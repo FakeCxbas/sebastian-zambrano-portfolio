@@ -1490,46 +1490,50 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 /* Technical Context Strip in Code View */
 .code-tech-context {
   display: grid;
-  grid-template-columns: 1.2fr 1.3fr 0.9fr;
-  gap: 14px;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  grid-template-columns: minmax(180px, 1.1fr) minmax(260px, 2fr) minmax(140px, 0.9fr);
+  gap: 16px 20px;
+  align-items: flex-start;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
 }
 .tech-context-item {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
   min-width: 0;
 }
 .tech-context-label {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.62rem;
+  font-size: 0.63rem;
   color: #798b75;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 .tech-context-val {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: #dce5d8;
+  line-height: 1.45;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 .tech-context-val .tech-icon-inline {
   color: var(--primary);
   flex-shrink: 0;
+  margin-top: 3px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .code-tech-context {
     grid-template-columns: 1fr;
     gap: 12px;
+    padding: 14px 16px;
   }
 }
 

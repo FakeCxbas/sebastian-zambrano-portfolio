@@ -86,7 +86,7 @@ export const PROJECTS_DETAILS: Record<string, ProjectDetail> = {
       fileName: 'src/services/sriSigner.ts',
       language: 'TypeScript',
       authorWatermark: 'Sebastián Zambrano · Arquitecto Fullstack',
-      decisionTitle: 'Canonización XAdES-BES y Cálculo de Clave de Acceso Módulo 11',
+      decisionTitle: 'Canonización XAdES-BES y Cálculo de Clave Módulo 11',
       decisionNote:
         'El SRI Ecuador exige un algoritmo ponderado estricto de Módulo 11 (factores 2 al 7 invertidos) para el dígito verificador de 49 caracteres. Se implementó una capa desacoplada que valida la integridad matemática antes de enviar al SOAP de recepción, evitando peticiones rechazadas y consumo innecesario de cuota.',
       code: `/**
