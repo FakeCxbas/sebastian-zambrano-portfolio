@@ -1490,9 +1490,9 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 /* Technical Context Strip in Code View */
 .code-tech-context {
   display: grid;
-  grid-template-columns: 1fr 1.35fr 0.9fr;
+  grid-template-columns: 1.2fr 1.3fr 0.9fr;
   gap: 14px;
-  padding: 14px 18px;
+  padding: 12px 18px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 12px;
@@ -1500,23 +1500,26 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 .tech-context-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  min-width: 0;
 }
 .tech-context-label {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   color: #798b75;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .tech-context-val {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: #dce5d8;
   display: flex;
   align-items: center;
   gap: 6px;
-  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .tech-context-val .tech-icon-inline {
   color: var(--primary);
