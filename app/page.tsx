@@ -57,7 +57,6 @@ const projects: Project[] = [
     category: 'ai',
     text: 'Desarrollé el software de unas gafas de asistencia visual con detección de objetos e indicaciones por voz. Proyecto en equipo reconocido con mención de honor en enero de 2026.',
     stack: 'Python / OpenCV / YOLOv8 / Raspberry Pi',
-    url: 'https://github.com/FakeCxbas/TechView',
     aside: 'Mi aporte: el software de las gafas.',
     originalIndex: 5,
   },
@@ -76,7 +75,6 @@ const projects: Project[] = [
     category: 'web',
     text: 'Propuesta de sitio para consultoría actuarial con servicios, preguntas frecuentes y solicitudes de cotización por WhatsApp y correo.',
     stack: 'React / TypeScript / CSS adaptable',
-    url: 'https://github.com/FakeCxbas/actuariosa-web',
     originalIndex: 7,
   },
 ];
@@ -257,7 +255,7 @@ export default function Home() {
           <div className="contact-glow" aria-hidden="true" />
           <span className="eyebrow">04 / HABLEMOS</span>
           <h2>Cuéntame qué<br /><em>tienes en mente.</em></h2>
-          <p>Busco mi siguiente oportunidad para aprender y aportar: un puesto junior, una pasantía o un proyecto tecnológico para tu negocio.</p>
+          <p>Busco mi siguiente oportunidad para aportar y crecer: un puesto como desarrollador junior, soporte de aplicaciones o un proyecto tecnológico para tu negocio.</p>
           
           <div className="contact-cards-grid">
             <div className="contact-card">

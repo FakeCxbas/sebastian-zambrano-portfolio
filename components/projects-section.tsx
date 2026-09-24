@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ProjectPreview } from '@/components/project-preview';
 import { ProjectModal } from '@/components/project-modal';
 import { TechBadge } from '@/components/tech-icons';
-import { Layers, Sparkles, Monitor, Smartphone, Cpu, ExternalLink } from 'lucide-react';
+import { Layers, Sparkles, Monitor, Smartphone, Cpu, ExternalLink, Code2 } from 'lucide-react';
 
 export interface Project {
   name: string;
@@ -138,9 +138,22 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   ))}
                 </div>
 
-                {/* Enlace externo si existe */}
-                {project.url && (
-                  <div className="project-footer-actions">
+                {/* Acciones de pie de tarjeta: Ficha & Código y Visitar */}
+                <div className="project-footer-actions">
+                  <button
+                    type="button"
+                    className="project-code-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProject(project.name);
+                    }}
+                    title={`Ver ficha técnica y código de ${project.name}`}
+                  >
+                    <Code2 size={13} />
+                    <span>Ficha & Código</span>
+                  </button>
+
+                  {project.url && !project.url.includes('github.com') && (
                     <a
                       href={project.url}
                       target="_blank"
@@ -148,11 +161,11 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                       className="project-link-action"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <span>{project.url.includes('github.com') ? 'GitHub' : 'Visitar'}</span>
+                      <span>Visitar</span>
                       <ExternalLink size={12} />
                     </a>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </article>
           );
