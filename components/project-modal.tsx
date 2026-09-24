@@ -1031,19 +1031,22 @@ function CodeInspector({ snippet }: { snippet: CodeSnippet }) {
 
   return (
     <div className="code-inspector-container">
-      {/* Banner de Autoría Verificada */}
-      <div className="code-author-banner">
-        <div className="author-badge-icon">
-          <ShieldCheck size={22} />
+      {/* Barra de contexto técnico y autoría */}
+      <div className="code-tech-context">
+        <div className="tech-context-item">
+          <span className="tech-context-label">ARCHIVO</span>
+          <span className="tech-context-val">
+            <Terminal size={13} className="tech-icon-inline" />
+            <span>{snippet.fileName}</span>
+          </span>
         </div>
-        <div className="author-badge-text">
-          <div className="author-badge-header">
-            <strong>{snippet.authorWatermark}</strong>
-            <span className="author-verified-tag">● Autoría Propia Verificada</span>
-          </div>
-          <p className="author-badge-sub">
-            Extracto representativo de la capa nuclear del sistema. El código completo e infraestructura privada se resguardan por acuerdos de confidencialidad con los negocios.
-          </p>
+        <div className="tech-context-item">
+          <span className="tech-context-label">PROPÓSITO</span>
+          <span className="tech-context-val">{snippet.decisionTitle}</span>
+        </div>
+        <div className="tech-context-item">
+          <span className="tech-context-label">DESARROLLO</span>
+          <span className="tech-context-val">Sebastián Zambrano</span>
         </div>
       </div>
 
