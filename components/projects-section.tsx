@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ProjectPreview } from '@/components/project-preview';
 import { ProjectModal } from '@/components/project-modal';
 import { TechBadge } from '@/components/tech-icons';
-import { Layers, Sparkles, Monitor, Smartphone, Cpu, ExternalLink, Code2 } from 'lucide-react';
+import { Layers, Globe, Monitor, Smartphone, Cpu, ExternalLink, Code2 } from 'lucide-react';
 
 export interface Project {
   name: string;
@@ -19,7 +19,7 @@ export interface Project {
 
 const CATEGORIES = [
   { id: 'all', label: 'Todos', icon: Layers },
-  { id: 'web', label: 'Web', icon: Sparkles },
+  { id: 'web', label: 'Web', icon: Globe },
   { id: 'mobile', label: 'Móvil', icon: Smartphone },
   { id: 'desktop', label: 'Escritorio', icon: Monitor },
   { id: 'ai', label: 'IA & Visión', icon: Cpu },

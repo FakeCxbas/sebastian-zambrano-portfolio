@@ -15,7 +15,6 @@ import {
   Copy,
   Check,
   Terminal,
-  Sparkles,
 } from 'lucide-react';
 import { TechBadge } from './tech-icons';
 
@@ -1093,7 +1092,7 @@ function CodeInspector({ snippet }: { snippet: CodeSnippet }) {
       {/* Tarjeta de Decisión Arquitectónica */}
       <div className="code-decision-box">
         <div className="code-decision-header">
-          <Sparkles size={16} className="decision-sparkle" />
+          <Layers size={16} className="decision-icon" />
           <h4>{snippet.decisionTitle}</h4>
         </div>
         <p>{snippet.decisionNote}</p>

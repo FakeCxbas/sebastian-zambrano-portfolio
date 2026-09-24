@@ -1676,8 +1676,9 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   gap: 8px;
   margin-bottom: 10px;
 }
-.code-decision-header .decision-sparkle {
+.code-decision-header .decision-icon {
   color: var(--modal-accent, var(--primary));
+  flex-shrink: 0;
 }
 .code-decision-header h4 {
   font-size: 0.96rem;
