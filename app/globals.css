@@ -2747,27 +2747,68 @@ body {
   position: relative;
   max-width: 720px;
   margin: 20px auto 10px;
-  background: linear-gradient(135deg, rgba(22, 29, 23, 0.96) 0%, rgba(13, 17, 14, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(20, 26, 21, 0.96) 0%, rgba(11, 15, 12, 0.98) 100%);
   border: 1px solid rgba(198, 250, 120, 0.35);
+  border-color: color-mix(in srgb, var(--tech-card-color, #c6fa78) 42%, rgba(255, 255, 255, 0.12));
   border-radius: 16px;
   padding: 24px 26px;
   box-shadow: 
     0 24px 60px rgba(0, 0, 0, 0.65),
-    0 0 40px rgba(198, 250, 120, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 0 35px var(--tech-card-glow, rgba(198, 250, 120, 0.14)),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(24px);
-  animation: inspector-rise 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: inspector-open 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: top center;
   z-index: 30;
+  will-change: transform, opacity, filter;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes inspector-rise {
-  from {
+.tech-inspector-card.is-closing {
+  animation: inspector-close 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes inspector-open {
+  0% {
     opacity: 0;
-    transform: translateY(12px) scale(0.98);
+    transform: translateY(-12px) scale(0.96);
+    filter: blur(4px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes inspector-close {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+    filter: blur(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-inspector-card {
+    animation: inspector-fade-in 0.15s ease both;
+  }
+  .tech-inspector-card.is-closing {
+    animation: inspector-fade-out 0.15s ease forwards;
+  }
+  @keyframes inspector-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes inspector-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
   }
 }
 
@@ -2822,13 +2863,19 @@ body {
   border-radius: 50%;
   color: #94a3b8;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tech-inspector-close:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
-  transform: rotate(90deg);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg) scale(1.08);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.tech-inspector-close:active {
+  transform: rotate(90deg) scale(0.92);
 }
 
 .tech-inspector-body {
@@ -2874,21 +2921,24 @@ body {
   align-items: center;
   gap: 5px;
   background: rgba(16, 185, 129, 0.1);
+  background: color-mix(in srgb, var(--tech-card-color, #10b981) 12%, rgba(255, 255, 255, 0.04));
   border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #6ee7b7;
+  border-color: color-mix(in srgb, var(--tech-card-color, #10b981) 35%, transparent);
+  color: var(--tech-card-color, #6ee7b7);
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 0.74rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tech-project-chip:hover {
-  background: rgba(16, 185, 129, 0.22);
-  border-color: #10b981;
+  background: color-mix(in srgb, var(--tech-card-color, #10b981) 24%, rgba(255, 255, 255, 0.08));
+  border-color: var(--tech-card-color, #10b981);
   color: #ffffff;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--tech-card-glow, rgba(16, 185, 129, 0.25));
 }
 
 /* ==========================================================================

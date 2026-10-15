@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { getTechMeta } from '@/components/tech-icons';
 import { useLanguage } from '@/lib/i18n';
 import { X, ExternalLink } from 'lucide-react';
@@ -183,7 +183,79 @@ export function TechMarquee() {
   const { locale } = useLanguage();
   const isEn = locale === 'en';
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
-  const activeDetail = selectedTech ? TECH_CATALOG[selectedTech] : null;
+  const [displayedTech, setDisplayedTech] = useState<string | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
+
+  const handleOpen = (item: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsClosing(false);
+    setSelectedTech(item);
+    setDisplayedTech(item);
+  };
+
+  const handleClose = () => {
+    if (isClosing || !displayedTech) return;
+    setIsClosing(true);
+    setSelectedTech(null);
+
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    closeTimeoutRef.current = setTimeout(() => {
+      setDisplayedTech(null);
+      setIsClosing(false);
+      closeTimeoutRef.current = null;
+    }, 220);
+  };
+
+  const handleToggle = (item: string) => {
+    if (selectedTech === item && !isClosing) {
+      handleClose();
+    } else {
+      handleOpen(item);
+    }
+  };
+
+  // Close on Escape or click outside
+  useEffect(() => {
+    if (!displayedTech || isClosing) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    const handlePointerDown = (e: PointerEvent) => {
+      if (!cardRef.current) return;
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      if (cardRef.current.contains(target) || target.closest('.marquee-item')) {
+        return;
+      }
+      handleClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, [displayedTech, isClosing]);
+
+  const activeDetail = displayedTech ? TECH_CATALOG[displayedTech] : null;
+  const activeMeta = activeDetail ? getTechMeta(activeDetail.name) : null;
 
   return (
     <div className="tech-marquee-wrapper">
@@ -210,7 +282,7 @@ export function TechMarquee() {
                         '--item-hover-bg': meta.hoverBg,
                         '--item-glow': meta.glow,
                       } as React.CSSProperties}
-                      onClick={() => setSelectedTech(isSelected ? null : item)}
+                      onClick={() => handleToggle(item)}
                       title={
                         isEn
                           ? `Click to see how I use ${item}`
@@ -232,20 +304,40 @@ export function TechMarquee() {
         </div>
       </div>
 
-      {/* Popover editorial limpio y humano (sin preguntas de cuestionario) */}
-      {activeDetail && (
-        <div className="tech-inspector-card" role="dialog" aria-modal="true">
+      {/* Popover con animación fluida de entrada y salida */}
+      {activeDetail && activeMeta && (
+        <div
+          key={displayedTech}
+          ref={cardRef}
+          className={`tech-inspector-card ${isClosing ? 'is-closing' : ''}`}
+          style={{
+            '--tech-card-color': activeMeta.color,
+            '--tech-card-glow': activeMeta.glow,
+          } as React.CSSProperties}
+          role="dialog"
+          aria-modal="true"
+          onAnimationEnd={(e) => {
+            if (isClosing && e.target === cardRef.current) {
+              if (closeTimeoutRef.current) {
+                clearTimeout(closeTimeoutRef.current);
+                closeTimeoutRef.current = null;
+              }
+              setDisplayedTech(null);
+              setIsClosing(false);
+            }
+          }}
+        >
           <div className="tech-inspector-header">
             <div className="tech-inspector-title-group">
               <span
                 className="tech-inspector-icon"
                 style={{
-                  color: getTechMeta(activeDetail.name).color,
-                  background: getTechMeta(activeDetail.name).hoverBg,
-                  borderColor: `${getTechMeta(activeDetail.name).color}40`,
+                  color: activeMeta.color,
+                  background: activeMeta.hoverBg,
+                  borderColor: `${activeMeta.color}40`,
                 }}
               >
-                {React.createElement(getTechMeta(activeDetail.name).Icon, { size: 18 })}
+                {React.createElement(activeMeta.Icon, { size: 18 })}
               </span>
               <div>
                 <h4 className="tech-inspector-name">{activeDetail.name}</h4>
@@ -258,7 +350,7 @@ export function TechMarquee() {
             <button
               type="button"
               className="tech-inspector-close"
-              onClick={() => setSelectedTech(null)}
+              onClick={handleClose}
               aria-label={isEn ? 'Close' : 'Cerrar'}
             >
               <X size={15} />
@@ -280,7 +372,7 @@ export function TechMarquee() {
                     key={proj}
                     href="#proyectos"
                     className="tech-project-chip"
-                    onClick={() => setSelectedTech(null)}
+                    onClick={handleClose}
                   >
                     <span>{proj}</span>
                     <ExternalLink size={10} />
