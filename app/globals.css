@@ -3167,14 +3167,48 @@ body {
   color: var(--card-accent);
 }
 
-.whatsapp-btn:hover {
-  border-color: rgba(37, 211, 102, 0.4) !important;
-  color: #25d366 !important;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.15) !important;
+/* Individual Social & CV Hover Glows */
+.github-btn:hover {
+  border-color: rgba(168, 85, 247, 0.45) !important;
+  color: #c084fc !important;
+  background: rgba(168, 85, 247, 0.08) !important;
+  box-shadow: 0 6px 22px rgba(168, 85, 247, 0.22), inset 0 0 10px rgba(168, 85, 247, 0.08) !important;
+}
+.github-btn:hover .social-handle {
+  color: #c084fc !important;
 }
 
+.linkedin-btn:hover {
+  border-color: rgba(14, 165, 233, 0.45) !important;
+  color: #38bdf8 !important;
+  background: rgba(14, 165, 233, 0.08) !important;
+  box-shadow: 0 6px 22px rgba(14, 165, 233, 0.25), inset 0 0 10px rgba(14, 165, 233, 0.08) !important;
+}
+.linkedin-btn:hover .social-handle {
+  color: #38bdf8 !important;
+}
+
+.whatsapp-btn:hover {
+  border-color: rgba(37, 211, 102, 0.45) !important;
+  color: #25d366 !important;
+  background: rgba(37, 211, 102, 0.08) !important;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.22), inset 0 0 10px rgba(37, 211, 102, 0.08) !important;
+}
 .whatsapp-btn:hover .social-handle {
   color: #25d366 !important;
+}
+
+.cv-btn:hover {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.25), inset 0 0 12px rgba(255, 255, 255, 0.1) !important;
+}
+.cv-btn:hover .social-handle {
+  color: #ffffff !important;
+}
+.cv-btn:hover .social-btn-left svg {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
 }
 
 @media (max-width: 1024px) {

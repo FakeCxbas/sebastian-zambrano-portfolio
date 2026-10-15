@@ -335,7 +335,7 @@ function PortfolioView() {
                   href="https://github.com/FakeCxbas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-btn"
+                  className="social-btn github-btn"
                 >
                   <span className="social-btn-left">
                     <GithubIcon size={16} />
@@ -348,7 +348,7 @@ function PortfolioView() {
                   href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-btn"
+                  className="social-btn linkedin-btn"
                 >
                   <span className="social-btn-left">
                     <LinkedinIcon size={16} />
@@ -378,7 +378,7 @@ function PortfolioView() {
                   href="/cv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-btn"
+                  className="social-btn cv-btn"
                 >
                   <span className="social-btn-left">
                     <CvFileIcon size={16} />
