@@ -31,73 +31,10 @@ export function MotionLayer() {
   return <div id="scroll-progress" className="scroll-progress-bar" aria-hidden="true" />;
 }
 
+import { RemoteHud } from '@/components/remote-hud';
+
 export function HeroVisual() {
-  return <aside className="personal-note" aria-label="El origen de mi trabajo">
-    <span className="note-number">01</span>
-    <div className="note-body">
-      <span className="note-kicker">DE DÓNDE VENGO</span>
-      <p>Antes de desarrollar para un negocio, <em>trabajé en uno.</em></p>
-      <div className="note-detail">Atendí clientes, vendí repuestos y manejé inventarios. De esa experiencia nació ContaNova.</div>
-      <a href="#proyectos" className="note-link">Conoce la historia <span aria-hidden="true">↘</span></a>
-    </div>
-  </aside>;
+  return <RemoteHud />;
 }
 
-const TECH_MARQUEE_ITEMS = [
-  'React',
-  'Next.js',
-  'TypeScript',
-  'Python',
-  'Flutter',
-  'PostgreSQL',
-  'Electron',
-  'OpenCV',
-  'Tailwind CSS',
-  'SQLite',
-  'Docker',
-  'Raspberry Pi',
-  'Vite',
-  'Capacitor',
-  'Linux',
-  'Git',
-  'GitHub',
-  'FastAPI',
-] as const;
-
-export function TechMarquee() {
-  return (
-    <div
-      className="tech-marquee"
-      aria-label={`Tecnologías clave: ${TECH_MARQUEE_ITEMS.join(', ')}`}
-    >
-      <div className="marquee-track" aria-hidden="true">
-        {[0, 1].map((copy) => (
-          <div className="marquee-group" key={copy}>
-            {TECH_MARQUEE_ITEMS.map((item) => {
-              const meta = getTechMeta(item);
-              const Icon = meta.Icon;
-              return (
-                <div key={`${copy}-${item}`} className="marquee-unit">
-                  <div
-                    className="marquee-item"
-                    style={{
-                      '--item-color': meta.color,
-                      '--item-hover-bg': meta.hoverBg,
-                      '--item-glow': meta.glow,
-                    } as React.CSSProperties}
-                  >
-                    <span className="marquee-item-icon">
-                      <Icon size={22} />
-                    </span>
-                    <span className="marquee-item-name">{item}</span>
-                  </div>
-                  <span className="marquee-separator" aria-hidden="true">✦</span>
-                </div>
-              );
-            })}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+export { TechMarquee } from '@/components/tech-marquee';

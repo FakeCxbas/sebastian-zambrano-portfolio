@@ -1,11 +1,16 @@
+'use client';
+
+import { useState } from 'react';
 import { ProjectsSection, Project } from '@/components/projects-section';
 import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer';
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
 import { SkillsGrid } from '@/components/skills-grid';
-import { GithubIcon, LinkedinIcon, CvFileIcon } from '@/components/tech-icons';
-
-export const dynamic = 'force-static';
+import { RemoteDna } from '@/components/remote-dna';
+import { LanguageSwitch } from '@/components/language-switch';
+import { LanguageProvider, useLanguage } from '@/lib/i18n';
+import { GithubIcon, LinkedinIcon, CvFileIcon, WhatsAppIcon } from '@/components/tech-icons';
+import { MapPin } from 'lucide-react';
 
 const projects: Project[] = [
   {
@@ -30,7 +35,7 @@ const projects: Project[] = [
     name: 'MxCorreo',
     type: 'AUTOMATIZACIÓN · WINDOWS',
     category: 'desktop',
-    text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 132.000 registros procesados para Actuariosa, con detección de duplicados e informes. La revisión DNS no confirma la existencia de cada buzón.',
+    text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 132.000 registros procesados para Actuariosa, con detección de duplicados e informes.',
     stack: 'Python / Tkinter / SQLite / DNS',
     originalIndex: 2,
   },
@@ -79,231 +84,326 @@ const projects: Project[] = [
   },
 ];
 
-export default function Home() {
+function PortfolioView() {
+  const { t, locale } = useLanguage();
+  const [timelineFilter, setTimelineFilter] = useState<'all' | 'work' | 'edu'>('all');
+
   return (
     <>
       <MotionLayer />
-      <a className="skip" href="#contenido">Saltar al contenido</a>
+      <a className="skip" href="#contenido">
+        {locale === 'en' ? 'Skip to content' : 'Saltar al contenido'}
+      </a>
+
+      {/* Barra superior de navegación con soporte bilingüe */}
       <header className="topbar">
         <div className="topbar-inner">
-          <a className="brand" href="#inicio" aria-label="Sebastián Zambrano, inicio">sz<span>.</span></a>
-          <nav aria-label="Navegación principal">
-            <a href="#proyectos">Proyectos</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#trayectoria">Trayectoria</a>
-            <a href="#contacto">Contacto ↗</a>
-          </nav>
+          <a className="brand" href="#inicio" aria-label="Sebastián Zambrano, inicio">
+            sz<span>.</span>
+          </a>
+
+          <div className="topbar-actions">
+            <nav aria-label="Navegación principal">
+              <a href="#proyectos">{t.nav.projects}</a>
+              <a href="#sobre-mi">{t.nav.about}</a>
+              <a href="#trayectoria">{t.nav.experience}</a>
+              <a href="#contacto" className="nav-contact-btn">{t.nav.contact}</a>
+            </nav>
+
+            <LanguageSwitch />
+          </div>
         </div>
       </header>
+
       <main id="contenido">
+        {/* Sección Hero */}
         <section className="hero" id="inicio">
           <div className="eyebrow">
-            <span className="dot" /> GUAYAQUIL, ECUADOR
+            <span className="hero-location">
+              <MapPin size={12} className="location-pin-icon" aria-hidden="true" />
+              <span>{t.hero.location}</span>
+            </span>
             <StatusBadge />
-            <span className="hero-index">PORTAFOLIO / 2026</span>
+            <span className="hero-index">{t.hero.portfolioYear}</span>
           </div>
+
           <div className="hero-stage">
-            <div>
-              <span className="hero-role">Hola, soy</span>
-              <h1>Sebastián<br />Zambrano<span className="period">.</span></h1>
+            <div className="hero-heading-group">
+              <span className="hero-role">{t.hero.greeting}</span>
+              <h1>
+                {t.hero.headlinePart1}<br />
+                {t.hero.headlinePart2}<span className="period">.</span>
+              </h1>
             </div>
+
+            {/* Remote Engineer HUD & Interactive Story */}
             <HeroVisual />
           </div>
+
           <div className="hero-bottom">
-            <h2>Entre el código<br />y <em>el día a día.</em></h2>
+            <h2>
+              {t.hero.subheadlinePart1}<br />
+              <em>{t.hero.subheadlinePart2}</em>
+            </h2>
             <div>
-              <p>Soy desarrollador junior en Guayaquil. Hago aplicaciones para talleres, comercios y equipos de trabajo; también las implemento, explico cómo usarlas y doy soporte.</p>
-              <a className="primary-link" href="#proyectos">Te muestro mi trabajo <span>↘</span></a>
+              <p>{t.hero.bio}</p>
+              <a className="primary-link" href="#proyectos">
+                <span className="primary-link-text">{t.hero.ctaPrimary}</span>
+                <span className="primary-link-icon" aria-hidden="true">↘</span>
+              </a>
             </div>
           </div>
+
           <div className="hero-foot">
-            <span>DESARROLLO · IMPLEMENTACIÓN · SOPORTE</span>
-            <span>DESLIZA PARA EXPLORAR ↓</span>
+            <span>{t.hero.footRole}</span>
+            <span>{t.hero.footScroll}</span>
           </div>
         </section>
 
+        {/* Marquee de tecnologías dinámicas */}
         <TechMarquee />
 
+        {/* Sección de Proyectos */}
         <ProjectsSection projects={projects} />
 
+        {/* Sección Sobre Mí */}
         <section className="about section" id="sobre-mi">
           <div>
-            <span className="eyebrow">02 / SOBRE MÍ</span>
-            <h2>No todo lo aprendí<br /><em>programando.</em></h2>
+            <span className="eyebrow">{t.about.eyebrow}</span>
+            <h2>
+              {t.about.headingPart1}<br />
+              <em>{t.about.headingPart2}</em>
+            </h2>
             
             <div className="metrics-strip">
               <div className="metric-box">
-                <span className="metric-number">+5</span>
-                <span className="metric-title">Sistemas desplegados</span>
-                <span className="metric-desc">ContaNova, Billar Club, Jeldes, MxCorreo y Strawberry</span>
+                <span className="metric-number">{t.about.metric1Number}</span>
+                <span className="metric-title">{t.about.metric1Title}</span>
+                <span className="metric-desc">{t.about.metric1Desc}</span>
               </div>
               <div className="metric-box">
-                <span className="metric-number">132k+</span>
-                <span className="metric-title">Registros procesados</span>
-                <span className="metric-desc">Automatización y depuración con Python</span>
+                <span className="metric-number">{t.about.metric2Number}</span>
+                <span className="metric-title">{t.about.metric2Title}</span>
+                <span className="metric-desc">{t.about.metric2Desc}</span>
               </div>
               <div className="metric-box">
-                <span className="metric-number">2026</span>
-                <span className="metric-title">Mención de Honor</span>
-                <span className="metric-desc">Reconocimiento por visión artificial (TechView)</span>
+                <span className="metric-number">{t.about.metric3Number}</span>
+                <span className="metric-title">{t.about.metric3Title}</span>
+                <span className="metric-desc">{t.about.metric3Desc}</span>
               </div>
               <div className="metric-box">
-                <span className="metric-number">100%</span>
-                <span className="metric-title">Acompañamiento</span>
-                <span className="metric-desc">Requerimientos, desarrollo y capacitación</span>
+                <span className="metric-number">{t.about.metric4Number}</span>
+                <span className="metric-title">{t.about.metric4Title}</span>
+                <span className="metric-desc">{t.about.metric4Desc}</span>
               </div>
             </div>
           </div>
+
           <div className="about-copy">
-            <p>Mi experiencia no empezó solamente frente al código. He trabajado en atención al cliente, ventas, inventarios y asistencia administrativa. Conocer esos procesos me ayuda a desarrollar herramientas que encajan con el trabajo diario.</p>
-            <p>Estudio Ciencias de la Computación en la Universidad Espíritu Santo y trabajo de forma independiente en el desarrollo y soporte de aplicaciones. También colaboro con Actuariosa en herramientas internas, gestión de correo y apoyo actuarial.</p>
-            <p>Me interesa crecer en desarrollo de software y soporte de aplicaciones, en Guayaquil o de forma remota.</p>
+            <p>{t.about.para1}</p>
+            <p>{t.about.para2}</p>
+            <p>{t.about.para3}</p>
             
+            {/* Grid de Habilidades */}
             <SkillsGrid />
           </div>
         </section>
 
+        {/* Sección de Capacidades de Trabajo Remoto Global */}
+        <RemoteDna />
+
+        {/* Sección Trayectoria / Experiencia */}
         <section className="section experience" id="trayectoria">
           <div className="section-title">
-            <span className="eyebrow">03 / TRAYECTORIA</span>
-            <h2>Aprender haciendo.</h2>
-            <p>Cada etapa ha sumado experiencia técnica directa o conocimiento práctico del funcionamiento de un negocio real.</p>
+            <span className="eyebrow">{t.experience.eyebrow}</span>
+            <h2>{t.experience.heading}</h2>
+            <p>{t.experience.subtitle}</p>
           </div>
+
+          {/* Filtro interactivo de trayectoria */}
+          <div className="timeline-filter-bar" role="tablist" aria-label="Filtrar trayectoria">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={timelineFilter === 'all'}
+              className={`filter-btn ${timelineFilter === 'all' ? 'is-active' : ''}`}
+              onClick={() => setTimelineFilter('all')}
+            >
+              <span>{t.experience.filterAll}</span>
+              <span className="filter-count">{t.experience.items.length}</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={timelineFilter === 'work'}
+              className={`filter-btn ${timelineFilter === 'work' ? 'is-active' : ''}`}
+              onClick={() => setTimelineFilter('work')}
+            >
+              <span>{t.experience.filterWork}</span>
+              <span className="filter-count">
+                {t.experience.items.filter((item) => item.badgeType !== 'edu').length}
+              </span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={timelineFilter === 'edu'}
+              className={`filter-btn ${timelineFilter === 'edu' ? 'is-active' : ''}`}
+              onClick={() => setTimelineFilter('edu')}
+            >
+              <span>{t.experience.filterEdu}</span>
+              <span className="filter-count">
+                {t.experience.items.filter((item) => item.badgeType === 'edu').length}
+              </span>
+            </button>
+          </div>
+
           <div className="timeline-container">
             <div className="timeline-track" />
-            <article className="timeline-item is-active">
-              <div className="timeline-marker">
-                <div className="timeline-ping" />
-                <div className="timeline-dot" />
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="timeline-date">MAR. 2026 — ACTUALIDAD</span>
-                  <span className="timeline-badge badge-active">Actual · Independiente</span>
-                </div>
-                <h3>Desarrollo de software independiente</h3>
-                <p>Levantamiento de requerimientos, desarrollo de software a medida, implementación in situ, capacitación a usuarios y soporte continuo para pequeños negocios.</p>
-              </div>
-            </article>
 
-            <article className="timeline-item is-active">
-              <div className="timeline-marker">
-                <div className="timeline-ping" />
-                <div className="timeline-dot" />
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="timeline-date">MAR. 2025 — ACTUALIDAD</span>
-                  <span className="timeline-badge badge-active">Actual · Consultoría</span>
-                </div>
-                <h3>Actuariosa</h3>
-                <p>Desarrollo de herramientas internas de automatización, saneamiento de bases de datos de correo (más de 132.000 registros procesados) y apoyo analítico actuarial.</p>
-              </div>
-            </article>
+            {t.experience.items
+              .filter((item) => {
+                if (timelineFilter === 'work') return item.badgeType !== 'edu';
+                if (timelineFilter === 'edu') return item.badgeType === 'edu';
+                return true;
+              })
+              .map((item, idx) => {
+              const isActive = item.badgeType === 'active';
+              const isEdu = item.badgeType === 'edu';
 
-            <article className="timeline-item">
-              <div className="timeline-marker">
-                <div className="timeline-dot" />
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="timeline-date">FEB. — ABR. 2026</span>
-                  <span className="timeline-badge">Operaciones & Facturación</span>
-                </div>
-                <h3>Electromecánica Bolívar</h3>
-                <p>Atención directa al cliente, venta de repuestos automotrices, facturación e inventarios. La experiencia práctica que inspiró la creación de ContaNova.</p>
-              </div>
-            </article>
+              return (
+                <article
+                  key={`${item.title}-${idx}`}
+                  className={`timeline-item ${isActive ? 'is-active' : ''} ${isEdu ? 'timeline-education' : ''}`}
+                >
+                  <div className="timeline-marker">
+                    {isActive && <div className="timeline-ping" />}
+                    <div className={`timeline-dot ${isEdu ? 'dot-edu' : ''}`} />
+                  </div>
 
-            <article className="timeline-item">
-              <div className="timeline-marker">
-                <div className="timeline-dot" />
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="timeline-date">FEB. — ABR. 2025</span>
-                  <span className="timeline-badge">Prácticas Profesionales</span>
-                </div>
-                <h3>Apol S.A.</h3>
-                <p>Prácticas de asistencia administrativa y apoyo a gerencia: coordinación de reuniones, gestión documental, bases de datos y reportes ejecutivos.</p>
-              </div>
-            </article>
+                  <div className="timeline-content">
+                    <div className="timeline-header">
+                      <span className="timeline-date">{item.date}</span>
+                      <span className={`timeline-badge ${isActive ? 'badge-active' : ''} ${isEdu ? 'badge-edu' : ''}`}>
+                        {item.badge}
+                      </span>
+                    </div>
 
-            <article className="timeline-item timeline-education">
-              <div className="timeline-marker">
-                <div className="timeline-dot dot-edu" />
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <span className="timeline-date">FORMACIÓN ACADÉMICA</span>
-                  <span className="timeline-badge badge-edu">Universidad & Instituto</span>
-                </div>
-                <div className="education-subitem">
-                  <h3>Ciencias de la Computación · UEES</h3>
-                  <p>En curso desde mayo de 2026 en Universidad Espíritu Santo. Modalidad virtual nocturna.</p>
-                </div>
-                <div className="education-subitem">
-                  <h3 className="education">Bachiller en Informática · Instituto Coello</h3>
-                  <p>Graduado en marzo de 2026. Tutoría voluntaria de Matemáticas, Física y Computación (2023–2025).</p>
-                </div>
-              </div>
-            </article>
+                    <h3>{item.title}</h3>
+                    {item.description && <p>{item.description}</p>}
+
+                    {item.educationSubitems && item.educationSubitems.map((sub, sIdx) => (
+                      <div key={sIdx} className="education-subitem">
+                        <h3>{sub.title}</h3>
+                        <p>{sub.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
 
+        {/* Sección Contacto */}
         <section className="contact section" id="contacto">
           <div className="contact-glow" aria-hidden="true" />
-          <span className="eyebrow">04 / HABLEMOS</span>
-          <h2>Cuéntame qué<br /><em>tienes en mente.</em></h2>
-          <p>Busco mi siguiente oportunidad para aportar y crecer: un puesto como desarrollador junior, soporte de aplicaciones o un proyecto tecnológico para tu negocio.</p>
+          <span className="eyebrow">{t.contact.eyebrow}</span>
+          <h2>
+            {t.contact.headingPart1}<br />
+            <em>{t.contact.headingPart2}</em>
+          </h2>
+          <p>{t.contact.description}</p>
           
           <div className="contact-cards-grid">
             <div className="contact-card">
-              <div className="contact-card-label">CORREO ELECTRÓNICO</div>
+              <div className="contact-card-label">{t.contact.emailLabel}</div>
               <a className="contact-card-main email" href="mailto:sebastianzambrano2818@gmail.com">
                 sebastianzambrano2818@gmail.com ↗
               </a>
               <div className="contact-card-sub">
                 <CopyEmailButton />
-                <span className="contact-availability">● Respuesta rápida</span>
+                <span className="contact-availability">{t.contact.availability}</span>
               </div>
             </div>
 
             <div className="contact-card">
-              <div className="contact-card-label">REDES & CURRÍCULUM</div>
+              <div className="contact-card-label">{t.contact.socialLabel}</div>
               <div className="social-links-grid">
-                <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer" className="social-btn">
+                <a
+                  href="https://github.com/FakeCxbas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-btn"
+                >
                   <span className="social-btn-left">
                     <GithubIcon size={16} />
-                    <span>GitHub</span>
+                    <span>{t.contact.githubLabel}</span>
                   </span>
                   <span className="social-handle">@FakeCxbas ↗</span>
                 </a>
-                <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer" className="social-btn">
+
+                <a
+                  href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-btn"
+                >
                   <span className="social-btn-left">
                     <LinkedinIcon size={16} />
-                    <span>LinkedIn</span>
+                    <span>{t.contact.linkedinLabel}</span>
                   </span>
                   <span className="social-handle">Sebastián Zambrano ↗</span>
                 </a>
-                <a href="/cv" target="_blank" rel="noopener noreferrer" className="social-btn">
+
+                <a
+                  href={`https://wa.me/593998134331?text=${encodeURIComponent(
+                    locale === 'en'
+                      ? 'Hello Sebastián, I saw your portfolio and would like to discuss a remote opportunity.'
+                      : 'Hola Sebastián, vi tu portafolio y me gustaría conversar sobre una oportunidad.'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-btn whatsapp-btn"
+                >
+                  <span className="social-btn-left">
+                    <WhatsAppIcon size={18} />
+                    <span>{t.contact.whatsappLabel}</span>
+                  </span>
+                  <span className="social-handle">{t.contact.whatsappSub}</span>
+                </a>
+
+                <a
+                  href="/cv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-btn"
+                >
                   <span className="social-btn-left">
                     <CvFileIcon size={16} />
-                    <span>Hoja de Vida</span>
+                    <span>{t.contact.cvLabel}</span>
                   </span>
-                  <span className="social-handle">Ver CV (PDF) ↗</span>
+                  <span className="social-handle">{t.contact.cvSub}</span>
                 </a>
               </div>
             </div>
           </div>
         </section>
-
       </main>
+
       <footer className="footer">
-        <span>© 2026 Sebastián Zambrano</span>
-        <span>Desde Guayaquil, con mucho por aprender.</span>
-        <a href="#inicio">Volver arriba ↑</a>
+        <span>{t.footer.copyright}</span>
+        <span>{t.footer.tagline}</span>
+        <a href="#inicio">{t.footer.backToTop}</a>
       </footer>
     </>
+  );
+}
+
+export default function Home() {
+  return (
+    <LanguageProvider>
+      <PortfolioView />
+    </LanguageProvider>
   );
 }

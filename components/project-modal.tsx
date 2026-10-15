@@ -17,6 +17,7 @@ import {
   Terminal,
 } from 'lucide-react';
 import { TechBadge } from './tech-icons';
+import { useLanguage } from '@/lib/i18n';
 
 export interface CodeSnippet {
   fileName: string;
@@ -1013,7 +1014,207 @@ export class ActuarialQuoteService {
   },
 };
 
-function CodeInspector({ snippet }: { snippet: CodeSnippet }) {
+export const PROJECTS_DETAILS_EN: Record<string, Partial<ProjectDetail>> = {
+  'ContaNova': {
+    type: 'COMMERCIAL MANAGEMENT & INVOICING',
+    tagline: 'From the real operational needs of an auto repair shop to a multi-business SaaS platform with SRI electronic invoicing.',
+    badge: 'Active in Production',
+    role: 'Full-Stack Software Architect & Developer',
+    clientOrContext: 'Electromecánica Bolívar & Local Retailers',
+    period: '2025 — Present',
+    problem:
+      'Small auto repair shops and retail businesses in Ecuador relied on manual paper logs or scattered spreadsheets, causing inventory discrepancies, delayed cash flow, and hurdles complying with mandatory Ecuadorian SRI electronic invoicing.',
+    solution:
+      'Designed and developed an intuitive web platform centralizing auto parts inventory, customer directory, authorized SRI electronic invoicing, daily register balances, and accounting exports. Purpose-built for rapid counter operation even on touchscreen terminals.',
+    architectureHighlights: [
+      'XML canonization and XAdES-BES digital signature adhering to Ecuadorian SRI SOAP web services.',
+      'PostgreSQL database with strict ACID transactions ensuring zero inventory drift under concurrent sales.',
+      'Decoupled modular architecture configurable for diverse retail verticals (auto shops, hardware stores, spare parts retailers).',
+      'High-availability cloud deployment with automated daily database backups.',
+    ],
+    challenges:
+      'Ensuring resilient interoperability with government SRI servers under high network latency or intermittent downtimes via retry queues and offline-first temporary persistence.',
+    impactMetrics: [
+      { label: 'Invoice issuance time', value: '< 3 sec' },
+      { label: 'Platform uptime', value: '99.9%' },
+      { label: 'Businesses served', value: 'Auto shops & stores' },
+    ],
+  },
+  'Taller Jeldes': {
+    type: 'MOBILE APP · INTERNAL USE',
+    tagline: 'Cross-platform mobile rebuild in Flutter with administrative backoffice, attendance tracking, and AI inspection logs.',
+    badge: 'Internal Production Use',
+    role: 'Mobile & Backend Developer',
+    clientOrContext: 'Taller Mecánico Jeldes (15 Technicians)',
+    period: '2025',
+    problem:
+      'Workshop operations lacked real-time visibility into repair stages, photographic evidence of vehicular handovers, technician time tracking, and systematic diagnostic generation.',
+    solution:
+      'Rebuilt the Flutter mobile app and admin dashboard from scratch. Technicians log job cards with timestamps, before/after photos, and AI-assisted technical summaries directly from Android/iOS devices.',
+    architectureHighlights: [
+      'Clean cross-platform Flutter architecture with BLoC/Provider state management.',
+      'Secure cloud media storage with client-side image compression reducing payload sizes by 65%.',
+      'AI-assisted diagnostic reporting converting technical bullet points into client-ready service summaries.',
+      'Daily technician attendance and time-tracking module with tamper-resistant validation.',
+    ],
+    challenges:
+      'Optimizing photo upload pipelines for low-connectivity workshop environments without blocking the technician UI.',
+    impactMetrics: [
+      { label: 'Daily active users', value: '15 technicians' },
+      { label: 'Diagnostic report time', value: '-60% reduction' },
+      { label: 'Photo evidence auditability', value: '100% orders' },
+    ],
+  },
+  'MxCorreo': {
+    type: 'DATA AUTOMATION · WINDOWS',
+    tagline: 'High-performance desktop data pipeline for cleaning, validating, and segmenting corporate contact databases.',
+    badge: 'Custom Corporate Utility',
+    role: 'Python Automation Developer',
+    clientOrContext: 'Actuariosa (Actuarial Consultancy)',
+    period: '2024',
+    problem:
+      'A legacy contact dataset of over 132,000 corporate records contained syntax errors, duplicates, outdated domains, and invalid email formatting, crippling B2B outreach efforts.',
+    solution:
+      'Developed a lightweight, standalone Python desktop utility with multi-threaded domain syntax parsing, MX record validation, deduplication algorithms, and interactive SQLite caching.',
+    architectureHighlights: [
+      'Multi-threaded DNS MX query worker pool to verify active mail exchanges without triggering spam traps.',
+      'Deduplication and normalization pipeline processing 132k+ records in under 4 minutes.',
+      'Local SQLite database cache ensuring instant repeatability and zero external server dependency.',
+      'Structured CSV/Excel export partitioned by deliverability confidence scores.',
+    ],
+    challenges:
+      'Preventing DNS rate-limiting and thread starvation while executing hundreds of simultaneous MX domain lookups.',
+    impactMetrics: [
+      { label: 'Records sanitized', value: '+132,000' },
+      { label: 'Bounce rate reduction', value: '-85%' },
+      { label: 'Processing time', value: '< 4 minutes' },
+    ],
+  },
+  'San Viernes & Billar Club': {
+    type: 'COMMERCIAL SOFTWARE · IN PRODUCTION',
+    tagline: 'Commercial desktop POS and table management systems with thermal ticket printing and mobile owner oversight.',
+    badge: 'Active Commercial Deployment',
+    role: 'Full-Stack Desktop & Mobile Developer',
+    clientOrContext: 'San Viernes Gastrobar & Billar Club',
+    period: '2024 — Present',
+    problem:
+      'Hospitality businesses struggled to track concurrent table timers, bar tab orders, beverage inventory shrinkage, and thermal ticket printing with off-the-shelf software that was either overpriced or too rigid.',
+    solution:
+      'Engineered tailored desktop POS software using Electron and React with thermal receipt printer ESC/POS integration, coupled with Capacitor mobile companion apps for remote owner monitoring.',
+    architectureHighlights: [
+      'Native Electron bridge handling raw ESC/POS thermal printer commands over USB and network serial ports.',
+      'Concurrent billable table timer state engine with automated price scaling.',
+      'Capacitor mobile client enabling owners to monitor live revenue and open tabs remotely.',
+      'Fault-tolerant offline storage ensuring continuous cash register operation during internet outages.',
+    ],
+    challenges:
+      'Reliable low-level hardware communication with diverse legacy thermal printers across different Windows OS versions.',
+    impactMetrics: [
+      { label: 'Commercial venues', value: '2 locations' },
+      { label: 'Daily ticket printing', value: '100% reliable' },
+      { label: 'Inventory discrepancy', value: 'Near zero' },
+    ],
+  },
+  'SmartDocs': {
+    type: 'DOCUMENT MANAGEMENT · CLIENT PROJECT',
+    tagline: 'Client-side OCR document management, intelligent search, and secure multi-format file processing.',
+    badge: 'Commissioned Web App',
+    role: 'Frontend Architect & Developer',
+    clientOrContext: 'Corporate Client Project',
+    period: '2025',
+    problem:
+      'Manual digitization and categorization of scanned administrative papers, invoices, and contracts was time-consuming and prone to lost documentation.',
+    solution:
+      'Built a web-based document workspace with in-browser Tesseract.js OCR, instant full-text search, tag taxonomy, and interactive preview modals with version tracking.',
+    architectureHighlights: [
+      'In-browser Web Workers running Tesseract.js OCR to extract text without uploading sensitive paperwork to third-party servers.',
+      'IndexedDB client cache for instant offline document retrieval.',
+      'Modular React architecture with drag-and-drop file ingestion and custom tag taxonomy.',
+    ],
+    challenges:
+      'Maintaining smooth 60fps UI performance while executing intensive optical character recognition in background threads.',
+    impactMetrics: [
+      { label: 'Search speed', value: 'Instant (< 50ms)' },
+      { label: 'Data privacy', value: '100% client-side' },
+      { label: 'OCR accuracy', value: '> 92%' },
+    ],
+  },
+  'TechView': {
+    type: 'COMPUTER VISION · ACADEMIC PROJECT',
+    tagline: 'Wearable assistive smart glasses with real-time YOLOv8 computer vision and low-latency voice obstacle warnings.',
+    badge: 'Academic Honors Recognition',
+    role: 'Embedded Computer Vision Software Engineer',
+    clientOrContext: 'UEES Capstone Team Project (Graduation Honors)',
+    period: '2025 — 2026',
+    problem:
+      'Visually impaired individuals face daily navigational hazards with traditional canes that cannot detect elevated or approaching obstacles in complex environments.',
+    solution:
+      'Engineered the embedded software pipeline on a Raspberry Pi-powered smart glasses wearable, capturing real-time camera frames with OpenCV, running YOLOv8 object detection, and delivering spatial voice guidance.',
+    architectureHighlights: [
+      'Optimized frame pre-processing pipeline in OpenCV with dynamic ROI cropping for low-latency inference.',
+      'Quantized YOLOv8 neural network inference tuned for ARM embedded compute.',
+      'Audio queuing engine prioritizing imminent collision warnings over routine environmental descriptions.',
+      'Won formal Academic Graduation Honors recognition in January 2026.',
+    ],
+    challenges:
+      'Balancing thermal limits, power consumption, and frame rates on a wearable Raspberry Pi architecture.',
+    impactMetrics: [
+      { label: 'Inference latency', value: 'Real-time (< 70ms)' },
+      { label: 'Detection accuracy', value: '94% on key obstacles' },
+      { label: 'Recognition', value: 'Honorable Mention' },
+    ],
+  },
+  'Strawberry Sweet Serve': {
+    type: 'ONLINE ORDERING · ADOPTED BY BUSINESS',
+    tagline: 'Custom digital ordering web portal with product customization and administrative kitchen dashboard.',
+    badge: 'Adopted by Business',
+    role: 'Full-Stack Web Developer',
+    clientOrContext: 'Strawberry Sweet Serve Retail Shop',
+    period: '2025',
+    problem:
+      'Orders taken via WhatsApp during peak hours were frequently confused, topping choices misplaced, and delivery status updates lacked transparency.',
+    solution:
+      'Crafted a fast, interactive ordering web app allowing customers to customize dessert bases, toppings, and sauces step-by-step, with real-time kitchen order queue updates.',
+    architectureHighlights: [
+      'Dynamic step-by-step cart configurator with live price calculations.',
+      'Kitchen queue management screen with auditory chimes for incoming tickets.',
+      'Lightweight, responsive mobile-first UI with dark/vibrant styling.',
+    ],
+    challenges:
+      'Designing a dessert customizer fast enough to be completed on mobile phones in under 45 seconds.',
+    impactMetrics: [
+      { label: 'Order errors', value: 'Reduced to 0%' },
+      { label: 'Order completion time', value: '< 45 seconds' },
+      { label: 'Business adoption', value: 'Active daily usage' },
+    ],
+  },
+  'Actuariosa Web': {
+    type: 'WEBSITE · DEMONSTRATION PROPOSAL',
+    tagline: 'Corporate actuarial consultancy landing with deep-linked parametric quotation generator and service breakdown.',
+    badge: 'Client Demonstration Proposal',
+    role: 'Frontend Developer & UI Designer',
+    clientOrContext: 'Actuariosa Consultora Actuarial',
+    period: '2024',
+    problem:
+      'Actuarial services (pension reserves, occupational risks, labor liabilities) are complex and difficult for corporate HR and finance executives to evaluate quickly.',
+    solution:
+      'Built a modern, authoritative corporate web showcase breaking down technical consulting services, FAQs, and a dynamic quote generator with deep-linked WhatsApp and email dispatch.',
+    architectureHighlights: [
+      'Type-safe quotation input calculator formatted into compliant RFC-3986 WhatsApp messages.',
+      'Fluid typography and accessible high-contrast layout conveying corporate trust.',
+      'Zero layout shift (CLS: 0.0) and optimized performance.',
+    ],
+    challenges:
+      'Translating dense actuarial terminology into clear, digestible executive value propositions.',
+    impactMetrics: [
+      { label: 'Quote initiation time', value: '< 1 minute' },
+      { label: 'Lead conversion', value: 'Direct WhatsApp link' },
+      { label: 'Performance score', value: '100 / 100 Lighthouse' },
+    ],
+  },
+};
+
+function CodeInspector({ snippet, isEn = false }: { snippet: CodeSnippet; isEn?: boolean }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -1033,18 +1234,18 @@ function CodeInspector({ snippet }: { snippet: CodeSnippet }) {
       {/* Barra de contexto técnico y autoría */}
       <div className="code-tech-context">
         <div className="tech-context-item">
-          <span className="tech-context-label">ARCHIVO</span>
+          <span className="tech-context-label">{isEn ? 'FILE' : 'ARCHIVO'}</span>
           <span className="tech-context-val">
             <Terminal size={13} className="tech-icon-inline" />
             <span>{snippet.fileName}</span>
           </span>
         </div>
         <div className="tech-context-item">
-          <span className="tech-context-label">PROPÓSITO</span>
+          <span className="tech-context-label">{isEn ? 'LOGIC & PURPOSE' : 'PROPÓSITO'}</span>
           <span className="tech-context-val">{snippet.decisionTitle}</span>
         </div>
         <div className="tech-context-item">
-          <span className="tech-context-label">DESARROLLO</span>
+          <span className="tech-context-label">{isEn ? 'ENGINEER' : 'DESARROLLO'}</span>
           <span className="tech-context-val">Sebastián Zambrano</span>
         </div>
       </div>
@@ -1068,10 +1269,10 @@ function CodeInspector({ snippet }: { snippet: CodeSnippet }) {
             type="button"
             className={`code-copy-btn ${copied ? 'is-copied' : ''}`}
             onClick={handleCopy}
-            title="Copiar código al portapapeles"
+            title={isEn ? 'Copy code to clipboard' : 'Copiar código al portapapeles'}
           >
             {copied ? <Check size={13} /> : <Copy size={13} />}
-            <span>{copied ? '¡Copiado!' : 'Copiar'}</span>
+            <span>{copied ? (isEn ? 'Copied!' : '¡Copiado!') : (isEn ? 'Copy' : 'Copiar')}</span>
           </button>
         </div>
 
@@ -1108,9 +1309,16 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectModalProps) {
+  const { locale } = useLanguage();
+  const isEn = locale === 'en';
   const [activeTab, setActiveTab] = useState<'details' | 'code'>('details');
   const projectKeys = Object.keys(PROJECTS_DETAILS);
-  const detail = projectName ? PROJECTS_DETAILS[projectName] : null;
+  const baseDetail = projectName ? PROJECTS_DETAILS[projectName] : null;
+  const detail = baseDetail
+    ? isEn && PROJECTS_DETAILS_EN[baseDetail.name]
+      ? { ...baseDetail, ...PROJECTS_DETAILS_EN[baseDetail.name] }
+      : baseDetail
+    : null;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const currentIndex = projectName ? projectKeys.indexOf(projectName) : -1;
@@ -1224,7 +1432,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
             }}
           >
             <FileText size={14} />
-            <span>Ficha Técnica</span>
+            <span>{isEn ? 'Technical Specs' : 'Ficha Técnica'}</span>
           </button>
 
           <button
@@ -1238,7 +1446,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
             }}
           >
             <Code2 size={14} />
-            <span>Código & Arquitectura</span>
+            <span>{isEn ? 'Code & Architecture' : 'Código & Arquitectura'}</span>
             <span className="modal-tab-lang-tag">{detail.snippet.language}</span>
           </button>
         </div>
@@ -1271,15 +1479,15 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
               {/* Barra de Datos Clave */}
               <div className="project-modal-facts-grid">
                 <div className="fact-item">
-                  <span className="fact-label">ROL</span>
+                  <span className="fact-label">{isEn ? 'ROLE' : 'ROL'}</span>
                   <span className="fact-value">{detail.role}</span>
                 </div>
                 <div className="fact-item">
-                  <span className="fact-label">CONTEXTO / CLIENTE</span>
+                  <span className="fact-label">{isEn ? 'CONTEXT / CLIENT' : 'CONTEXTO / CLIENTE'}</span>
                   <span className="fact-value">{detail.clientOrContext}</span>
                 </div>
                 <div className="fact-item">
-                  <span className="fact-label">PERÍODO</span>
+                  <span className="fact-label">{isEn ? 'TIMELINE' : 'PERÍODO'}</span>
                   <span className="fact-value">{detail.period}</span>
                 </div>
               </div>
@@ -1300,7 +1508,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                   <div className="modal-story-card">
                     <div className="modal-section-heading">
                       <Clock size={16} className="heading-icon" />
-                      <h3>La Necesidad Real</h3>
+                      <h3>{isEn ? 'The Real-World Need' : 'La Necesidad Real'}</h3>
                     </div>
                     <p>{detail.problem}</p>
                   </div>
@@ -1308,7 +1516,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                   <div className="modal-story-card">
                     <div className="modal-section-heading">
                       <CheckCircle2 size={16} className="heading-icon" />
-                      <h3>La Solución Implementada</h3>
+                      <h3>{isEn ? 'The Implemented Solution' : 'La Solución Implementada'}</h3>
                     </div>
                     <p>{detail.solution}</p>
                   </div>
@@ -1317,7 +1525,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                 <div className="modal-architecture-card">
                   <div className="modal-section-heading">
                     <Layers size={16} className="heading-icon" />
-                    <h3>Aspectos Clave de Arquitectura & Decisiones Técnicas</h3>
+                    <h3>{isEn ? 'Key Architecture & Engineering Decisions' : 'Aspectos Clave de Arquitectura & Decisiones Técnicas'}</h3>
                   </div>
                   <ul className="architecture-list">
                     {detail.architectureHighlights.map((point, index) => (
@@ -1332,13 +1540,13 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                 <div className="modal-challenges-card">
                   <div className="modal-section-heading">
                     <ShieldCheck size={16} className="heading-icon" />
-                    <h3>Reto Principal Superado</h3>
+                    <h3>{isEn ? 'Primary Engineering Challenge Overcome' : 'Reto Principal Superado'}</h3>
                   </div>
                   <p>{detail.challenges}</p>
                 </div>
 
                 <div className="modal-tech-stack">
-                  <span className="tech-stack-title">TECNOLOGÍAS & HERRAMIENTAS</span>
+                  <span className="tech-stack-title">{isEn ? 'TECHNOLOGIES & TOOLING' : 'TECNOLOGÍAS & HERRAMIENTAS'}</span>
                   <div className="tech-tags-list">
                     {detail.stack.map((tech) => (
                       <TechBadge key={tech} name={tech} variant="modal" />
@@ -1349,7 +1557,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
             </>
           ) : (
             /* Vista de Código de Autoría Propia */
-            <CodeInspector snippet={detail.snippet} />
+            <CodeInspector snippet={detail.snippet} isEn={isEn} />
           )}
 
           {/* Footer de Acciones */}
@@ -1363,7 +1571,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                   className="modal-action-btn primary"
                 >
                   <ExternalLink size={15} />
-                  <span>Visitar sistema en vivo</span>
+                  <span>{isEn ? 'Visit Live System ↗' : 'Visitar sistema en vivo ↗'}</span>
                 </a>
               )}
 
@@ -1377,7 +1585,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                   className="modal-action-btn secondary"
                 >
                   <Code2 size={15} />
-                  <span>Inspeccionar código ({detail.snippet.language})</span>
+                  <span>{isEn ? `Inspect source code (${detail.snippet.language})` : `Inspeccionar código (${detail.snippet.language})`}</span>
                 </button>
               ) : (
                 <button
@@ -1389,12 +1597,12 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                   className="modal-action-btn secondary"
                 >
                   <FileText size={15} />
-                  <span>Volver a la ficha</span>
+                  <span>{isEn ? 'Back to specs' : 'Volver a la ficha'}</span>
                 </button>
               )}
 
               <button type="button" onClick={onClose} className="modal-action-btn ghost">
-                Cerrar ficha
+                {isEn ? 'Close specs' : 'Cerrar ficha'}
               </button>
             </div>
           </div>

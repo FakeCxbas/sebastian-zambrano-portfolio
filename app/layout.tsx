@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sebastian-zambrano-portfolio.vercel.app'),
+  metadataBase: new URL('https://sebastianzambrano.dev'),
   title: 'Sebastián Zambrano | Desarrollador de Software',
   description: 'Portafolio de Sebastián Zambrano, desarrollador de software en Guayaquil, Ecuador. Aplicaciones web, móviles y de escritorio: ContaNova, TechView, MxCorreo y más.',
   keywords: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_EC',
-    url: 'https://sebastian-zambrano-portfolio.vercel.app',
+    url: 'https://sebastianzambrano.dev',
     title: 'Sebastián Zambrano | Desarrollador de Software',
     description: 'Portafolio de Sebastián Zambrano: ContaNova, TechView, Taller Jeldes y proyectos de desarrollo de software en producción.',
     siteName: 'Sebastián Zambrano — Portafolio',
@@ -68,6 +68,41 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sebastián Paul Zambrano Inga',
+  alternateName: ['Sebastián Zambrano', 'FakeCxbas'],
+  url: 'https://sebastianzambrano.dev',
+  image: 'https://sebastianzambrano.dev/og-image.jpg',
+  jobTitle: 'Software Developer · Full-Stack & Computer Vision',
+  description:
+    'Desarrollador de software enfocado en construir herramientas web, móviles y automatizaciones que operan en negocios reales. Creador de ContaNova y TechView.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Guayaquil',
+    addressRegion: 'Guayas',
+    addressCountry: 'EC',
+  },
+  sameAs: [
+    'https://github.com/FakeCxbas',
+    'https://www.linkedin.com/in/sebastián-paul-zambrano-inga-7700633ab/',
+  ],
+  knowsAbout: [
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Python',
+    'PostgreSQL',
+    'Flutter',
+    'OpenCV',
+    'YOLOv8',
+    'Electron',
+    'Facturación Electrónica SRI',
+    'Remote Software Engineering',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -78,6 +113,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="theme-color" content="#0b0e0c" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
