@@ -10,6 +10,9 @@ import { RemoteDna } from '@/components/remote-dna';
 import { LanguageSwitch } from '@/components/language-switch';
 import { LanguageProvider, useLanguage } from '@/lib/i18n';
 import { GithubIcon, LinkedinIcon, CvFileIcon, WhatsAppIcon } from '@/components/tech-icons';
+import { NavbarNav } from '@/components/navbar-nav';
+import { CommandPalette } from '@/components/command-palette';
+import { ConsoleEasterEgg } from '@/components/console-easter-egg';
 import { MapPin } from 'lucide-react';
 
 const projects: Project[] = [
@@ -103,17 +106,15 @@ function PortfolioView() {
           </a>
 
           <div className="topbar-actions">
-            <nav aria-label="Navegación principal">
-              <a href="#proyectos">{t.nav.projects}</a>
-              <a href="#sobre-mi">{t.nav.about}</a>
-              <a href="#trayectoria">{t.nav.experience}</a>
-              <a href="#contacto" className="nav-contact-btn">{t.nav.contact}</a>
-            </nav>
-
+            <NavbarNav />
             <LanguageSwitch />
           </div>
         </div>
       </header>
+
+      {/* Paleta de comandos interactiva y Easter Egg de consola */}
+      <CommandPalette />
+      <ConsoleEasterEgg />
 
       <main id="contenido">
         {/* Sección Hero */}

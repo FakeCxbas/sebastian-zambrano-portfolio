@@ -93,6 +93,20 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
     return () => grid.removeEventListener('pointermove', handlePointerMove);
   }, []);
 
+  // Escuchar evento para abrir modal desde Command Palette o Consola
+  useEffect(() => {
+    const handleOpenProject = (e: Event) => {
+      const custom = e as CustomEvent<{ projectName: string }>;
+      if (custom.detail?.projectName) {
+        setActiveCategory('all');
+        setSelectedProject(custom.detail.projectName);
+      }
+    };
+
+    window.addEventListener('portfolio:open-project', handleOpenProject);
+    return () => window.removeEventListener('portfolio:open-project', handleOpenProject);
+  }, []);
+
   const filteredProjects = activeCategory === 'all'
     ? projects
     : projects.filter(p => p.category === activeCategory);
