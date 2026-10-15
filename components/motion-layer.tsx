@@ -28,7 +28,16 @@ export function MotionLayer() {
     update(); window.addEventListener('scroll', update, { passive: true });
     return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('scroll', update); targets.forEach(t => t.classList.remove('reveal')); };
   }, []);
-  return <div id="scroll-progress" className="scroll-progress-bar" aria-hidden="true" />;
+  return (
+    <>
+      <div id="scroll-progress" className="scroll-progress-bar" aria-hidden="true" />
+      <div className="ambient-mesh-glow" aria-hidden="true">
+        <div className="ambient-orb orb-1" />
+        <div className="ambient-orb orb-2" />
+        <div className="ambient-orb orb-3" />
+      </div>
+    </>
+  );
 }
 
 import { RemoteHud } from '@/components/remote-hud';

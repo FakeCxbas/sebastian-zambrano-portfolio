@@ -161,6 +161,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                 '--card-border-glow': theme.border,
               } as React.CSSProperties}
             >
+              <div className="project-underglow" aria-hidden="true" />
               {isFeatured && (
                 <div className="featured-banner">
                   <Sparkles size={11} className="featured-icon" />
