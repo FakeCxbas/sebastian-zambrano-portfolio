@@ -273,7 +273,8 @@ function PortfolioView() {
 
               return (
                 <article
-                  key={`${item.title}-${idx}`}
+                  key={`${timelineFilter}-${item.title}-${idx}`}
+                  style={{ '--item-idx': idx } as React.CSSProperties}
                   className={`timeline-item ${isActive ? 'is-active' : ''} ${isEdu ? 'timeline-education' : ''}`}
                 >
                   <div className="timeline-marker">

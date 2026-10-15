@@ -137,7 +137,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
 
       {/* Cuadrícula de Proyectos con Spotlight y Temas Vibrantes */}
       <div className="project-grid" ref={gridRef}>
-        {filteredProjects.map((project) => {
+        {filteredProjects.map((project, idx) => {
           const techList = project.stack.split(' / ').map(t => t.trim());
           const isFeatured = project.originalIndex === 0;
           const trans = t.projects.items[project.name] || {};
@@ -154,11 +154,12 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
           return (
             <article
               className={`project project-${project.originalIndex} project-spotlight ${isFeatured ? 'is-featured' : ''}`}
-              key={project.name}
+              key={`${activeCategory}-${project.name}`}
               style={{
                 '--card-accent': theme.accent,
                 '--card-glow': theme.glow,
                 '--card-border-glow': theme.border,
+                '--item-idx': idx,
               } as React.CSSProperties}
             >
               <div className="project-underglow" aria-hidden="true" />
