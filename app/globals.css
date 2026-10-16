@@ -3706,7 +3706,7 @@ body {
 
 /* Formulario Interactivo con Input de Comandos */
 .arch-interactive-form {
-  margin: 16px 0 12px;
+  margin: 16px 0 0;
   padding: 8px 12px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(198, 250, 120, 0.28);
@@ -3804,71 +3804,7 @@ body {
   opacity: 0.7;
 }
 
-/* Atajos y Sugerencias de Comandos Zsh */
-.arch-cmd-suggestions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 7px;
-  padding-top: 10px;
-  margin-top: 4px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.08);
-  font-family: var(--font-geist-mono), 'Fira Code', monospace;
-  font-size: 0.72rem;
-}
 
-.arch-sugg-label {
-  color: #64748b;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  font-weight: 600;
-  margin-right: 2px;
-}
-
-.arch-sugg-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 3px 9px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
-  font-family: inherit;
-  font-size: 0.72rem;
-  cursor: pointer;
-  transition: all 0.18s ease;
-}
-
-.arch-sugg-chip:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.arch-sugg-chip.is-accent {
-  background: rgba(198, 250, 120, 0.08);
-  border-color: rgba(198, 250, 120, 0.32);
-  color: #c6fa78;
-  font-weight: 600;
-}
-
-.arch-sugg-chip.is-accent:hover {
-  background: rgba(198, 250, 120, 0.18);
-  border-color: #c6fa78;
-  box-shadow: 0 0 12px rgba(198, 250, 120, 0.22);
-}
-
-.sugg-desc {
-  color: #64748b;
-  font-size: 0.64rem;
-  font-weight: 400;
-}
-
-.arch-sugg-chip.is-accent:hover .sugg-desc {
-  color: #a3e635;
-}
 
 @media (max-width: 600px) {
   .not-found-card {

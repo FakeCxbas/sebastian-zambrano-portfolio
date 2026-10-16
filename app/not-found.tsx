@@ -262,52 +262,6 @@ export default function NotFound() {
                 </button>
               </div>
             </form>
-
-            {/* ATAJOS RÁPIDOS DE COMANDOS ESTILO ZSH */}
-            <div className="arch-cmd-suggestions">
-              <span className="arch-sugg-label">comandos:</span>
-              <button
-                type="button"
-                className="arch-sugg-chip is-accent"
-                onClick={() => executeCmd('/back')}
-                title="Ejecutar: cd ~ (volver al inicio)"
-              >
-                <span className="sugg-cmd">cd ~</span>
-                <span className="sugg-desc">(/back)</span>
-              </button>
-              <button
-                type="button"
-                className="arch-sugg-chip"
-                onClick={() => executeCmd('/proyectos')}
-                title="Ejecutar: /proyectos"
-              >
-                <span className="sugg-cmd">/proyectos</span>
-              </button>
-              <button
-                type="button"
-                className="arch-sugg-chip"
-                onClick={() => executeCmd('/cv')}
-                title="Ejecutar: /cv"
-              >
-                <span className="sugg-cmd">/cv</span>
-              </button>
-              <button
-                type="button"
-                className="arch-sugg-chip"
-                onClick={() => executeCmd('/whatsapp')}
-                title="Ejecutar: /whatsapp"
-              >
-                <span className="sugg-cmd">/whatsapp</span>
-              </button>
-              <button
-                type="button"
-                className="arch-sugg-chip"
-                onClick={() => executeCmd('/help')}
-                title="Ejecutar: help"
-              >
-                <span className="sugg-cmd">help</span>
-              </button>
-            </div>
           </div>
         </section>
       </div>
