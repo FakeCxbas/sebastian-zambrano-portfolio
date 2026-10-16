@@ -2,8 +2,6 @@
 
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { Sparkles, FileText } from 'lucide-react';
-import { WhatsAppIcon } from '@/components/tech-icons';
 
 function ArchLogo({ size = 16 }: { size?: number }) {
   return (
@@ -26,10 +24,13 @@ export default function NotFound() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setMounted(true);
-    if (typeof window !== 'undefined') {
-      setPathname(window.location.pathname || '/ruta-desconocida');
-    }
+    const timer = setTimeout(() => {
+      setMounted(true);
+      if (typeof window !== 'undefined') {
+        setPathname(window.location.pathname || '/ruta-desconocida');
+      }
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const executeCmd = (cmd: string) => {
@@ -123,7 +124,7 @@ export default function NotFound() {
     setCommandInput('');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     executeCmd(commandInput || '/back');
   };
@@ -160,7 +161,7 @@ export default function NotFound() {
           {/* Header de la ventana estilo Tiling / Alacritty */}
           <div className="arch-terminal-topbar">
             <div className="arch-topbar-left">
-              <div className="terminal-dots">
+              <div className="terminal-dots" aria-hidden="true">
                 <span className="dot-red" />
                 <span className="dot-yellow" />
                 <span className="dot-green" />
@@ -217,7 +218,6 @@ export default function NotFound() {
                     value={commandInput}
                     onChange={(e) => setCommandInput(e.target.value)}
                     placeholder="/back"
-                    autoFocus
                     spellCheck={false}
                     autoComplete="off"
                     autoCapitalize="off"
@@ -243,39 +243,49 @@ export default function NotFound() {
               </div>
             </form>
 
-            {/* BOTÓN PROMINENTE DE RETORNO /back DIRECTO */}
-            <div className="arch-primary-back-wrap">
+            {/* ATAJOS RÁPIDOS DE COMANDOS ESTILO ZSH */}
+            <div className="arch-cmd-suggestions">
+              <span className="arch-sugg-label">comandos:</span>
               <button
                 type="button"
-                className="arch-back-action-btn"
+                className="arch-sugg-chip is-accent"
                 onClick={() => executeCmd('/back')}
+                title="Ejecutar: cd ~ (volver al inicio)"
               >
-                <div className="arch-back-btn-left">
-                  <span className="arch-back-arrow">↵</span>
-                  <span className="arch-back-cmd-label">/back</span>
-                  <span className="arch-back-desc">Retornar a la estación principal (Home)</span>
-                </div>
-                <span className="arch-back-badge">ACCESIBLE CON ENTER</span>
+                <span className="sugg-cmd">cd ~</span>
+                <span className="sugg-desc">(/back)</span>
               </button>
-            </div>
-
-            {/* ALIAS RÁPIDOS ESTILO COMANDO ARCH */}
-            <div className="arch-quick-aliases">
-              <span className="arch-alias-label">alias:</span>
-              <button type="button" className="arch-alias-chip" onClick={() => executeCmd('/proyectos')}>
-                <Sparkles size={11} />
-                <span>/proyectos</span>
+              <button
+                type="button"
+                className="arch-sugg-chip"
+                onClick={() => executeCmd('/proyectos')}
+                title="Ejecutar: /proyectos"
+              >
+                <span className="sugg-cmd">/proyectos</span>
               </button>
-              <button type="button" className="arch-alias-chip" onClick={() => executeCmd('/cv')}>
-                <FileText size={11} />
-                <span>/cv</span>
+              <button
+                type="button"
+                className="arch-sugg-chip"
+                onClick={() => executeCmd('/cv')}
+                title="Ejecutar: /cv"
+              >
+                <span className="sugg-cmd">/cv</span>
               </button>
-              <button type="button" className="arch-alias-chip" onClick={() => executeCmd('/whatsapp')}>
-                <WhatsAppIcon size={11} />
-                <span>/whatsapp</span>
+              <button
+                type="button"
+                className="arch-sugg-chip"
+                onClick={() => executeCmd('/whatsapp')}
+                title="Ejecutar: /whatsapp"
+              >
+                <span className="sugg-cmd">/whatsapp</span>
               </button>
-              <button type="button" className="arch-alias-chip" onClick={() => executeCmd('/help')}>
-                <span>/help</span>
+              <button
+                type="button"
+                className="arch-sugg-chip"
+                onClick={() => executeCmd('/help')}
+                title="Ejecutar: help"
+              >
+                <span className="sugg-cmd">help</span>
               </button>
             </div>
           </div>
