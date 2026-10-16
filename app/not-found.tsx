@@ -150,15 +150,6 @@ export default function NotFound() {
       <div className="not-found-grid-mesh" aria-hidden="true" />
 
       <div className="not-found-card arch-card-wrapper">
-        {/* Barra superior con telemetría */}
-        <div className="not-found-status-bar">
-          <span className="not-found-badge arch-badge">
-            <span className="not-found-pulse-dot" aria-hidden="true" />
-            <span>ERROR 404 // ROUTE NOT FOUND</span>
-          </span>
-          <span className="not-found-coords">SEBASTIÁN ZAMBRANO · DEV STATION</span>
-        </div>
-
         {/* ARTE DE CARACTERES ASCII 404 */}
         <div className="not-found-ascii-wrapper" aria-label="Código 404 en arte de caracteres">
           <pre className="not-found-ascii-art">
@@ -237,18 +228,14 @@ export default function NotFound() {
                     className="arch-cli-input"
                     value={commandInput}
                     onChange={(e) => setCommandInput(e.target.value)}
-                    placeholder="/back"
+                    placeholder=""
                     spellCheck={false}
                     autoComplete="off"
                     autoCapitalize="off"
                     aria-label="Comando de terminal"
                   />
-                  {/* Si el input está vacío, muestra /back como sugerencia con el cursor parpadeante */}
                   {!commandInput && (
-                    <span className="arch-placeholder-overlay" style={{ pointerEvents: 'none' }} aria-hidden="true">
-                      <span className="arch-cmd-glow">/back</span>
-                      <span className="arch-blinking-cursor" aria-hidden="true">▋</span>
-                    </span>
+                    <span className="arch-blinking-cursor" aria-hidden="true">▋</span>
                   )}
                 </div>
 

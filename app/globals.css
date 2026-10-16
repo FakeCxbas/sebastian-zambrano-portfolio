@@ -3497,7 +3497,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 12px 0 8px;
+  margin: 0 0 12px;
   overflow-x: auto;
   max-width: 100%;
 }
@@ -3742,6 +3742,7 @@ body {
   font-family: inherit;
   font-size: 0.84rem;
   color: #f8fafc;
+  caret-color: #c6fa78;
   padding: 0;
 }
 
@@ -3765,10 +3766,15 @@ body {
 }
 
 .arch-blinking-cursor {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   color: #c6fa78;
   animation: arch-blink 1s step-end infinite;
-  margin-left: 2px;
   font-size: 0.85rem;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes arch-blink {
