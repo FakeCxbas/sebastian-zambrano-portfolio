@@ -7,6 +7,17 @@ import { TechBadge } from '@/components/tech-icons';
 import { useLanguage } from '@/lib/i18n';
 import { Layers, Globe, Monitor, Smartphone, Cpu, ExternalLink, Code2, Sparkles } from 'lucide-react';
 
+export interface CaseStudyData {
+  problemEs: string;
+  problemEn: string;
+  roleEs: string;
+  roleEn: string;
+  usersEs: string;
+  usersEn: string;
+  outcomeEs: string;
+  outcomeEn: string;
+}
+
 export interface Project {
   name: string;
   type: string;
@@ -16,6 +27,7 @@ export interface Project {
   url?: string;
   aside?: string;
   originalIndex: number;
+  caseStudy?: CaseStudyData;
 }
 
 const PROJECT_THEMES: Record<string, { accent: string; glow: string; border: string }> = {
@@ -197,7 +209,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   }
                 }}
               >
-                <ProjectPreview index={project.originalIndex} />
+                <ProjectPreview name={project.name} index={project.originalIndex} />
               </div>
               
               <div className="project-content">
@@ -215,7 +227,38 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   {aside && <span className="project-aside">{aside}</span>}
                 </h3>
 
-                <p>{text}</p>
+                <p className="project-summary-text">{text}</p>
+
+                {/* Caso de estudio estructurado si está disponible */}
+                {project.caseStudy && (
+                  <div className="project-case-study-box" role="region" aria-label={`Caso de estudio: ${title}`}>
+                    <div className="cs-badge-row">
+                      <span className="cs-badge" style={{ borderColor: theme.border, color: theme.accent }}>
+                        {locale === 'en' ? 'CASE STUDY' : 'CASO DE ESTUDIO'}
+                      </span>
+                    </div>
+                    <div className="cs-list">
+                      <div className="cs-item">
+                        <span className="cs-key">{locale === 'en' ? 'Problem:' : 'Problema:'}</span>
+                        <span className="cs-val">{locale === 'en' ? project.caseStudy.problemEn : project.caseStudy.problemEs}</span>
+                      </div>
+                      <div className="cs-item">
+                        <span className="cs-key">{locale === 'en' ? 'My Role:' : 'Mi Aporte:'}</span>
+                        <span className="cs-val">{locale === 'en' ? project.caseStudy.roleEn : project.caseStudy.roleEs}</span>
+                      </div>
+                      <div className="cs-item">
+                        <span className="cs-key">{locale === 'en' ? 'Users & Context:' : 'Usuarios / Estado:'}</span>
+                        <span className="cs-val">{locale === 'en' ? project.caseStudy.usersEn : project.caseStudy.usersEs}</span>
+                      </div>
+                      <div className="cs-item cs-item-outcome">
+                        <span className="cs-key">{locale === 'en' ? 'Outcome:' : 'Resultado:'}</span>
+                        <span className="cs-val-outcome" style={{ color: theme.accent }}>
+                          {locale === 'en' ? project.caseStudy.outcomeEn : project.caseStudy.outcomeEs}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Micro-badges de stack tecnológico */}
                 <div className="tech-badge-container" aria-label="Tecnologías utilizadas">

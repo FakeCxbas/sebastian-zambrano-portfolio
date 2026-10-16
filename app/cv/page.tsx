@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Mail, MapPin, Globe, Phone } from 'lucide-react';
+import { ArrowLeft, Mail, MapPin, Phone } from 'lucide-react';
 import { CvPrintButton } from '@/components/cv-print-button';
 import { LanguageProvider, useLanguage } from '@/lib/i18n';
 import { LanguageSwitch } from '@/components/language-switch';
@@ -40,7 +40,23 @@ function CvContent() {
             <span>{isEn ? 'Back to Portfolio' : 'Volver al Portafolio'}</span>
           </Link>
           
-          <div className="cv-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div className="cv-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <a
+              href="/cv/CV-Sebastian-Zambrano-ES.pdf"
+              download="CV-tecnico-Sebastian-Zambrano-ES.pdf"
+              className="cv-pdf-download-pill"
+              title="Descargar CV Técnico en PDF (Español)"
+            >
+              <span>PDF (ES) ⬇</span>
+            </a>
+            <a
+              href="/cv/CV-Sebastian-Zambrano-EN.pdf"
+              download="Sebastian-Zambrano-Junior-Software-Developer-EN.pdf"
+              className="cv-pdf-download-pill"
+              title="Download Junior Software Developer Resume in PDF (English)"
+            >
+              <span>PDF (EN) ⬇</span>
+            </a>
             <LanguageSwitch />
             <CvPrintButton />
           </div>
@@ -54,12 +70,12 @@ function CvContent() {
           <h1 className="cv-name">Sebastián Paul Zambrano Inga</h1>
           <div className="cv-role">
             {isEn
-              ? 'Software Developer · Full-Stack Web, Mobile & Data Automation'
-              : 'Desarrollador de Software · Web, Móvil & Datos'}
+              ? 'Junior Software Developer · React, TypeScript, Python, PostgreSQL & Flutter'
+              : 'Desarrollador de Software Junior · React, TypeScript, Python, PostgreSQL & Flutter'}
           </div>
           
           <div className="cv-contact-info">
-            <span><MapPin size={13} /> Guayaquil, Ecuador (UTC-5 / EST)</span>
+            <span><MapPin size={13} /> Guayaquil, Ecuador (UTC-5)</span>
             <a href="mailto:sebastianzambrano2818@gmail.com"><Mail size={13} /> sebastianzambrano2818@gmail.com</a>
             <a href="https://wa.me/593998134331" target="_blank" rel="noopener noreferrer"><Phone size={13} /> +593 99 813 4331</a>
             <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer"><GithubIcon size={13} /> github.com/FakeCxbas</a>
@@ -299,6 +315,31 @@ function CvContent() {
               </div>
               <span className="cv-job-dates">
                 {isEn ? 'Graduated March 2026' : 'Graduado en marzo 2026'}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* Idiomas & Disponibilidad */}
+        <section className="cv-section">
+          <h2 className="cv-section-title">
+            {isEn ? 'Languages & Availability' : 'Idiomas & Disponibilidad'}
+          </h2>
+          <div className="cv-skills-table">
+            <div className="cv-skill-row">
+              <strong className="cv-skill-cat">{isEn ? 'Languages:' : 'Idiomas:'}</strong>
+              <span>
+                {isEn
+                  ? 'Spanish (Native); English (Intermediate B1 - solid technical reading and written async collaboration)'
+                  : 'Español (Nativo); Inglés (Intermedio B1 - sólida lectura técnica y redacción asíncrona de equipo)'}
+              </span>
+            </div>
+            <div className="cv-skill-row">
+              <strong className="cv-skill-cat">{isEn ? 'Availability:' : 'Disponibilidad:'}</strong>
+              <span>
+                {isEn
+                  ? 'Full-time remote or hybrid; UTC-5 workday overlap across the Americas'
+                  : 'Jornada completa remoto o híbrido; solapamiento laboral UTC-5 con equipos de América'}
               </span>
             </div>
           </div>

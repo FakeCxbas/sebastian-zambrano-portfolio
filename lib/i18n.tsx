@@ -109,6 +109,8 @@ export interface Translations {
     whatsappSub: string;
     cvLabel: string;
     cvSub: string;
+    cvDownloadEs: string;
+    cvDownloadEn: string;
   };
   footer: {
     copyright: string;
@@ -129,16 +131,16 @@ export const translations: Record<Locale, Translations> = {
     hero: {
       location: 'GUAYAQUIL, ECUADOR',
       remoteBadge: 'Disponible para Remoto',
-      timezoneOverlap: 'UTC-5 · 100% EST Overlap',
+      timezoneOverlap: 'UTC-5 con solapamiento laboral con equipos de América',
       portfolioYear: 'PORTAFOLIO / 2026',
       greeting: 'Hola, soy',
       headlinePart1: 'Sebastián',
       headlinePart2: 'Zambrano',
       subheadlinePart1: 'Entre el código',
       subheadlinePart2: 'y el día a día.',
-      bio: 'Desarrollador de software enfocado en construir herramientas web, móviles y automatizaciones que operan en negocios reales. Listo para integrarme a equipos remotos de alto impacto.',
+      bio: 'Desarrollador de software junior enfocado en construir aplicaciones web, móviles y automatizaciones que operan en negocios reales. Especializado en React, TypeScript y Python.',
       ctaPrimary: 'Te muestro mi trabajo',
-      footRole: 'FULL STACK · AUTOMATIZACIÓN · SISTEMAS EN PRODUCCIÓN',
+      footRole: 'DESARROLLADOR DE SOFTWARE JUNIOR · REACT · TYPESCRIPT · PYTHON',
       footScroll: 'DESLIZA PARA EXPLORAR ↓',
       hudTitle: 'ESTACIÓN DE TRABAJO REMOTO',
       hudOriginTitle: 'DE DÓNDE VENGO',
@@ -227,7 +229,7 @@ export const translations: Record<Locale, Translations> = {
       metric4Desc: 'Requerimientos, desarrollo y capacitación',
       para1: 'Mi experiencia no empezó solamente frente al código. He trabajado en atención al cliente, ventas, inventarios y asistencia administrativa. Conocer la operativa real de un negocio me permite construir software intuitivo que los usuarios adoptan de inmediato.',
       para2: 'Estudio Ciencias de la Computación en la Universidad Espíritu Santo (UEES) y trabajo de forma independiente en el desarrollo y soporte de aplicaciones. También colaboro con Actuariosa en herramientas internas de automatización, saneamiento de datos y apoyo analítico.',
-      para3: 'Busco aportar mi energía y criterio técnico en roles de desarrollo de software (Full Stack / Frontend / Backend Junior), trabajando de forma 100% remota o híbrida.',
+      para3: 'Busco aportar en roles de Desarrollador de Software Junior (React, TypeScript, Python), soporte de aplicaciones o automatización de datos, en modalidad 100% remota o híbrida.',
     },
     experience: {
       eyebrow: '03 / TRAYECTORIA',
@@ -286,7 +288,7 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: '04 / HABLEMOS',
       headingPart1: 'Cuéntame qué',
       headingPart2: 'tienes en mente.',
-      description: 'Disponible para puestos de desarrollador de software remoto (tiempo completo), pasantías o proyectos por encargo. Respuesta ágil asegurada.',
+      description: 'Disponible para puestos de desarrollador de software remoto (tiempo completo) o proyectos a medida. Respuesta ágil asegurada.',
       emailLabel: 'CORREO ELECTRÓNICO',
       availability: '● Respuesta rápida en < 24h',
       socialLabel: 'REDES & CURRÍCULUM',
@@ -295,7 +297,9 @@ export const translations: Record<Locale, Translations> = {
       whatsappLabel: 'WhatsApp',
       whatsappSub: 'Mensaje directo ↗',
       cvLabel: 'Hoja de Vida',
-      cvSub: 'Ver CV (PDF) ↗',
+      cvSub: 'Ver CV interactivo ↗',
+      cvDownloadEs: 'Descargar CV (Español - PDF)',
+      cvDownloadEn: 'Download Resume (English - PDF)',
     },
     footer: {
       copyright: '© 2026 Sebastián Zambrano',
@@ -314,16 +318,16 @@ export const translations: Record<Locale, Translations> = {
     hero: {
       location: 'GUAYAQUIL, ECUADOR',
       remoteBadge: 'Available for Remote',
-      timezoneOverlap: 'UTC-5 · 100% US EST Overlap',
+      timezoneOverlap: 'UTC-5 · Full workday overlap across the Americas',
       portfolioYear: 'PORTFOLIO / 2026',
       greeting: "Hi, I'm",
       headlinePart1: 'Sebastián',
       headlinePart2: 'Zambrano',
       subheadlinePart1: 'Bridging resilient code',
       subheadlinePart2: 'with real business needs.',
-      bio: 'Software developer specializing in full-stack web applications, mobile tools, and robust automation pipelines in production. Ready to integrate into high-performing remote teams worldwide.',
+      bio: 'Junior software developer experienced in building web, mobile, and desktop applications for businesses. Primary stack: React, TypeScript, Python, PostgreSQL, and Flutter.',
       ctaPrimary: 'Explore my work',
-      footRole: 'FULL STACK · AUTOMATION · PRODUCTION SYSTEMS',
+      footRole: 'JUNIOR SOFTWARE DEVELOPER · REACT · TYPESCRIPT · PYTHON',
       footScroll: 'SCROLL TO EXPLORE ↓',
       hudTitle: 'REMOTE WORK STATION',
       hudOriginTitle: 'WHERE I COME FROM',
@@ -389,8 +393,8 @@ export const translations: Record<Locale, Translations> = {
         },
         'Actuariosa Web': {
           name: 'Actuariosa Web',
-          type: 'CONSULTING SITE · LIVE DEMO',
-          text: 'Interactive corporate website for an actuarial consultancy with service catalogs, FAQs, and instant quote requests via WhatsApp and Email.',
+          type: 'CONSULTING SITE · PROPOSAL DEMO',
+          text: 'Demonstration proposal website for an actuarial consultancy with service catalogs, FAQs, and instant quote requests via WhatsApp and Email. Built as a prototype proposal.',
         },
       },
     },
@@ -412,7 +416,7 @@ export const translations: Record<Locale, Translations> = {
       metric4Desc: 'Requirements, engineering & user onboarding',
       para1: 'My engineering perspective was forged in real operations. I have worked in customer service, sales counter, inventory auditing, and administrative management. Experiencing operational bottlenecks firsthand is why I build software that teams actually love using.',
       para2: 'I study Computer Science at Universidad Espíritu Santo (UEES) and build software independently. I also collaborate with Actuariosa developing internal automation engines, large-scale data sanitation pipelines, and analytical tooling.',
-      para3: 'I am actively seeking full-time remote or hybrid opportunities as a Software / Full Stack / Frontend Developer, eager to bring ownership, clean code, and speed to your team.',
+      para3: 'I am actively seeking junior software developer roles (React, TypeScript, Python), application support, or data automation tooling in remote or hybrid teams.',
     },
     experience: {
       eyebrow: '03 / JOURNEY',
@@ -471,7 +475,7 @@ export const translations: Record<Locale, Translations> = {
       eyebrow: '04 / GET IN TOUCH',
       headingPart1: "Let's build something",
       headingPart2: 'exceptional together.',
-      description: 'Actively interviewing for full-time remote developer positions, internships, or business custom software projects. Rapid response guaranteed.',
+      description: 'Available for full-time remote developer positions or custom business software engineering projects. Rapid response guaranteed.',
       emailLabel: 'DIRECT EMAIL',
       availability: '● Fast response within 24h',
       socialLabel: 'NETWORKS & RESUME',
@@ -480,7 +484,9 @@ export const translations: Record<Locale, Translations> = {
       whatsappLabel: 'WhatsApp',
       whatsappSub: 'Quick Chat ↗',
       cvLabel: 'Curriculum Vitae',
-      cvSub: 'View Resume (PDF) ↗',
+      cvSub: 'View Interactive CV ↗',
+      cvDownloadEs: 'Descargar CV (Español - PDF)',
+      cvDownloadEn: 'Download Resume (English - PDF)',
     },
     footer: {
       copyright: '© 2026 Sebastián Zambrano',

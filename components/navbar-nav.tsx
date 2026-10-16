@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/lib/i18n';
-import { Search } from 'lucide-react';
 
 interface NavItem {
   id: string;
   href: string;
   label: string;
-  isContact?: boolean;
 }
 
 export function NavbarNav() {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number; opacity: number }>({
     left: 0,
@@ -23,17 +21,16 @@ export function NavbarNav() {
   const navRef = useRef<HTMLElement>(null);
   const linksRef = useRef<Map<string, HTMLAnchorElement>>(new Map());
 
+  // Pastilla de 3 casillas principales (Proyectos, Sobre mí, Trayectoria)
   const navItems: NavItem[] = [
     { id: 'proyectos', href: '#proyectos', label: t.nav.projects },
     { id: 'sobre-mi', href: '#sobre-mi', label: t.nav.about },
     { id: 'trayectoria', href: '#trayectoria', label: t.nav.experience },
-    { id: 'contacto', href: '#contacto', label: t.nav.contact, isContact: true },
   ];
 
   // Actualizar la posición de la pastilla deslizante
   const updateIndicator = (targetId: string | null) => {
-    if (!targetId || targetId === 'contacto') {
-      // El botón de contacto tiene su propio estilo destacado
+    if (!targetId || targetId === 'contacto' || targetId === 'inicio') {
       setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }));
       return;
     }
@@ -87,7 +84,6 @@ export function NavbarNav() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', () => updateIndicator(activeSection), { passive: true });
 
-    // Ejecución inicial
     handleScroll();
 
     return () => {
@@ -101,14 +97,10 @@ export function NavbarNav() {
     updateIndicator(id);
   };
 
-  const handleOpenCmdK = () => {
-    window.dispatchEvent(new CustomEvent('portfolio:open-cmd-k'));
-  };
-
   return (
     <div className="navbar-nav-group">
+      {/* Pastilla de 3 casillas principales */}
       <nav ref={navRef} className="navbar-pill-nav" aria-label="Navegación principal">
-        {/* Pastilla indicadora deslizante */}
         <span
           className="nav-sliding-pill"
           style={{
@@ -127,7 +119,7 @@ export function NavbarNav() {
               else linksRef.current.delete(item.id);
             }}
             href={item.href}
-            className={`nav-link-item ${activeSection === item.id ? 'is-active-section' : ''} ${item.isContact ? 'nav-contact-btn' : ''}`}
+            className={`nav-link-item ${activeSection === item.id ? 'is-active-section' : ''}`}
             onClick={() => handleLinkClick(item.id)}
           >
             {item.label}
@@ -135,18 +127,14 @@ export function NavbarNav() {
         ))}
       </nav>
 
-      {/* Botón trigger para Command Palette (Cmd + K) */}
-      <button
-        type="button"
-        className="cmd-k-trigger"
-        onClick={handleOpenCmdK}
-        title={locale === 'en' ? 'Open Command Palette (⌘K / Ctrl+K)' : 'Abrir Paleta de Comandos (⌘K / Ctrl+K)'}
-        aria-label="Abrir buscador y atajos de teclado"
+      {/* Botón Contacto independiente y redondeado */}
+      <a
+        href="#contacto"
+        className={`nav-contact-pill-btn ${activeSection === 'contacto' ? 'is-active-contact' : ''}`}
+        onClick={() => handleLinkClick('contacto')}
       >
-        <Search size={13} className="cmd-k-icon" aria-hidden="true" />
-        <span className="cmd-k-label">{locale === 'en' ? 'Search' : 'Buscar'}</span>
-        <kbd className="cmd-k-kbd">⌘K</kbd>
-      </button>
+        <span>{t.nav.contact}</span>
+      </a>
     </div>
   );
 }

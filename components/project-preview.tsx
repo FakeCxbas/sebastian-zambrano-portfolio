@@ -62,8 +62,8 @@ const previews = [
   },
 ];
 
-export function ProjectPreview({ index }: { index: number }) {
-  const p = previews[index];
+export function ProjectPreview({ index, name }: { index?: number; name?: string }) {
+  const p = (name ? previews.find((item) => item.name === name) : null) || (index !== undefined ? previews[index] : null);
   if (!p) return null;
 
   return (

@@ -11,42 +11,42 @@ export function RemoteDna() {
   const cards = [
     {
       icon: Clock,
-      badge: isEn ? 'UTC-5 · Guayaquil, EC' : 'UTC-5 · Guayaquil, EC',
-      title: isEn ? '100% US Eastern (EST) Overlap' : '100% solapamiento con US Eastern (EST)',
+      badge: isEn ? 'UTC-5 · Guayaquil, Ecuador' : 'UTC-5 · Guayaquil, Ecuador',
+      title: isEn ? 'UTC-5 with workday overlap across the Americas' : 'UTC-5 con solapamiento laboral con equipos de América',
       desc: isEn
-        ? 'Real-time daily collaboration with teams in New York, Miami, Toronto, and Montreal. Smooth midday overlap with Central (CST), Pacific (PST), and Europe.'
-        : 'Colaboración en vivo con equipos en Nueva York, Miami, Toronto y Montreal. Cobertura fluida con Central (CST), Pacífico (PST) y mañanas de Europa.',
-      tag: isEn ? 'Timezone Aligned' : 'Zona Horaria Ideal',
+        ? 'Consistent real-time overlap with engineering and product teams across the Americas. Ecuador timezone (UTC-5) maintains direct daily coverage during business hours.'
+        : 'Solapamiento laboral en tiempo real con equipos en América. La zona horaria de Ecuador (UTC-5) asegura cobertura directa durante la jornada de trabajo.',
+      tag: isEn ? 'Americas Overlap' : 'Solapamiento Laboral',
       color: '#38bdf8',
     },
     {
       icon: GitBranch,
-      badge: isEn ? 'Async-First · Git PRs' : 'Cultura Asíncrona · Git',
-      title: isEn ? 'Documented, autonomous progress' : 'Claridad escrita & autonomía',
+      badge: isEn ? 'Verifiable Collaboration' : 'Evidencia Verificable',
+      title: isEn ? 'Bilingual READMEs, clear PRs & automated testing' : 'READMEs bilingües, PRs claros y pruebas',
       desc: isEn
-        ? 'Disciplined atomic commits, clear pull request descriptions, proactive status updates, and short video walkthroughs (Loom). No micromanagement needed.'
-        : 'Commits atómicos, PRs detallados con contexto, actualizaciones diarias proactivas y demos en video cuando se requiere. Sin fricción ni micromanagement.',
-      tag: isEn ? 'Autonomous Delivery' : 'Entregas Predecibles',
+        ? 'Clean git history with atomic commits, contextual PR descriptions, issue tracking, bilingual setup guides, and automated testing (Vitest, Playwright).'
+        : 'Repositorios con commits atómicos, issues documentados, pull requests con contexto de negocio, guías bilingües de instalación y pruebas automatizadas (Vitest, Playwright).',
+      tag: isEn ? 'Code Evidence' : 'Evidencia Técnica',
       color: '#10b981',
     },
     {
       icon: Briefcase,
-      badge: isEn ? 'Production Ownership' : 'Mentalidad de Negocio',
-      title: isEn ? 'Operational empathy & product sense' : 'Empatía operativa & visión de negocio',
+      badge: isEn ? 'Business & Operations' : 'Operación & Negocio Real',
+      title: isEn ? 'Hands-on operational understanding' : 'Comprensión operativa de negocios reales',
       desc: isEn
-        ? 'Hands-on experience working directly with business owners, counter staff, and clients. I build resilient software designed to solve real daily operational headaches.'
-        : 'Experiencia real atendiendo clientes, administrando inventarios y vendiendo repuestos. Construyo software diseñado para resistir el uso rudo del negocio diario.',
-      tag: isEn ? 'Business Impact' : 'Foco en Valor Real',
+        ? 'Experience gathering requirements, training users, managing counter inventory, and supporting small businesses directly. I build software that solves concrete operational bottlenecks.'
+        : 'Experiencia directa en mostrador, inventarios, atención a usuarios y capacitación. Desarrollar para negocios reales me permite construir software intuitivo y resistente.',
+      tag: isEn ? 'Operational Empathy' : 'Empatía Operativa',
       color: '#f59e0b',
     },
     {
       icon: Languages,
-      badge: isEn ? 'English & Spanish' : 'Inglés & Español',
-      title: isEn ? 'Bilingual technical fluency (B2)' : 'Colaboración bilingüe fluida (B2)',
+      badge: isEn ? 'Spanish & English' : 'Español & Inglés',
+      title: isEn ? 'Technical English (B1 Intermediate)' : 'Inglés técnico intermedio (B1)',
       desc: isEn
-        ? 'Proven ability to conduct daily standups, write architecture specs, review pull requests, and communicate technical trade-offs fluently in both languages.'
-        : 'Fluidez técnica para daily standups, redacción de especificaciones de arquitectura, revisión de código y documentación completa en ambos idiomas.',
-      tag: isEn ? 'Global Ready' : 'Alcance Internacional',
+        ? 'Solid technical reading comprehension for documentation and RFCs, clear written communication for commits, pull requests, issues, and asynchronous teamwork.'
+        : 'Sólida lectura técnica de documentación, especificaciones y librerías; redacción clara en inglés de commits, issues, PRs y comunicación asíncrona de equipo.',
+      tag: isEn ? 'B1 Intermediate' : 'B1 Intermedio',
       color: '#a78bfa',
     },
   ];

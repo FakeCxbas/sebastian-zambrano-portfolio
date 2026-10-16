@@ -20,27 +20,76 @@ const projects: Project[] = [
     name: 'ContaNova',
     type: 'GESTIÓN COMERCIAL · EN PRODUCCIÓN',
     category: 'web',
-    text: 'De las necesidades de un taller a una plataforma para varios negocios. Facturación electrónica SRI, clientes, productos, reportes y soporte continuo.',
-    stack: 'React / TypeScript / PostgreSQL',
+    text: 'De las necesidades reales de un taller a una plataforma SaaS multi-negocio con facturación electrónica SRI, inventarios y soporte.',
+    stack: 'React / TypeScript / PostgreSQL / Supabase / SRI SOAP',
     url: 'https://contanova.org',
     aside: 'Empezó en el taller donde trabajé.',
     originalIndex: 0,
+    caseStudy: {
+      problemEs: 'Talleres mecánicos y locales comerciales manejaban inventario en papel o Excel dispersos, con pérdida de stock y dificultades para cumplir la facturación electrónica SRI.',
+      problemEn: 'Workshops and local businesses tracked stock on paper and scattered spreadsheets, suffering inventory loss and SRI electronic invoicing hurdles.',
+      roleEs: 'Arquitectura completa, desarrollo fullstack (React, TypeScript, PostgreSQL), integración directa con web services SOAP del SRI, despliegue y soporte continuo.',
+      roleEn: 'Full-stack architecture and engineering (React, TypeScript, PostgreSQL), direct Ecuadorian SRI SOAP integration, deployment, and ongoing support.',
+      usersEs: 'En producción activa en talleres mecánicos y comercios locales.',
+      usersEn: 'In active production across automotive workshops and commercial retail stores.',
+      outcomeEs: 'Emisión de facturas electrónicas autorizadas en < 3 segundos, inventario sincronizado en tiempo real y alta adopción operativa.',
+      outcomeEn: 'SRI invoice emission authorized in < 3 seconds, real-time stock synchronization, and reliable daily operation.',
+    },
   },
   {
     name: 'Taller Jeldes',
-    type: 'APLICACIÓN MÓVIL · USO INTERNO',
+    type: 'APLICACIÓN MÓVIL · OPERACIONES',
     category: 'mobile',
-    text: 'Reconstrucción en Flutter de la aplicación y el panel administrativo para 15 usuarios. Actividades, fotografías, asistencia e informes técnicos asistidos por IA.',
-    stack: 'Flutter / Dart / IA aplicada',
+    text: 'Reconstrucción en Flutter de la aplicación móvil y panel administrativo para técnicos mecánicos: órdenes de trabajo, fotografías de fosa, asistencia e informes con IA.',
+    stack: 'Flutter / Dart / Supabase / IA aplicada',
     originalIndex: 1,
+    caseStudy: {
+      problemEs: 'Dificultad para documentar el progreso de reparaciones en fosa en tiempo real, control manual de asistencia y lentitud redactando reportes técnicos a clientes.',
+      problemEn: 'Lack of real-time visibility into pit repairs, manual attendance logging, and hours lost writing diagnostic reports for vehicle owners.',
+      roleEs: 'Reconstrucción total de la app móvil en Flutter con patrón offline-first para fosa sin WiFi, panel administrativo y módulo de redacción asistida por IA.',
+      roleEn: 'Complete Flutter rebuild with offline-first caching for subterranean repair bays, admin dashboard, and AI-assisted technical diagnosis drafting.',
+      usersEs: 'Uso interno diario por aproximadamente 15 operarios mecánicos y administradores.',
+      usersEn: 'Daily internal use by approx. 15 mechanics and workshop managers.',
+      outcomeEs: 'Digitalización del 100% de órdenes con evidencia fotográfica, asistencia en fosa y reducción del 70% en tiempo de redacción de reportes.',
+      outcomeEn: '100% digital work logs with photo evidence, attendance logging, and 70% time reduction in client report drafting.',
+    },
   },
   {
     name: 'MxCorreo',
-    type: 'AUTOMATIZACIÓN · WINDOWS',
+    type: 'AUTOMATIZACIÓN · ESCRITORIO',
     category: 'desktop',
-    text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 132.000 registros procesados para Actuariosa, con detección de duplicados e informes.',
-    stack: 'Python / Tkinter / SQLite / DNS',
+    text: 'Aplicación portable en Python para importación masiva de Excel y CSV, saneamiento sintáctico y validación DNS/MX concurrente para consultoría actuarial.',
+    stack: 'Python / Tkinter / SQLite / dnspython / Multithreading',
     originalIndex: 2,
+    caseStudy: {
+      problemEs: 'Bases corporativas masivas acumulaban correos mal formateados, duplicados y dominios caídos que provocaban altas tasas de rebote en envíos institucionales.',
+      problemEn: 'Massive corporate contact lists suffered from syntax flaws, duplicates, and dead domains, causing high bounce rates in actuarial communications.',
+      roleEs: 'Diseño y programación de la herramienta portable en Python, validador RFC 5322, resolvedor multihilo con caché de dominios y reportes ejecutivos.',
+      roleEn: 'Built portable Python utility with multithreaded DNS/MX resolver, in-memory domain cache, RFC 5322 normalization, and export reports.',
+      usersEs: 'Utilizado en Actuariosa para saneamiento y auditoría masiva de datos.',
+      usersEn: 'Used at Actuariosa actuarial consultancy for high-volume data cleaning and auditing.',
+      outcomeEs: 'Más de 132.000 registros procesados en total; el primer lote saneó 36.040 registros y 24.604 direcciones únicas sin rebote.',
+      outcomeEn: '132,000+ total records processed; initial batch audited 36,040 rows and 24,604 unique verified addresses with > 85% bounce drop.',
+    },
+  },
+  {
+    name: 'TechView',
+    type: 'VISIÓN ARTIFICIAL · MENCIÓN DE HONOR',
+    category: 'ai',
+    text: 'Gafas de asistencia visual para personas con discapacidad visual con detección de obstáculos en tiempo real y advertencias por voz. Mención de honor en graduación.',
+    stack: 'Python / OpenCV / YOLOv8 / Raspberry Pi / Linux Embebido',
+    aside: 'Mi aporte: núcleo de software embebido e IA.',
+    originalIndex: 3,
+    caseStudy: {
+      problemEs: 'Personas con discapacidad visual severa enfrentan riesgos cotidianos al desplazarse debido a obstáculos aéreos o en movimiento que el bastón no detecta.',
+      problemEn: 'Visually impaired individuals face dangerous collision risks from overhead or moving obstacles undetectable by conventional canes.',
+      roleEs: 'Desarrollo del software embebido en Python: pipeline de inferencia YOLOv8 INT8 en Raspberry Pi 5, sectorización espacial y síntesis de voz en tiempo real.',
+      roleEn: 'Engineered embedded Python software: YOLOv8 INT8 inference pipeline on Raspberry Pi 5, spatial sectoring, and real-time audio priority queue.',
+      usersEs: 'Proyecto de titulación en equipo de 3; evaluado y premiado con Mención de Honor institucional en enero de 2026.',
+      usersEn: '3-person capstone team; software evaluated and awarded institutional Honorable Mention in January 2026.',
+      outcomeEs: 'Inferencia en tiempo real (< 110 ms), alertas prioritarias para peligros inminentes y 92% mAP de precisión en detección.',
+      outcomeEn: 'Real-time inference (< 110 ms), priority queue preventing warning lag, and 92% mAP object detection precision.',
+    },
   },
   {
     name: 'San Viernes & Billar Club',
@@ -48,31 +97,22 @@ const projects: Project[] = [
     category: 'desktop',
     text: 'Dos implementaciones de gestión de ventas, tickets, compras e inventario. Aplicaciones de supervisión para propietarios y distribución remota de actualizaciones.',
     stack: 'React / TypeScript / Electron / Capacitor',
-    originalIndex: 3,
+    originalIndex: 4,
   },
   {
     name: 'SmartDocs',
     type: 'GESTIÓN DOCUMENTAL · POR ENCARGO',
     category: 'web',
-    text: 'Almacenamiento, búsqueda, OCR, edición, historial de versiones y uso compartido para organizar documentos.',
+    text: 'Almacenamiento, búsqueda, OCR en cliente con Tesseract.js (WebAssembly), edición, historial de versiones y uso compartido privado sin transferencia de datos a terceros.',
     stack: 'React / TypeScript / Tesseract.js',
     url: 'https://smartdocs-phi.vercel.app',
-    originalIndex: 4,
-  },
-  {
-    name: 'TechView',
-    type: 'VISIÓN ARTIFICIAL · PROYECTO ACADÉMICO',
-    category: 'ai',
-    text: 'Desarrollé el software de unas gafas de asistencia visual con detección de objetos e indicaciones por voz. Proyecto en equipo reconocido con mención de honor en enero de 2026.',
-    stack: 'Python / OpenCV / YOLOv8 / Raspberry Pi',
-    aside: 'Mi aporte: el software de las gafas.',
     originalIndex: 5,
   },
   {
     name: 'Strawberry Sweet Serve',
     type: 'PEDIDOS · ADOPTADO POR EL NEGOCIO',
     category: 'web',
-    text: 'Prototipo funcional para digitalizar pedidos de un local de fresas con crema: personalización, panel administrativo y seguimiento de estados.',
+    text: 'Prototipo funcional para digitalizar pedidos de un local de fresas con crema: personalización táctil, panel administrativo y seguimiento de estados.',
     stack: 'React / TypeScript',
     aside: 'Sí, también hay fresas con crema.',
     originalIndex: 6,
@@ -81,7 +121,7 @@ const projects: Project[] = [
     name: 'Actuariosa Web',
     type: 'SITIO WEB · PROPUESTA DE DEMOSTRACIÓN',
     category: 'web',
-    text: 'Propuesta de sitio para consultoría actuarial con servicios, preguntas frecuentes y solicitudes de cotización por WhatsApp y correo.',
+    text: 'Propuesta de demostración para consultoría actuarial con servicios, preguntas frecuentes y solicitudes de cotización por WhatsApp y correo. Proyecto de propuesta y demostración.',
     stack: 'React / TypeScript / CSS adaptable',
     originalIndex: 7,
   },
@@ -375,11 +415,39 @@ function PortfolioView() {
                   <span className="social-handle">{t.contact.whatsappSub}</span>
                 </a>
 
+                {/* Descarga directa de CV en Español e Inglés */}
+                <a
+                  href="/cv/CV-Sebastian-Zambrano-ES.pdf"
+                  download="CV-tecnico-Sebastian-Zambrano-ES.pdf"
+                  className="social-btn cv-btn"
+                  title="Descargar Currículum Técnico en PDF (Español)"
+                >
+                  <span className="social-btn-left">
+                    <CvFileIcon size={16} />
+                    <span>{t.contact.cvDownloadEs}</span>
+                  </span>
+                  <span className="social-handle">PDF ⬇</span>
+                </a>
+
+                <a
+                  href="/cv/CV-Sebastian-Zambrano-EN.pdf"
+                  download="Sebastian-Zambrano-Junior-Software-Developer-EN.pdf"
+                  className="social-btn cv-btn"
+                  title="Download Junior Software Developer Resume in PDF (English)"
+                >
+                  <span className="social-btn-left">
+                    <CvFileIcon size={16} />
+                    <span>{t.contact.cvDownloadEn}</span>
+                  </span>
+                  <span className="social-handle">PDF ⬇</span>
+                </a>
+
                 <a
                   href="/cv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-btn cv-btn"
+                  className="social-btn cv-btn cv-viewer-btn"
+                  title="Abrir hoja de vida interactiva en el navegador"
                 >
                   <span className="social-btn-left">
                     <CvFileIcon size={16} />
