@@ -3,13 +3,27 @@
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 
-function ArchLogo({ size = 16 }: { size?: number }) {
+function SzLogo({ size = 16 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 300 300" width={size} height={size} aria-hidden="true" style={{ flexShrink: 0 }}>
-      <path
-        fill="#1793d1"
-        d="M141.6 8.4C137.4 18.2 127 41.5 118.5 60.1 94.4 113.1 48.9 213.1 48.9 213.6c0 .4 6.8-6.1 15-14.3 28.5-28.5 54.3-43.9 78.4-46.8 9.9-1.2 24.3.4 34.2 3.8 2.2.8 4.2 1.4 4.5 1.4.3 0-1.8-1.5-4.7-3.4-15.6-10.1-27.1-23.7-31.5-37.4-2.8-8.8-2.6-19.6.5-28.8 4.9-14.4 16.2-25.7 30.6-30.6 8.8-3 19.6-3.1 28.5-.4 14.1 4.4 25.4 15.4 30.2 29.5 2.8 8.1 2.8 19.3 0 27.5-4.4 13.1-15 25.8-29.6 35.6-4.2 2.8-8 5.6-8.5 6.2-.7.8 1.4 2.1 7.2 4.4 14.1 5.7 33.3 18.8 49.3 33.8 13.1 12.3 27 28.6 30.4 35.7.5 1 .7.8.9-.7.4-2.4-29.2-70.5-70.7-162.1C186.7 107.5 152.4 32.5 144.4 9.4c-.6-1.7-1.4-1.7-2.8-1z"
-      />
+    <svg
+      viewBox="0 0 40 40"
+      width={size}
+      height={size}
+      aria-hidden="true"
+      style={{ flexShrink: 0, display: 'inline-block', verticalAlign: 'middle' }}
+    >
+      <rect width="40" height="40" rx="9" fill="rgba(198, 250, 120, 0.12)" stroke="rgba(198, 250, 120, 0.35)" strokeWidth="1.5" />
+      <text
+        x="7"
+        y="27"
+        fill="#f8fafc"
+        fontFamily="var(--font-geist-sans), Arial, sans-serif"
+        fontSize="21"
+        fontWeight="850"
+        letterSpacing="-0.06em"
+      >
+        sz<tspan fill="#c6fa78">.</tspan>
+      </text>
     </svg>
   );
 }
@@ -50,7 +64,7 @@ export default function NotFound() {
       setIsReturning(true);
       setTerminalHistory((prev) => [
         ...prev,
-        `[sz@archlinux ~]$ ${raw}`,
+        `[sz@portfolio ~]$ ${raw}`,
         '> Reorientando conexión hacia https://sebastianzambrano.dev/ ...',
         '> Regresando a la estación base.',
       ]);
@@ -64,7 +78,7 @@ export default function NotFound() {
       setIsReturning(true);
       setTerminalHistory((prev) => [
         ...prev,
-        `[sz@archlinux ~]$ ${raw}`,
+        `[sz@portfolio ~]$ ${raw}`,
         '> Abriendo catálogo de proyectos...',
       ]);
       setTimeout(() => {
@@ -76,7 +90,7 @@ export default function NotFound() {
     if (clean === '/cv' || clean === 'cv' || clean === 'cat cv') {
       setTerminalHistory((prev) => [
         ...prev,
-        `[sz@archlinux ~]$ ${raw}`,
+        `[sz@portfolio ~]$ ${raw}`,
         '> Abriendo Currículum Vitae (PDF) en nueva pestaña...',
       ]);
       window.open('/cv', '_blank');
@@ -87,7 +101,7 @@ export default function NotFound() {
     if (clean === '/whatsapp' || clean === 'whatsapp') {
       setTerminalHistory((prev) => [
         ...prev,
-        `[sz@archlinux ~]$ ${raw}`,
+        `[sz@portfolio ~]$ ${raw}`,
         '> Iniciando enlace seguro con WhatsApp (+593 99 813 4331)...',
       ]);
       window.open('https://wa.me/593998134331?text=Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20terminal%20en%20el%20portafolio.', '_blank');
@@ -104,8 +118,8 @@ export default function NotFound() {
     if (clean === 'help' || clean === '/help' || clean === 'ls') {
       setTerminalHistory((prev) => [
         ...prev,
-        `[sz@archlinux ~]$ ${raw}`,
-        'COMANDOS DISPONIBLES EN ARCH:',
+        `[sz@portfolio ~]$ ${raw}`,
+        'COMANDOS DISPONIBLES EN SZ.DEV:',
         '  /back       -> Retornar al inicio del portafolio',
         '  /proyectos  -> Explorar proyectos en producción',
         '  /cv         -> Ver Currículum Vitae',
@@ -118,7 +132,7 @@ export default function NotFound() {
 
     setTerminalHistory((prev) => [
       ...prev,
-      `[sz@archlinux ~]$ ${raw}`,
+      `[sz@portfolio ~]$ ${raw}`,
       `zsh: command not found: ${raw}. Escribe /back o presiona Enter para volver.`,
     ]);
     setCommandInput('');
@@ -140,24 +154,30 @@ export default function NotFound() {
         <div className="not-found-status-bar">
           <span className="not-found-badge arch-badge">
             <span className="not-found-pulse-dot" aria-hidden="true" />
-            <span>ERROR 404 // KERNEL ROUTE MISSING</span>
+            <span>ERROR 404 // ROUTE NOT FOUND</span>
           </span>
-          <span className="not-found-coords">ARCH LINUX 6.12.9 · GUAYAQUIL</span>
+          <span className="not-found-coords">SEBASTIÁN ZAMBRANO · DEV STATION</span>
         </div>
 
-        {/* Número 404 estético */}
-        <div className="not-found-code-wrapper">
-          <h1 className="not-found-code">404</h1>
-          <span className="not-found-code-glow" aria-hidden="true">404</span>
+        {/* ARTE DE CARACTERES ASCII 404 */}
+        <div className="not-found-ascii-wrapper" aria-label="Código 404 en arte de caracteres">
+          <pre className="not-found-ascii-art">
+{` ██╗  ██╗   ██████╗   ██╗  ██╗
+ ██║  ██║  ██╔═████╗  ██║  ██║
+ ███████║  ██║██╔██║  ███████║
+ ╚════██║  ████╔╝██║  ╚════██║
+      ██║  ╚██████╔╝       ██║
+      ╚═╝   ╚═════╝        ╚═╝`}
+          </pre>
         </div>
 
         <h2 className="not-found-title">Destino no encontrado / Route Not Found</h2>
         <p className="not-found-desc">
-          El endpoint solicitado no está mapeado en el servidor. Usa la terminal de Arch a continuación para retornar a la base.
+          El endpoint solicitado no está mapeado en el servidor. Usa la terminal interactiva a continuación para retornar a la base.
         </p>
 
-        {/* TERMINAL REALISTA DE ARCH LINUX */}
-        <section className="arch-terminal-window" aria-label="Terminal Arch Linux">
+        {/* TERMINAL INTERACTIVA SZ.DEV */}
+        <section className="arch-terminal-window" aria-label="Terminal interactiva de Sebastián Zambrano">
           {/* Header de la ventana estilo Tiling / Alacritty */}
           <div className="arch-terminal-topbar">
             <div className="arch-topbar-left">
@@ -167,8 +187,8 @@ export default function NotFound() {
                 <span className="dot-green" />
               </div>
               <div className="arch-title-group">
-                <ArchLogo size={14} />
-                <span className="arch-window-title">sz@archlinux: ~ (zsh)</span>
+                <SzLogo size={18} />
+                <span className="arch-window-title">sz@portfolio: ~ (zsh)</span>
               </div>
             </div>
             <div className="arch-topbar-tags" aria-hidden="true">
@@ -180,18 +200,18 @@ export default function NotFound() {
 
           {/* Cuerpo de la terminal */}
           <div className="arch-terminal-body">
-            <p className="arch-banner-line">Arch Linux 6.12.9-arch1-1 (tty1) - Guayaquil station</p>
+            <p className="arch-banner-line">sz-terminal v2.4 (tty1) - Guayaquil station</p>
 
             <div className="arch-log-block">
               <p className="arch-line">
-                <span className="arch-prompt-user">sz@archlinux</span>
+                <span className="arch-prompt-user">sz@portfolio</span>
                 <span className="arch-prompt-colon">:</span>
                 <span className="arch-prompt-path">~</span>
                 <span className="arch-prompt-symbol">$</span>
                 <span className="arch-cmd-text">curl -I https://sebastianzambrano.dev{mounted ? pathname : '/404'}</span>
               </p>
               <p className="arch-output arch-out-error">HTTP/2 404 Not Found</p>
-              <p className="arch-output arch-out-dim">server: arch-edge-gateway</p>
+              <p className="arch-output arch-out-dim">server: edge-gateway (sebastianzambrano.dev)</p>
               <p className="arch-output arch-out-warn">[!] Destination unreachable: target path not registered in production routes.</p>
             </div>
 
@@ -205,7 +225,7 @@ export default function NotFound() {
             {/* PROMPT PRINCIPAL INTERACTIVO CON /back */}
             <form onSubmit={handleSubmit} className="arch-interactive-form">
               <div className="arch-prompt-row">
-                <span className="arch-prompt-user">sz@archlinux</span>
+                <span className="arch-prompt-user">sz@portfolio</span>
                 <span className="arch-prompt-colon">:</span>
                 <span className="arch-prompt-path">~</span>
                 <span className="arch-prompt-symbol">$</span>

@@ -3493,37 +3493,28 @@ body {
   color: #64748b;
 }
 
-.not-found-code-wrapper {
-  position: relative;
+.not-found-ascii-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 12px 0 8px;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
-.not-found-code {
-  font-size: clamp(3.8rem, 8vw, 5.2rem);
-  font-weight: 850;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+.not-found-ascii-art {
+  font-family: var(--font-geist-mono), 'Fira Code', 'Courier New', monospace;
+  font-size: clamp(0.68rem, 2vw, 1rem);
+  line-height: 1.14;
+  color: #c6fa78;
+  text-shadow: 0 0 20px rgba(198, 250, 120, 0.45), 0 0 6px rgba(198, 250, 120, 0.85);
   margin: 0;
-  background: linear-gradient(180deg, #ffffff 30%, #c6fa78 85%, #557827 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  z-index: 2;
-}
-
-.not-found-code-glow {
-  position: absolute;
-  font-size: clamp(3.8rem, 8vw, 5.2rem);
-  font-weight: 850;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  color: rgba(198, 250, 120, 0.28);
-  filter: blur(24px);
-  z-index: 1;
+  padding: 4px 12px;
+  background: transparent;
   user-select: none;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  text-align: left;
 }
 
 .not-found-title {
