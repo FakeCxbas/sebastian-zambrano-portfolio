@@ -437,33 +437,7 @@ function PortfolioView() {
                   <span className="social-handle">{t.contact.whatsappSub}</span>
                 </a>
 
-                {/* Descarga directa de CV en Español e Inglés */}
-                <a
-                  href="/cv/CV-Sebastian-Zambrano-ES.pdf"
-                  download="CV-tecnico-Sebastian-Zambrano-ES.pdf"
-                  className="social-btn cv-btn"
-                  title="Descargar Currículum Técnico en PDF (Español)"
-                >
-                  <span className="social-btn-left">
-                    <CvFileIcon size={16} />
-                    <span>{t.contact.cvDownloadEs}</span>
-                  </span>
-                  <span className="social-handle">PDF ⬇</span>
-                </a>
-
-                <a
-                  href="/cv/CV-Sebastian-Zambrano-EN.pdf"
-                  download="Sebastian-Zambrano-Junior-Software-Developer-EN.pdf"
-                  className="social-btn cv-btn"
-                  title="Download Junior Software Developer Resume in PDF (English)"
-                >
-                  <span className="social-btn-left">
-                    <CvFileIcon size={16} />
-                    <span>{t.contact.cvDownloadEn}</span>
-                  </span>
-                  <span className="social-handle">PDF ⬇</span>
-                </a>
-
+                {/* Enlace al CV interactivo unificado */}
                 <a
                   href="/cv"
                   target="_blank"

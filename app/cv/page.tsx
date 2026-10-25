@@ -40,32 +40,16 @@ function CvContent() {
             <span>{isEn ? 'Back to Portfolio' : 'Volver al Portafolio'}</span>
           </Link>
           
-          <div className="cv-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-            <a
-              href="/cv/CV-Sebastian-Zambrano-ES.pdf"
-              download="CV-tecnico-Sebastian-Zambrano-ES.pdf"
-              className="cv-pdf-download-pill"
-              title="Descargar CV Técnico en PDF (Español)"
-            >
-              <span>PDF General ⬇</span>
-            </a>
-            <a
-              href="/cv/CV-Sebastian-Zambrano-Seguridad-Electronica-ES.pdf"
-              download="CV-Sebastian-Zambrano-Seguridad-Electronica-ES.pdf"
-              className="cv-pdf-download-pill"
-              title="Descargar CV enfocado en Seguridad Electrónica & Soporte TI (PDF)"
-            >
-              <span>Seguridad TI (PDF) ⬇</span>
-            </a>
-            <a
-              href="/cv/CV-Sebastian-Zambrano-EN.pdf"
-              download="Sebastian-Zambrano-Junior-Software-Developer-EN.pdf"
-              className="cv-pdf-download-pill"
-              title="Download Junior Software Developer Resume in PDF (English)"
-            >
-              <span>PDF (EN) ⬇</span>
-            </a>
+          <div className="cv-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <LanguageSwitch />
+            <a
+              href={isEn ? '/cv/CV-Sebastian-Zambrano-EN.pdf' : '/cv/CV-Sebastian-Zambrano-ES.pdf'}
+              download={isEn ? 'Sebastian-Zambrano-Junior-Software-Developer-EN.pdf' : 'CV-Sebastian-Zambrano-ES.pdf'}
+              className="cv-pdf-download-pill"
+              title={isEn ? 'Download Resume in PDF' : 'Descargar Hoja de Vida en PDF'}
+            >
+              <span>{isEn ? 'Download PDF ⬇' : 'Descargar PDF ⬇'}</span>
+            </a>
             <CvPrintButton />
           </div>
         </div>
