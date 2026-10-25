@@ -230,7 +230,7 @@ export const translations: Record<Locale, Translations> = {
       metric4Title: 'Acompañamiento',
       metric4Desc: 'Requerimientos, desarrollo y capacitación',
       para1: 'Mi experiencia no empezó solamente frente al código. He trabajado en atención al cliente, ventas, inventarios y asistencia administrativa. Conocer la operativa real de un negocio me permite construir software intuitivo que los usuarios adoptan de inmediato.',
-      para2: 'Estudio Ciencias de la Computación en la Universidad Espíritu Santo (UEES) y cofundé ESORIA Sistemas, firma donde brindamos soporte técnico a empresas, instalación y mantenimiento de seguridad electrónica (cámaras CCTV), seguridad informática y desarrollo de software a medida. También colaboro con Actuariosa en herramientas internas de automatización, saneamiento de datos y apoyo analítico.',
+      para2: 'Estudio Ingeniería en Ciencias de la Computación en la Universidad Espíritu Santo (UEES) y cofundé ESORIA Sistemas, firma donde brindamos soporte técnico a empresas, instalación y mantenimiento de seguridad electrónica (cámaras CCTV), seguridad informática y desarrollo de software a medida. También colaboro con Actuariosa en herramientas internas de automatización, saneamiento de datos y apoyo analítico.',
       para3: 'Busco aportar en roles de Desarrollador de Software Junior (React, TypeScript, Python), soporte de aplicaciones o automatización de datos, en modalidad 100% remota o híbrida.',
     },
     experience: {
@@ -282,7 +282,7 @@ export const translations: Record<Locale, Translations> = {
           description: '',
           educationSubitems: [
             {
-              title: 'Ciencias de la Computación · UEES',
+              title: 'Ingeniería en Ciencias de la Computación · UEES',
               desc: 'En curso desde mayo de 2026 en Universidad Espíritu Santo. Modalidad virtual nocturna.',
             },
             {
@@ -424,7 +424,7 @@ export const translations: Record<Locale, Translations> = {
       metric4Title: 'End-to-End Ownership',
       metric4Desc: 'Requirements, engineering & user onboarding',
       para1: 'My engineering perspective was forged in real operations. I have worked in customer service, sales counter, inventory auditing, and administrative management. Experiencing operational bottlenecks firsthand is why I build software that teams actually love using.',
-      para2: 'I study Computer Science at Universidad Espíritu Santo (UEES) and co-founded ESORIA Sistemas, delivering business IT technical support, electronic security systems (CCTV), corporate cybersecurity, and custom software engineering. I also collaborate with Actuariosa developing internal automation engines, large-scale data sanitation pipelines, and analytical tooling.',
+      para2: 'I study Computer Science Engineering at Universidad Espíritu Santo (UEES) and co-founded ESORIA Sistemas, delivering business IT technical support, electronic security systems (CCTV), corporate cybersecurity, and custom software engineering. I also collaborate with Actuariosa developing internal automation engines, large-scale data sanitation pipelines, and analytical tooling.',
       para3: 'I am actively seeking junior software developer roles (React, TypeScript, Python), application support, or data automation tooling in remote or hybrid teams.',
     },
     experience: {
@@ -476,7 +476,7 @@ export const translations: Record<Locale, Translations> = {
           description: '',
           educationSubitems: [
             {
-              title: 'B.S. in Computer Science · UEES',
+              title: 'Computer Science Engineering · UEES',
               desc: 'Enrolled since May 2026 at Universidad Espíritu Santo. Evening virtual program.',
             },
             {

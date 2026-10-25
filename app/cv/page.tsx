@@ -82,8 +82,8 @@ function CvContent() {
           </h2>
           <p className="cv-summary">
             {isEn
-              ? 'Technical professional and software developer with proven experience in electronic security systems (CCTV installation, IP/HD cameras, DVR/NVR, structured cabling), business IT technical support, corporate cybersecurity, and custom commercial software engineering. Co-founder and Technical Lead at ESORIA Sistemas. Computer Science student at Universidad Espíritu Santo (UEES), High School Diploma in Informatics with AI honors, equipped with own tools, hands-on field diagnostic capabilities, and a commitment to operational uptime.'
-              : 'Profesional técnico y desarrollador con experiencia práctica comprobada en instalación y mantenimiento de sistemas de seguridad electrónica (CCTV, cámaras IP/HD, grabadores DVR/NVR, cableado estructurado), soporte técnico integral a negocios, seguridad informática y desarrollo de software de gestión comercial. Co-fundador y Responsable Técnico en ESORIA Sistemas. Bachiller en Informática (Instituto Coello) con mención de honor, estudiante de Ciencias de la Computación (UEES), con herramientas técnicas propias, rápida capacidad de resolución en campo y disposición inmediata.'}
+              ? 'Technical professional and software developer with proven experience in electronic security systems (CCTV installation, IP/HD cameras, DVR/NVR, structured cabling), business IT technical support, corporate cybersecurity, and custom commercial software engineering. Co-founder and Technical Lead at ESORIA Sistemas. Computer Science Engineering student at Universidad Espíritu Santo (UEES), High School Diploma in Informatics with AI honors, equipped with own tools, hands-on field diagnostic capabilities, and a commitment to operational uptime.'
+              : 'Profesional técnico y desarrollador con experiencia práctica comprobada en instalación y mantenimiento de sistemas de seguridad electrónica (CCTV, cámaras IP/HD, grabadores DVR/NVR, cableado estructurado), soporte técnico integral a negocios, seguridad informática y desarrollo de software de gestión comercial. Co-fundador y Responsable Técnico en ESORIA Sistemas. Bachiller en Informática (Instituto Coello) con mención de honor, estudiante de Ingeniería en Ciencias de la Computación (UEES), con herramientas técnicas propias, rápida capacidad de resolución en campo y disposición inmediata.'}
           </p>
         </section>
 
@@ -280,7 +280,7 @@ function CvContent() {
             <div className="cv-job-header">
               <div>
                 <strong>
-                  {isEn ? 'B.S. in Computer Science' : 'Licenciatura / Ingeniería en Ciencias de la Computación'}
+                  {isEn ? 'Computer Science Engineering' : 'Ingeniería en Ciencias de la Computación'}
                 </strong>
                 <div>
                   {isEn
