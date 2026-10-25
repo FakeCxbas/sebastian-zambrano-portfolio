@@ -89,6 +89,8 @@ export interface Translations {
       badgeType?: string;
       title: string;
       description: string;
+      logo?: string;
+      tags?: string[];
       educationSubitems?: {
         title: string;
         desc: string;
@@ -228,7 +230,7 @@ export const translations: Record<Locale, Translations> = {
       metric4Title: 'Acompañamiento',
       metric4Desc: 'Requerimientos, desarrollo y capacitación',
       para1: 'Mi experiencia no empezó solamente frente al código. He trabajado en atención al cliente, ventas, inventarios y asistencia administrativa. Conocer la operativa real de un negocio me permite construir software intuitivo que los usuarios adoptan de inmediato.',
-      para2: 'Estudio Ciencias de la Computación en la Universidad Espíritu Santo (UEES) y trabajo de forma independiente en el desarrollo y soporte de aplicaciones. También colaboro con Actuariosa en herramientas internas de automatización, saneamiento de datos y apoyo analítico.',
+      para2: 'Estudio Ciencias de la Computación en la Universidad Espíritu Santo (UEES) y cofundé ESORIA Sistemas, firma donde brindamos soporte técnico a empresas, instalación y mantenimiento de seguridad electrónica (cámaras CCTV), seguridad informática y desarrollo de software a medida. También colaboro con Actuariosa en herramientas internas de automatización, saneamiento de datos y apoyo analítico.',
       para3: 'Busco aportar en roles de Desarrollador de Software Junior (React, TypeScript, Python), soporte de aplicaciones o automatización de datos, en modalidad 100% remota o híbrida.',
     },
     experience: {
@@ -240,11 +242,18 @@ export const translations: Record<Locale, Translations> = {
       filterEdu: 'Educación & Honores',
       items: [
         {
-          date: 'MAR. 2026 — ACTUALIDAD',
-          badge: 'Actual · Independiente',
+          date: '2024 — ACTUALIDAD',
+          badge: 'Actual · Co-fundador',
           badgeType: 'active',
-          title: 'Desarrollo de software independiente',
-          description: 'Levantamiento de requerimientos, desarrollo de software a medida (React, TypeScript, PostgreSQL), implementación in situ, capacitación a usuarios y soporte continuo para pequeños negocios.',
+          title: 'ESORIA Sistemas · Co-fundador & Responsable Técnico',
+          logo: '/branding/esoria-isotipo.png',
+          tags: [
+            'Soporte Técnico a Negocios',
+            'CCTV & Seguridad Electrónica',
+            'Seguridad Informática',
+            'Software Empresarial',
+          ],
+          description: 'Liderazgo técnico e implementación de soluciones para negocios: soporte técnico integral a estaciones de trabajo y hardware, instalación y calibración de sistemas de videovigilancia CCTV (cámaras IP/HD, DVR/NVR y visualización remota en vivo), seguridad informática (políticas de respaldos periódicos, firewalls y protección de datos) y desarrollo de software comercial a medida (ContaNova, facturación SRI, inventarios y POS).',
         },
         {
           date: 'MAR. 2025 — ACTUALIDAD',
@@ -415,7 +424,7 @@ export const translations: Record<Locale, Translations> = {
       metric4Title: 'End-to-End Ownership',
       metric4Desc: 'Requirements, engineering & user onboarding',
       para1: 'My engineering perspective was forged in real operations. I have worked in customer service, sales counter, inventory auditing, and administrative management. Experiencing operational bottlenecks firsthand is why I build software that teams actually love using.',
-      para2: 'I study Computer Science at Universidad Espíritu Santo (UEES) and build software independently. I also collaborate with Actuariosa developing internal automation engines, large-scale data sanitation pipelines, and analytical tooling.',
+      para2: 'I study Computer Science at Universidad Espíritu Santo (UEES) and co-founded ESORIA Sistemas, delivering business IT technical support, electronic security systems (CCTV), corporate cybersecurity, and custom software engineering. I also collaborate with Actuariosa developing internal automation engines, large-scale data sanitation pipelines, and analytical tooling.',
       para3: 'I am actively seeking junior software developer roles (React, TypeScript, Python), application support, or data automation tooling in remote or hybrid teams.',
     },
     experience: {
@@ -427,11 +436,18 @@ export const translations: Record<Locale, Translations> = {
       filterEdu: 'Education & Honors',
       items: [
         {
-          date: 'MAR. 2026 — PRESENT',
-          badge: 'Current · Independent',
+          date: '2024 — PRESENT',
+          badge: 'Current · Co-Founder',
           badgeType: 'active',
-          title: 'Independent Software Engineering',
-          description: 'Client discovery, end-to-end custom application development (React, TypeScript, PostgreSQL), deployment, user training, and ongoing SLA support for businesses.',
+          title: 'ESORIA Sistemas · Co-Founder & Technical Lead',
+          logo: '/branding/esoria-isotipo.png',
+          tags: [
+            'Business IT Support',
+            'CCTV & Electronic Security',
+            'Cybersecurity',
+            'Enterprise Software',
+          ],
+          description: 'Technical leadership and on-site implementation for companies: end-to-end hardware and IT support, electronic security system deployments (CCTV IP/HD cameras, DVR/NVR, structured cabling, and remote mobile monitoring), corporate cybersecurity (scheduled encrypted backups, firewalls, and network protection), and custom software engineering (ContaNova, SRI electronic invoicing, POS, and inventory platforms).',
         },
         {
           date: 'MAR. 2025 — PRESENT',

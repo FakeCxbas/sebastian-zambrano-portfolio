@@ -40,14 +40,22 @@ function CvContent() {
             <span>{isEn ? 'Back to Portfolio' : 'Volver al Portafolio'}</span>
           </Link>
           
-          <div className="cv-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div className="cv-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <a
               href="/cv/CV-Sebastian-Zambrano-ES.pdf"
               download="CV-tecnico-Sebastian-Zambrano-ES.pdf"
               className="cv-pdf-download-pill"
               title="Descargar CV Técnico en PDF (Español)"
             >
-              <span>PDF (ES) ⬇</span>
+              <span>PDF General ⬇</span>
+            </a>
+            <a
+              href="/cv/CV-Sebastian-Zambrano-Seguridad-Electronica-ES.pdf"
+              download="CV-Sebastian-Zambrano-Seguridad-Electronica-ES.pdf"
+              className="cv-pdf-download-pill"
+              title="Descargar CV enfocado en Seguridad Electrónica & Soporte TI (PDF)"
+            >
+              <span>Seguridad TI (PDF) ⬇</span>
             </a>
             <a
               href="/cv/CV-Sebastian-Zambrano-EN.pdf"
@@ -70,8 +78,8 @@ function CvContent() {
           <h1 className="cv-name">Sebastián Paul Zambrano Inga</h1>
           <div className="cv-role">
             {isEn
-              ? 'Junior Software Developer · React, TypeScript, Python, PostgreSQL & Flutter'
-              : 'Desarrollador de Software Junior · React, TypeScript, Python, PostgreSQL & Flutter'}
+              ? 'Software Developer · IT Technical Support & Electronic Security (CCTV)'
+              : 'Desarrollador de Software · Soporte Técnico & Seguridad Electrónica (CCTV)'}
           </div>
           
           <div className="cv-contact-info">
@@ -90,8 +98,8 @@ function CvContent() {
           </h2>
           <p className="cv-summary">
             {isEn
-              ? 'Software Developer with proven end-to-end experience architecting, shipping, and maintaining production applications for businesses. Leveraging a practical background in sales operations, inventory control, and customer support, I design software with high operational empathy. Computer Science student at Universidad Espíritu Santo (UEES), graduation honors in AI computer vision, and hands-on expertise in TypeScript, React, Python, PostgreSQL, and Flutter.'
-              : 'Desarrollador de software con experiencia comprobada en el ciclo completo de diseño, desarrollo, despliegue y soporte de aplicaciones en entornos de producción real. Con experiencia directa previa en áreas comerciales, administrativas y de soporte, desarrollo soluciones técnicas orientadas a la eficiencia operativa de negocios. Estudiante de Ciencias de la Computación (UEES) con mención de honor en visión artificial y sólidas bases en TypeScript, React, Python y Flutter.'}
+              ? 'Technical professional and software developer with proven experience in electronic security systems (CCTV installation, IP/HD cameras, DVR/NVR, structured cabling), business IT technical support, corporate cybersecurity, and custom commercial software engineering. Co-founder and Technical Lead at ESORIA Sistemas. Computer Science student at Universidad Espíritu Santo (UEES), High School Diploma in Informatics with AI honors, equipped with own tools, hands-on field diagnostic capabilities, and a commitment to operational uptime.'
+              : 'Profesional técnico y desarrollador con experiencia práctica comprobada en instalación y mantenimiento de sistemas de seguridad electrónica (CCTV, cámaras IP/HD, grabadores DVR/NVR, cableado estructurado), soporte técnico integral a negocios, seguridad informática y desarrollo de software de gestión comercial. Co-fundador y Responsable Técnico en ESORIA Sistemas. Bachiller en Informática (Instituto Coello) con mención de honor, estudiante de Ciencias de la Computación (UEES), con herramientas técnicas propias, rápida capacidad de resolución en campo y disposición inmediata.'}
           </p>
         </section>
 
@@ -103,31 +111,29 @@ function CvContent() {
           <div className="cv-skills-table">
             <div className="cv-skill-row">
               <strong className="cv-skill-cat">
-                {isEn ? 'Frontend Engineering:' : 'Desarrollo Frontend:'}
-              </strong>
-              <span>React 19, TypeScript, Next.js, Vite, JavaScript (ES6+), Tailwind CSS, CSS3 Modular, Web Components.</span>
-            </div>
-            <div className="cv-skill-row">
-              <strong className="cv-skill-cat">
-                {isEn ? 'Mobile & Desktop:' : 'Desarrollo Móvil & Escritorio:'}
-              </strong>
-              <span>Flutter, Dart, Electron, Capacitor (iOS/Android wrappers).</span>
-            </div>
-            <div className="cv-skill-row">
-              <strong className="cv-skill-cat">
-                {isEn ? 'Backend, Data & AI:' : 'Backend, Datos & IA:'}
-              </strong>
-              <span>Python, PostgreSQL, SQLite, RESTful APIs, OpenCV, YOLOv8, Client-side OCR (WebAssembly).</span>
-            </div>
-            <div className="cv-skill-row">
-              <strong className="cv-skill-cat">
-                {isEn ? 'Systems & Compliance:' : 'Sistemas & Negocio:'}
+                {isEn ? 'Electronic Security & IT Support:' : 'Seguridad Electrónica & Soporte TI:'}
               </strong>
               <span>
                 {isEn
-                  ? 'SRI Electronic Invoicing (Ecuador), Git, GitHub Actions, Linux (Bash), Docker, Technical User Support.'
-                  : 'Facturación Electrónica SRI (Ecuador), Git, Linux, Raspberry Pi, Atención técnica al usuario.'}
+                  ? 'CCTV deployment (IP & HD cameras, DVR/NVR), structured UTP cabling (Cat 5e/6), crimping & network testing, remote live view streaming, preventive/corrective PC hardware maintenance, field troubleshooting with own tools.'
+                  : 'Instalación y calibración de CCTV (cámaras IP/HD, grabadores DVR/NVR), cableado estructurado UTP (Cat 5e/6), ponchado y prueba de puntos de red, configuración de monitoreo remoto en tiempo real, mantenimiento preventivo y correctivo de hardware/PC, diagnóstico y herramientas propias.'}
               </span>
+            </div>
+            <div className="cv-skill-row">
+              <strong className="cv-skill-cat">
+                {isEn ? 'Cybersecurity & Infrastructure:' : 'Seguridad Informática & Redes:'}
+              </strong>
+              <span>
+                {isEn
+                  ? 'Local network segmentation (VLANs), managed switches, router firewalls, automated encrypted backups, access control policies, and operational data protection for small businesses.'
+                  : 'Segmentación de redes (VLANs), switches, firewalls perimetrales, esquemas de copias de seguridad periódicas (backups encriptados), control de accesos y protección de datos comerciales.'}
+              </span>
+            </div>
+            <div className="cv-skill-row">
+              <strong className="cv-skill-cat">
+                {isEn ? 'Software & Systems Development:' : 'Desarrollo de Software & Sistemas:'}
+              </strong>
+              <span>React, TypeScript, Python, PostgreSQL, Flutter, Next.js, Electron, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.</span>
             </div>
           </div>
         </section>
@@ -142,30 +148,32 @@ function CvContent() {
             <div className="cv-job-header">
               <div className="cv-job-title-group">
                 <h3 className="cv-job-title">
-                  {isEn ? 'Independent Software Developer' : 'Desarrollador de Software Independiente'}
+                  {isEn ? 'Co-Founder & Technical Lead' : 'Co-fundador & Responsable Técnico'}
                 </h3>
                 <span className="cv-job-company">
-                  {isEn ? 'ContaNova & Commercial Applications' : 'ContaNova & Sistemas Comerciales'}
+                  {isEn ? 'ESORIA Sistemas · Tech Solutions & Security' : 'ESORIA Sistemas · Soluciones Tecnológicas & Seguridad'}
                 </span>
               </div>
               <span className="cv-job-dates">
-                {isEn ? 'March 2026 — Present' : 'Marzo 2026 — Actualidad'}
+                {isEn ? 'January 2024 — Present' : 'Enero 2024 — Actualidad'}
               </span>
             </div>
             <ul className="cv-bullets">
               {isEn ? (
                 <>
-                  <li>Architected and delivered <strong>ContaNova</strong>, an active commercial SaaS platform supporting SRI electronic invoicing, inventory tracking, accounts receivable, and customer CRM.</li>
-                  <li>Built <strong>San Viernes & Billar Club</strong> desktop POS applications using Electron, managing real-time pool table sessions and thermal ESC/POS ticket printing for 2 venues.</li>
-                  <li>Engineered a touchscreen web ordering terminal and kitchen queue for <strong>Strawberry Sweet Serve</strong>.</li>
-                  <li>Full lifecycle ownership: client requirements discovery, UX design, staging deployment, and end-user onboarding.</li>
+                  <li><strong>Electronic Security & CCTV:</strong> On-site assessment, conduit routing, structured UTP cabling, installation and angle calibration of security cameras (IP and HD-CVI), NVR/DVR storage setup, and live remote streaming configuration on client mobile devices.</li>
+                  <li><strong>Business IT Support:</strong> Diagnostic, preventive, and corrective maintenance for workstation PCs, operating systems, local peripherals, and office network links, minimizing business downtime.</li>
+                  <li><strong>Cybersecurity & Data Protection:</strong> Deployed automated backup policies for accounting and customer databases, configured router firewalls, and isolated commercial networks from guest Wi-Fi.</li>
+                  <li><strong>Commercial Software Engineering:</strong> Architected and delivered <strong>ContaNova</strong> (active SaaS for Ecuadorian SRI electronic invoicing and inventory) and desktop POS systems for retail and hospitality venues (San Viernes, Billar Club).</li>
+                  <li><strong>Field Work & Tools:</strong> Equipped with own professional toolsets for physical cabling, camera mounting, and network testing; client training and fast-response maintenance visits.</li>
                 </>
               ) : (
                 <>
-                  <li>Diseño, programación e implementación en producción de <strong>ContaNova</strong>, plataforma integral de gestión comercial con facturación electrónica SRI, control de inventario y clientes.</li>
-                  <li>Desarrollo de <strong>San Viernes & Billar Club</strong> en Electron para la gestión de tiempos por mesa y emisión de comandas térmicas ESC/POS en 2 locales.</li>
-                  <li>Creación del terminal táctil de pedidos y panel para el negocio gastronómico <strong>Strawberry Sweet Serve</strong>.</li>
-                  <li>Acompañamiento presencial y remoto: levantamiento de requerimientos, despliegue y capacitación directa a usuarios finales.</li>
+                  <li><strong>Seguridad Electrónica & CCTV:</strong> Levantamiento técnico de cobertura, canalización, tendido de cableado estructurado UTP, instalación y calibración de cámaras de seguridad (IP y analógicas HD), configuración de grabadores DVR/NVR y acceso remoto en tiempo real en teléfonos y computadoras para propietarios de locales y empresas.</li>
+                  <li><strong>Soporte Técnico a Negocios:</strong> Mantenimiento preventivo y correctivo de computadoras de escritorio, laptops y periféricos en locales comerciales y oficinas; diagnóstico de fallas de hardware/software, optimización y aseguramiento de operatividad continua.</li>
+                  <li><strong>Seguridad Informática:</strong> Implementación de políticas de respaldo periódico (backups encriptados) de bases de datos contables y comerciales; configuración de firewalls, segmentación de redes y protección contra intrusiones.</li>
+                  <li><strong>Software y Sistemas Comerciales:</strong> Diseño, puesta en producción y soporte de plataformas como <strong>ContaNova</strong> (facturación electrónica SRI e inventarios), terminales de punto de venta (POS) y pedidos digitales (San Viernes, Billar Club, Strawberry Sweet Serve).</li>
+                  <li><strong>Atención y Herramientas Propias:</strong> Disponibilidad de herramientas técnicas propias para instalaciones en campo (ponchadoras, tester de red, taladro para montaje), elaboración de presupuestos técnicos y capacitación al personal del cliente.</li>
                 </>
               )}
             </ul>

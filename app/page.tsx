@@ -331,7 +331,29 @@ function PortfolioView() {
                       </span>
                     </div>
 
-                    <h3>{item.title}</h3>
+                    <div className="timeline-title-row">
+                      {item.logo && (
+                        <img
+                          src={item.logo}
+                          alt="ESORIA logo"
+                          className="timeline-item-logo"
+                          width={28}
+                          height={28}
+                        />
+                      )}
+                      <h3>{item.title}</h3>
+                    </div>
+
+                    {item.tags && item.tags.length > 0 && (
+                      <div className="timeline-tags">
+                        {item.tags.map((tag, tIdx) => (
+                          <span key={tIdx} className="timeline-tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
                     {item.description && <p>{item.description}</p>}
 
                     {item.educationSubitems && item.educationSubitems.map((sub, sIdx) => (
