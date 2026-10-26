@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, Globe, Mail, MapPin, Phone } from 'lucide-react';
 import { CvPrintButton } from '@/components/cv-print-button';
 import { LanguageProvider, useLanguage } from '@/lib/i18n';
 import { LanguageSwitch } from '@/components/language-switch';
@@ -70,6 +70,7 @@ function CvContent() {
             <span><MapPin size={13} /> Guayaquil, Ecuador (UTC-5)</span>
             <a href="mailto:sebastianzambrano2818@gmail.com"><Mail size={13} /> sebastianzambrano2818@gmail.com</a>
             <a href="https://wa.me/593998134331" target="_blank" rel="noopener noreferrer"><Phone size={13} /> +593 99 813 4331</a>
+            <a href="https://sebastianzambrano.dev" target="_blank" rel="noopener noreferrer"><Globe size={13} /> sebastianzambrano.dev</a>
             <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer"><GithubIcon size={13} /> github.com/FakeCxbas</a>
             <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer"><LinkedinIcon size={13} /> LinkedIn</a>
           </div>
