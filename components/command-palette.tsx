@@ -193,6 +193,34 @@ export function CommandPalette() {
           setIsOpen(false);
         },
       },
+      {
+        id: 'p-omninote',
+        title: 'OmniNote STEM',
+        subtitle: isEn ? 'GPU-accelerated technical canvas and math calculation engine' : 'Motor vectorial de cálculo técnico y notas con soporte Wacom',
+        category: 'projects',
+        badge: 'Desktop · C++20 / Qt 6 / OpenGL',
+        icon: Code2,
+        keywords: ['omninote', 'stem', 'c++', 'qt', 'opengl', 'calculo', 'wacom', 'matematicas'],
+        action: () => {
+          window.dispatchEvent(new CustomEvent('portfolio:open-project', { detail: { projectName: 'OmniNote STEM' } }));
+          document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
+          setIsOpen(false);
+        },
+      },
+      {
+        id: 'p-swiftpiano',
+        title: 'SwiftPiano',
+        subtitle: isEn ? 'Real-time 88-key piano synthesizer with GLSL bloom shaders' : 'Sintetizador 2D de piano de 88 teclas con shaders y audio real',
+        category: 'projects',
+        badge: 'Desktop · Godot 4 / GDScript',
+        icon: Code2,
+        keywords: ['swiftpiano', 'piano', 'godot', 'sintetizador', 'midi', 'shaders', 'musica'],
+        action: () => {
+          window.dispatchEvent(new CustomEvent('portfolio:open-project', { detail: { projectName: 'SwiftPiano' } }));
+          document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
+          setIsOpen(false);
+        },
+      },
     ];
 
     const navigation: PaletteItem[] = [

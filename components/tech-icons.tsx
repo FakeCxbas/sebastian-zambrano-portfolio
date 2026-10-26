@@ -286,6 +286,55 @@ export function WebWorkersIcon({ size = 15, className = '' }: { size?: number; c
   );
 }
 
+export function CppIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <path fill="#00599C" d="M118.062 86.828L67.11 116.24a6.2 6.2 0 0 1-6.195 0L10.026 86.828a6.19 6.19 0 0 1-3.098-5.365V22.651a6.19 6.19 0 0 1 3.098-5.365L60.915 2.115a6.2 6.2 0 0 1 6.195 0l50.952 29.418a6.19 6.19 0 0 1 3.098 5.365v44.565a6.19 6.19 0 0 1-3.098 5.365z"/>
+      <path fill="#fff" d="M64.012 30.569c-18.47 0-33.441 14.97-33.441 33.44s14.971 33.44 33.441 33.44c13.411 0 24.975-7.897 30.27-19.309l-14.887-6.223c-2.827 6.425-9.306 10.9-15.383 10.9-10.287 0-18.627-8.34-18.627-18.808 0-10.467 8.34-18.808 18.627-18.808 6.077 0 12.556 4.475 15.383 10.9l14.887-6.223C88.987 38.466 77.423 30.569 64.012 30.569zM88.5 58h6v-6h6v6h6v6h-6v6h-6v-6h-6zm20 0h6v-6h6v6h6v6h-6v6h-6v-6h-6z"/>
+    </svg>
+  );
+}
+
+export function QtIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <path fill="#41CD52" d="M12.8 19.2h102.4a6.4 6.4 0 0 1 6.4 6.4v76.8a6.4 6.4 0 0 1-6.4 6.4H12.8a6.4 6.4 0 0 1-6.4-6.4V25.6a6.4 6.4 0 0 1 6.4-6.4z"/>
+      <path fill="#fff" d="M54.5 73.8c-2.4 1.7-5.5 2.6-9.1 2.6-3.8 0-7.1-1-9.9-3.1-2.8-2.1-4.9-5.1-6.3-9-1.4-3.9-2.1-8.5-2.1-13.8 0-5.2.7-9.8 2.2-13.6 1.5-3.8 3.7-6.8 6.6-8.9 2.9-2.1 6.3-3.1 10.3-3.1 3.9 0 7.3 1 10.1 3.1 2.8 2.1 5 5.1 6.5 8.9 1.5 3.8 2.2 8.4 2.2 13.6 0 4.2-.5 8-1.5 11.4l5.6 5.6-4.5 4.5-5.2-5.2c-1.4 3.2-3 5.5-4.9 7zm-8.8-9.4c2.8 0 5.1-.8 6.9-2.3 1.8-1.5 3.1-3.7 4-6.5.9-2.8 1.3-6.1 1.3-9.9 0-3.8-.4-7.1-1.3-9.9-.9-2.8-2.2-5-4-6.5-1.8-1.5-4.1-2.3-6.9-2.3-2.8 0-5.1.8-6.9 2.3-1.8 1.5-3.1 3.7-4 6.5-.9 2.8-1.3 6.1-1.3 9.9 0 3.8.4 7.1 1.3 9.9.9 2.8 2.2 5 4 6.5 1.8 1.5 4.1 2.3 6.9 2.3zm31.7 11.4h-7.6V39.2h-11.8v-6.9H94v6.9H82.2v34.8h-4.8z"/>
+    </svg>
+  );
+}
+
+export function GodotIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <path fill="#478CBF" d="M37.6 14.8l7.5 13.8c5.8-1.5 12.2-2.3 18.9-2.3 6.7 0 13.1.8 18.9 2.3l7.5-13.8 13.8 7.5-6.5 14.4c12.2 6.8 21.6 17.5 26.2 30.5h14.1v15.7h-11.6c-.3 15.6-7.8 29.8-19.8 39.5l7.9 14.7-13.8 7.5-7.5-13.9c-8.9 3.5-18.8 5.5-29.3 5.5s-20.4-2-29.3-5.5l-7.5 13.9-13.8-7.5 7.9-14.7C22.6 109 15.1 94.8 14.8 79.2H3.2V63.5h14.1c4.6-13 14-23.7 26.2-30.5L37 18.6l13.8-7.5zm26.4 22.8c-24.3 0-44 19.7-44 44s19.7 44 44 44 44-19.7 44-44-19.7-44-44-44zm-19.7 31.5c4.3 0 7.9 3.5 7.9 7.9s-3.5 7.9-7.9 7.9-7.9-3.5-7.9-7.9 3.5-7.9 7.9-7.9zm39.4 0c4.3 0 7.9 3.5 7.9 7.9s-3.5 7.9-7.9 7.9-7.9-3.5-7.9-7.9 3.5-7.9 7.9-7.9zM42 94.5h44v7.9H42v-7.9z"/>
+      <circle cx="44.3" cy="77" r="4.5" fill="#fff"/>
+      <circle cx="83.7" cy="77" r="4.5" fill="#fff"/>
+    </svg>
+  );
+}
+
+export function WacomIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="none" stroke="#00A0E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="m12 19 7-7 3 3-7 7-3-3z"/>
+      <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+      <path d="m2 2 7.586 7.586"/>
+      <circle cx="11" cy="11" r="2"/>
+    </svg>
+  );
+}
+
+export function MidiIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="none" stroke="#EC4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+    </svg>
+  );
+}
+
 export function OpenAiIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
   return (
     <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="none" stroke="#10A37F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -551,6 +600,30 @@ export function getTechMeta(rawName: string): TechMeta {
   // Inglés
   if (norm.includes('inglés') || norm.includes('ingles')) {
     return { name: rawName, color: '#A78BFA', hoverBg: '#A78BFA18', glow: '#A78BFA35', Icon: EnglishIcon };
+  }
+  // C++ / Cpp
+  if (norm.includes('c++') || norm.includes('cpp')) {
+    return { name: rawName, color: '#00599C', hoverBg: '#00599C18', glow: '#00599C35', Icon: CppIcon };
+  }
+  // Qt
+  if (norm.includes('qt')) {
+    return { name: rawName, color: '#41CD52', hoverBg: '#41CD5218', glow: '#41CD5235', Icon: QtIcon };
+  }
+  // Godot / GDScript
+  if (norm.includes('godot') || norm.includes('gdscript')) {
+    return { name: rawName, color: '#478CBF', hoverBg: '#478CBF18', glow: '#478CBF35', Icon: GodotIcon };
+  }
+  // Wacom
+  if (norm.includes('wacom')) {
+    return { name: rawName, color: '#00A0E9', hoverBg: '#00A0E918', glow: '#00A0E935', Icon: WacomIcon };
+  }
+  // MIDI / Audio / Sintetizador / Salamander
+  if (norm.includes('midi') || norm.includes('salamander') || norm.includes('synth') || norm.includes('piano')) {
+    return { name: rawName, color: '#EC4899', hoverBg: '#EC489918', glow: '#EC489935', Icon: MidiIcon };
+  }
+  // OpenGL / Vulkan / Shaders
+  if (norm.includes('opengl') || norm.includes('vulkan') || norm.includes('shader') || norm.includes('glsl')) {
+    return { name: rawName, color: '#5586A4', hoverBg: '#5586A418', glow: '#5586A435', Icon: DefaultCodeIcon };
   }
 
   // Fallback

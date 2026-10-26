@@ -211,6 +211,16 @@ export const translations: Record<Locale, Translations> = {
           type: 'SITIO WEB · PROPUESTA DE DEMOSTRACIÓN',
           text: 'Propuesta de sitio para consultoría actuarial con servicios, preguntas frecuentes y solicitudes de cotización por WhatsApp y correo.',
         },
+        'OmniNote STEM': {
+          name: 'OmniNote STEM',
+          type: 'MOTOR VECTORIAL & CÁLCULO · C++20',
+          text: 'Entorno nativo en C++20 y Qt 6 para cálculo y física: trazo vectorial Catmull-Rom con lápiz Wacom, bloques de código, graficador de funciones matemáticas y base de datos SQLite.',
+        },
+        'SwiftPiano': {
+          name: 'SwiftPiano',
+          type: 'SINTETIZADOR 2D & SIMULADOR · GODOT 4',
+          text: 'Sintetizador interactivo de 88 notas con mapeo QWERTY completo, muestras de audio Salamander Grand Piano, shaders de halo aditivo y transcriptor MIDI en tiempo real.',
+        },
       },
     },
     about: {
@@ -404,6 +414,16 @@ export const translations: Record<Locale, Translations> = {
           name: 'Actuariosa Web',
           type: 'CONSULTING SITE · PROPOSAL DEMO',
           text: 'Demonstration proposal website for an actuarial consultancy with service catalogs, FAQs, and instant quote requests via WhatsApp and Email. Built as a prototype proposal.',
+        },
+        'OmniNote STEM': {
+          name: 'OmniNote STEM',
+          type: 'STEM ENGINE & VECTOR CANVAS · C++20',
+          text: 'Native C++20 and Qt 6 engineering canvas for calculus and physics: Catmull-Rom vector inking with Wacom pressure, code blocks, math function plotter, and SQLite WAL persistence.',
+        },
+        'SwiftPiano': {
+          name: 'SwiftPiano',
+          type: '2D SYNTHESIZER & SIMULATOR · GODOT 4',
+          text: 'Full 88-key piano synthesizer with complete QWERTY mapping, polyphonic Salamander Grand Piano sample pool, real-time 2D HDR bloom shaders, and live MIDI transcription.',
         },
       },
     },

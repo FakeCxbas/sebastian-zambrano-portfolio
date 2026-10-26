@@ -16,6 +16,9 @@ import {
   PostgresIcon,
   SqliteIcon,
   FastApiIcon as RestApiIcon,
+  CppIcon,
+  QtIcon,
+  GodotIcon,
   GitIcon,
   GithubIcon,
   LinuxIcon,
@@ -67,6 +70,8 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     accentColor: '#10B981',
     items: [
       { name: 'Python', color: '#3776AB', icon: PythonIcon },
+      { name: 'C++', color: '#00599C', icon: CppIcon },
+      { name: 'Qt 6', color: '#41CD52', icon: QtIcon },
       { name: 'PostgreSQL', color: '#336791', icon: PostgresIcon },
       { name: 'SQLite', color: '#0F7FCC', icon: SqliteIcon },
       { name: 'APIs REST', enName: 'RESTful APIs', color: '#009688', icon: RestApiIcon },
@@ -82,6 +87,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     items: [
       { name: 'Git', color: '#F05032', icon: GitIcon },
       { name: 'GitHub', color: '#FFFFFF', icon: GithubIcon },
+      { name: 'Godot 4', color: '#478CBF', icon: GodotIcon },
       { name: 'Electron', color: '#47848F', icon: ElectronIcon },
       { name: 'Capacitor', color: '#119EFF', icon: CapacitorIcon },
       { name: 'Vite', color: '#646CFF', icon: ViteIcon },

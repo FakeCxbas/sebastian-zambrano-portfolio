@@ -1012,6 +1012,147 @@ export class ActuarialQuoteService {
 }`,
     },
   },
+  'OmniNote STEM': {
+    name: 'OmniNote STEM',
+    type: 'MOTOR VECTORIAL & CÁLCULO · C++20',
+    category: 'desktop',
+    tagline: 'Entorno de cálculo técnico y notas vectoriales de alto rendimiento con aceleración por GPU y soporte Wacom sub-píxel.',
+    badge: 'Motor Nativo C++20 / Qt 6',
+    badgeVariant: 'production',
+    image: '/projects/omninote.png',
+    stack: ['C++20', 'Qt 6', 'OpenGL', 'Poppler-Qt6', 'SQLite3', 'Wacom'],
+    period: '2026',
+    role: 'Arquitectura de Software & Desarrollo del Motor Nativo',
+    clientOrContext: 'Entorno Personal & Académico de Ingeniería (UEES)',
+    problem:
+      'Las aplicaciones convencionales de toma de apuntes están orientadas a texto general o son lienzos rasterizados pesados que no cuentan con soporte para tabletas gráficas de baja latencia con rechazo de palma, bloques de código interactivos, graficador matemático analítico de funciones o exportación vectorial pura.',
+    solution:
+      'Diseñé y programé desde cero en C++20 puro y Qt 6 un motor vectorial completo con viewport acelerado por hardware (OpenGL con 4x MSAA), interpolación Catmull-Rom para trazos con presión Wacom, bloques de código embebidos con resaltado sintáctico (C++, Python), parser descendente recursivo para graficar funciones matemáticas con detección de asíntotas, y base de datos relacional SQLite (.omninote).',
+    architectureHighlights: [
+      'Intercepción directa de QTabletEvent con precisión sub-píxel y rechazo estricto de palma para tabletas Wacom Intuos.',
+      'Suavizado Catmull-Rom con cálculo de vectores ortogonales para renderizar listones vectoriales de ancho variable por presión.',
+      'Parser matemático recursivo en C++ para f(x) con detección automática de singularidades y asíntotas verticales (tan, 1/x).',
+      'Integración con Poppler-Qt6 para visualización de textos a DPI dinámico y exportación a PDF vectorial de 300 DPI.',
+      'Persistencia transaccional SQLite3 en modo WAL con historial completo Deshacer/Rehacer basado en QUndoStack.',
+    ],
+    challenges:
+      'Garantizar una latencia de entrada imperceptible (< 8 ms) al digitalizar trazos matemáticos complejos con la tableta gráfica mientras se mantiene el renderizado vectorial fluido a 60 FPS con OpenGL.',
+    impactMetrics: [
+      { label: 'Latencia de entrada', value: '< 8 ms (Wacom Intuos)' },
+      { label: 'Rendimiento gráfico', value: '60 FPS estables (OpenGL)' },
+      { label: 'Arquitectura', value: '100% C++20 nativo' },
+    ],
+    accentColor: '#10b981',
+    snippet: {
+      fileName: 'MathExpressionParser.cpp',
+      language: 'cpp',
+      code: `namespace OmniNote {
+
+// Evaluación recursiva de expresiones matemáticas para FunctionPlotItem
+struct BinaryOpNode : public MathExpressionParser::ASTNode {
+    MathExpressionParser::TokenType op;
+    MathExpressionParser::NodePtr left;
+    MathExpressionParser::NodePtr right;
+
+    BinaryOpNode(MathExpressionParser::TokenType o, MathExpressionParser::NodePtr l, MathExpressionParser::NodePtr r)
+        : op(o), left(std::move(l)), right(std::move(r)) {}
+
+    double evaluate(double x) const override {
+        if (!left || !right) return std::numeric_limits<double>::quiet_NaN();
+        double a = left->evaluate(x);
+        double b = right->evaluate(x);
+
+        switch (op) {
+            case MathExpressionParser::TokenType::Plus:     return a + b;
+            case MathExpressionParser::TokenType::Minus:    return a - b;
+            case MathExpressionParser::TokenType::Multiply: return a * b;
+            case MathExpressionParser::TokenType::Divide: {
+                if (std::abs(b) < 1e-12) return std::numeric_limits<double>::quiet_NaN();
+                return a / b;
+            }
+            case MathExpressionParser::TokenType::Power:    return std::pow(a, b);
+            default: return std::numeric_limits<double>::quiet_NaN();
+        }
+    }
+};
+
+}`,
+      authorWatermark: 'Desarrollado en C++20 puro por Sebastián Zambrano',
+      decisionTitle: 'Parser Analítico AST en C++20 con Detección de Singularidades',
+      decisionNote:
+        'Implementar un árbol de sintaxis abstracta (AST) recursivo sin librerías externas pesadas permite evaluar funciones continuas miles de veces por segundo y detectar discontinuidades para no trazar líneas falsas sobre asíntotas.',
+    },
+  },
+  'SwiftPiano': {
+    name: 'SwiftPiano',
+    type: 'SINTETIZADOR 2D & SIMULADOR · GODOT 4',
+    category: 'desktop',
+    tagline: 'Sintetizador interactivo de 88 notas con muestras acústicas Salamander Grand Piano, shaders de halo y transcriptor MIDI.',
+    badge: 'Godot 4 / Vulkan Engine',
+    badgeVariant: 'production',
+    image: '/projects/swiftpiano.png',
+    stack: ['Godot 4', 'GDScript', 'GLSL Shaders', 'Vulkan', 'MIDI', 'Salamander Piano'],
+    period: '2026',
+    role: 'Diseño de Motor de Audio, Shaders GLSL y Desarrollo en GDScript',
+    clientOrContext: 'Proyecto Creativo & Herramienta Musical Open Source',
+    problem:
+      'Los simuladores de piano virtuales para teclado de computadora suelen sufrir de latencia de audio perceptible, rangos restringidos a pocas octavas, o carecen de una respuesta gráfica reactiva que permita estudiar el ritmo y los acordes de forma interactiva.',
+    solution:
+      'Construí una aplicación de escritorio nativa en Godot 4 con GDScript que mapea las 88 teclas físicas de un piano de cola completo al teclado QWERTY estándar, motor de audio polifónico con 30 muestras estéreo de Salamander Grand Piano, visualizador de cascada de notas a 340 px/s con shaders GLSL de halo aditivo y bloom en HDR 2D sobre Vulkan, y conversor de archivos MIDI a partituras tocables.',
+    architectureHighlights: [
+      'Mapeo completo de 88 teclas (52 blancas, 36 negras) accesibles directamente sin cambios manuales de octava.',
+      'Pool polifónico dinámico de reproductores de audio para sostener notas y acordes complejos sin cortes acústicos.',
+      'Visualizador reactivo en tiempo real con shaders GLSL personalizados (supernova, aurora, synthwave) y halo HDR.',
+      'Importador de archivos MIDI y parser de hojas musicales para práctica guiada y reproducción automática sincronizada.',
+      'Soporte multiplataforma con backend Vulkan Mobile y modo de respaldo OpenGL Compatibility.',
+    ],
+    challenges:
+      'Optimizar la concurrencia de notas polifónicas para eliminar la latencia de respuesta al presionar múltiples teclas en acordes rápidos de teclado de PC, manteniendo 60 FPS estables.',
+    impactMetrics: [
+      { label: 'Rango de notas', value: '88 teclas físicas completas' },
+      { label: 'Tasa de cuadros', value: '60 FPS estables con VSync' },
+      { label: 'Audio', value: 'Muestras Salamander Grand' },
+    ],
+    accentColor: '#ec4899',
+    snippet: {
+      fileName: 'synth_visualizer.gd',
+      language: 'gdscript',
+      code: `extends Control
+
+# Visualizador de notas en cascada con shaders y halo aditivo HDR
+const SPEED = 340.0
+const MAX_POOLED_BARS = 64
+
+var bars: Dictionary = {}
+var released: Array[Dictionary] = []
+var key_rects: Dictionary = {}
+var key_range_mode: String = "full_88"
+var visible_midi_range: Vector2i = Vector2i(21, 108)
+var light_mode: String = "supernova"
+
+func trigger_note_strike(midi_note: int, velocity: float, note_color: Color) -> void:
+	if not enabled or not key_rects.has(midi_note):
+		return
+	var rect: Rect2 = key_rects[midi_note]
+	var bar_data = {
+		"midi": midi_note,
+		"x": rect.position.x,
+		"w": rect.size.x,
+		"y_start": rect.position.y,
+		"y_current": rect.position.y,
+		"color": note_color,
+		"velocity": velocity,
+		"active": true
+	}
+	bars[midi_note] = bar_data
+	_spawn_key_spark(rect.position.x + rect.size.x * 0.5, rect.position.y, note_color)
+`,
+      authorWatermark: 'Desarrollado en GDScript / Godot 4 por Sebastián Zambrano',
+      decisionTitle: 'Motor de Renderizado Reactivo 2D con Shaders en Vulkan',
+      decisionNote:
+        'Construir el visualizador y el teclado mediante código procedural sin dependencias pesadas de escenas garantiza que la aplicación responda al instante en cualquier resolución manteniendo sincronía milimétrica con el motor polifónico de audio.',
+    },
+  },
 };
 
 export const PROJECTS_DETAILS_EN: Record<string, Partial<ProjectDetail>> = {
@@ -1210,6 +1351,58 @@ export const PROJECTS_DETAILS_EN: Record<string, Partial<ProjectDetail>> = {
       { label: 'Quote initiation time', value: '< 1 minute' },
       { label: 'Lead conversion', value: 'Direct WhatsApp link' },
       { label: 'Performance score', value: '100 / 100 Lighthouse' },
+    ],
+  },
+  'OmniNote STEM': {
+    type: 'STEM ENGINE & VECTOR CANVAS · C++20',
+    tagline: 'High-performance GPU-accelerated technical canvas and math engine with sub-pixel Wacom digitizer support.',
+    badge: 'Native C++20 / Qt 6 Engine',
+    role: 'Software Architect & Native Engine Engineer',
+    clientOrContext: 'Personal & Academic Engineering Workspace (UEES)',
+    period: '2026',
+    problem:
+      'Conventional note-taking applications are limited to basic raster freehand drawing or text notes, lacking native sub-pixel low-latency stylus tracking with palm rejection, syntax-highlighted code blocks, analytical function graphing, and high-DPI vector exports.',
+    solution:
+      'Engineered an all-native vector workspace from scratch in modern C++20 and Qt 6 featuring a hardware-accelerated OpenGL viewport (4x MSAA), Catmull-Rom spline inking with Wacom pressure, embedded syntax-highlighted code blocks (C++, Python), recursive-descent math AST parser for analytical function plotting with asymptote detection, and SQLite relational storage (.omninote).',
+    architectureHighlights: [
+      'Direct QTabletEvent interception with sub-pixel precision and strict palm rejection for Wacom Intuos digitizers.',
+      'Adaptive Catmull-Rom spline smoother with normal orthogonal vectors rendering variable-width pressure ribbons.',
+      'Recursive-descent math expression parser for f(x) with automatic singularity and asymptote detection (tan, 1/x).',
+      'Poppler-Qt6 dynamic-DPI textbook rendering and 300 DPI vector PDF export.',
+      'ACID SQLite3 WAL persistence with full Undo/Redo stack via QUndoStack command pattern.',
+    ],
+    challenges:
+      'Achieving sub-8ms inking latency with complex mathematical symbols while maintaining 60 FPS vector hardware rendering in OpenGL.',
+    impactMetrics: [
+      { label: 'Input latency', value: '< 8 ms (Wacom Intuos)' },
+      { label: 'Rendering performance', value: 'Rock-solid 60 FPS (OpenGL)' },
+      { label: 'Architecture', value: '100% Native C++20' },
+    ],
+  },
+  'SwiftPiano': {
+    type: '2D SYNTHESIZER & SIMULATOR · GODOT 4',
+    tagline: '88-key interactive piano synthesizer featuring Salamander stereo samples, particle visualizer, and live MIDI transcription.',
+    badge: 'Godot 4 / Vulkan Engine',
+    role: 'Audio Engine Designer, GLSL Shaders & GDScript Developer',
+    clientOrContext: 'Creative Engineering & Interactive Music Tool',
+    period: '2026',
+    problem:
+      'Virtual piano keyboard applications suffer from noticeable audio latency, restrict users to 3 or 4 octavas, and lack an engaging visual response system for practicing songs on standard computer keyboards.',
+    solution:
+      'Architected a native Godot 4 application mapping all 88 physical grand piano keys to standard QWERTY keyboards, paired with a polyphonic voice pool running 30 stereo Salamander Grand Piano samples, a 340 px/s cascading note visualizer with custom GLSL bloom shaders, and an interactive MIDI-to-playable-sheet converter.',
+    architectureHighlights: [
+      'Full 88-key layout (52 white, 36 black keys) immediately playable without manual octave switching.',
+      'Dynamic polyphonic audio voice pool preventing acoustic cutoff during fast chords and pedal sustains.',
+      'Reactive cascading visualizer with custom GLSL shaders (supernova, aurora, synthwave) and HDR bloom.',
+      'MIDI file converter and sheet music parser for guided interactive practice and synchronized auto-play.',
+      'Cross-platform Vulkan Mobile backend with seamless OpenGL Compatibility fallback.',
+    ],
+    challenges:
+      'Eliminating audio latency when hammering polyphonic chords on standard PC keyboards while preserving constant 60 FPS visual rendering.',
+    impactMetrics: [
+      { label: 'Key range', value: 'Full 88 physical keys' },
+      { label: 'Frame rate', value: 'Rock-solid 60 FPS VSync' },
+      { label: 'Audio fidelity', value: 'Salamander Grand Piano samples' },
     ],
   },
 };

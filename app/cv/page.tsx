@@ -117,7 +117,7 @@ function CvContent() {
               <strong className="cv-skill-cat">
                 {isEn ? 'Software & Systems Development:' : 'Desarrollo de Software & Sistemas:'}
               </strong>
-              <span>React, TypeScript, Python, PostgreSQL, Flutter, Next.js, Electron, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.</span>
+              <span>React, TypeScript, Python, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.</span>
             </div>
           </div>
         </section>
@@ -268,6 +268,20 @@ function CvContent() {
             {isEn
               ? 'WebAssembly-driven OCR engine using Tesseract.js. Executes entirely in client browser memory with zero server data transfer, guaranteeing confidentiality.'
               : 'Procesamiento de documentos e imágenes mediante WebAssembly (Tesseract.js), ejecutado 100% en el cliente de forma privada y sin enviar datos a servidores.'}
+          </div>
+
+          <div className="cv-project-entry">
+            <strong>OmniNote STEM ({isEn ? 'Native C++20 / Qt 6 Vector Engine' : 'Motor Vectorial C++20 / Qt 6'}):</strong>{' '}
+            {isEn
+              ? 'High-performance GPU-accelerated technical canvas with Wacom digitizer sub-pixel inking, recursive-descent math AST parser, and SQLite WAL storage.'
+              : 'Entorno de cálculo y lienzo vectorial de alto rendimiento en C++20 y Qt 6: entrada Wacom sub-píxel de baja latencia, parser matemático recursivo y persistencia SQLite.'}
+          </div>
+
+          <div className="cv-project-entry">
+            <strong>SwiftPiano ({isEn ? 'Godot 4 / 2D Reactive Audio Synthesizer' : 'Sintetizador 2D & Motor de Audio en Godot 4'}):</strong>{' '}
+            {isEn
+              ? 'Real-time 88-key piano synthesizer with complete QWERTY mapping, polyphonic Salamander Grand Piano sample pool, custom GLSL bloom shaders, and live MIDI transcription.'
+              : 'Sintetizador de 88 notas en Godot 4 con mapeo QWERTY completo, audio polifónico Salamander Grand Piano, shaders GLSL de halo aditivo y transcriptor MIDI.'}
           </div>
         </section>
 

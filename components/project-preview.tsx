@@ -60,6 +60,20 @@ const previews = [
     short: 'Consultoría actuarial',
     color: '#88acd2',
   },
+  {
+    name: 'OmniNote STEM',
+    image: '/projects/omninote.png',
+    kind: 'Motor de cálculo vectorial · C++20 & Qt 6',
+    short: 'Cálculo técnico y Wacom.',
+    color: '#10b981',
+  },
+  {
+    name: 'SwiftPiano',
+    image: '/projects/swiftpiano.png',
+    kind: 'Sintetizador 2D interactivo · Godot 4',
+    short: '88 teclas, shaders y audio real.',
+    color: '#ec4899',
+  },
 ];
 
 export function ProjectPreview({ index, name }: { index?: number; name?: string }) {

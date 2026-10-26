@@ -71,6 +71,16 @@ const PROJECT_THEMES: Record<string, { accent: string; glow: string; border: str
     glow: 'rgba(59, 130, 246, 0.25)',
     border: 'rgba(59, 130, 246, 0.4)',
   },
+  'OmniNote STEM': {
+    accent: '#10b981',
+    glow: 'rgba(16, 185, 129, 0.25)',
+    border: 'rgba(16, 185, 129, 0.4)',
+  },
+  'SwiftPiano': {
+    accent: '#ec4899',
+    glow: 'rgba(236, 72, 153, 0.25)',
+    border: 'rgba(236, 72, 153, 0.4)',
+  },
 };
 
 export function ProjectsSection({ projects }: { projects: Project[] }) {

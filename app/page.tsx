@@ -125,6 +125,42 @@ const projects: Project[] = [
     stack: 'React / TypeScript / CSS adaptable',
     originalIndex: 7,
   },
+  {
+    name: 'OmniNote STEM',
+    type: 'MOTOR VECTORIAL & CÁLCULO · C++20',
+    category: 'desktop',
+    text: 'Entorno nativo en C++20 y Qt 6 para cálculo y física: trazo vectorial Catmull-Rom con Wacom, bloques de código, graficador de funciones y almacenamiento SQLite.',
+    stack: 'C++20 / Qt 6 / OpenGL / Poppler-Qt6 / SQLite3 / Wacom',
+    originalIndex: 8,
+    caseStudy: {
+      problemEs: 'Lienzos de notas genéricos con latencia de lápiz perceptible, sin soporte sub-píxel Wacom con rechazo de palma, bloques de código ni graficador matemático analítico.',
+      problemEn: 'Generic note-taking canvas apps suffer from stylus lag and lack sub-pixel Wacom palm rejection, embedded code blocks, or analytical math plotting.',
+      roleEs: 'Arquitectura completa y desarrollo en C++20 puro y Qt 6: pipeline de entrada Wacom, viewport OpenGL con 4x MSAA, parser AST recursivo de funciones y SQLite3 WAL.',
+      roleEn: 'Full native architecture in modern C++20 and Qt 6: Wacom input filter, hardware-accelerated OpenGL viewport (4x MSAA), recursive math AST parser, and SQLite3 WAL.',
+      usersEs: 'Uso personal intensivo en resolución de cálculo multivariable, algoritmos y apuntes técnicos.',
+      usersEn: 'Daily personal workstation use for multivariable calculus, algorithms, and engineering notes.',
+      outcomeEs: 'Latencia imperceptible (< 8 ms), 60 FPS estables con OpenGL, graficación instantánea con detección de asíntotas y exportación PDF vectorial a 300 DPI.',
+      outcomeEn: 'Imperceptible latency (< 8 ms), solid 60 FPS in OpenGL, instant graphing with singularity detection, and 300 DPI vector PDF exports.',
+    },
+  },
+  {
+    name: 'SwiftPiano',
+    type: 'SINTETIZADOR 2D & SIMULADOR · GODOT 4',
+    category: 'desktop',
+    text: 'Sintetizador interactivo de piano de 88 teclas con mapeo QWERTY completo, audio polifónico Salamander Grand Piano, shaders de halo aditivo y transcriptor MIDI.',
+    stack: 'Godot 4 / GDScript / Shaders GLSL / Vulkan / Salamander Piano / MIDI',
+    originalIndex: 9,
+    caseStudy: {
+      problemEs: 'Simuladores de piano virtuales limitados a pocas octavas, con latencia de audio perceptible y sin una experiencia visual fluida para estudio de ritmo y partituras.',
+      problemEn: 'Virtual piano tools restricted to 3-4 octaves, featuring audio latency lag and devoid of reactive visual cascades for learning musical rhythm and chords.',
+      roleEs: 'Desarrollo en Godot 4 con GDScript: mapeo de 88 teclas, pool polifónico de muestras Salamander, shaders GLSL de halo HDR en Vulkan, parser de hojas y conversor MIDI.',
+      roleEn: 'Godot 4 and GDScript engine development: full 88-key mapping, Salamander sample pool, Vulkan GLSL bloom shaders, sheet parser, and MIDI converter.',
+      usersEs: 'Herramienta de interpretación musical, estudio de partituras y visualización reactiva de piezas.',
+      usersEn: 'Tool for real-time PC keyboard performance, sheet music study, and reactive musical track synthesis.',
+      outcomeEs: '60 FPS estables con VSync sobre Vulkan, latencia de audio nula, 88 teclas asignadas y reproducción/visualización sincronizada.',
+      outcomeEn: 'Rock-solid 60 FPS VSync over Vulkan, near-zero audio latency, all 88 keys mapped, and synchronized visualizer cascade.',
+    },
+  },
 ];
 
 function PortfolioView() {

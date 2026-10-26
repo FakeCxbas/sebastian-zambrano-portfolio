@@ -175,6 +175,24 @@ export const TECH_CATALOG: Record<string, TechDetail> = {
     },
     projects: ['Actuariosa APIs', 'Servicios de Datos'],
   },
+  'C++': {
+    name: 'C++',
+    category: { es: 'Sistemas & Rendimiento', en: 'Systems & Performance' },
+    summary: {
+      es: 'Desarrollo de software nativo de alto rendimiento en C++20 con Qt 6 y OpenGL para el motor vectorial de apuntes técnicos y cálculo OmniNote STEM.',
+      en: 'High-performance native software development in modern C++20 using Qt 6 and OpenGL for the OmniNote STEM vector calculus canvas.',
+    },
+    projects: ['OmniNote STEM'],
+  },
+  'Godot': {
+    name: 'Godot Engine',
+    category: { es: 'Motores & Gráficos 2D', en: 'Engines & 2D Graphics' },
+    summary: {
+      es: 'Motor de videojuegos y simuladores 2D/3D. Desarrollé el sintetizador SwiftPiano con 88 notas, shaders GLSL de halo aditivo y transcriptor MIDI en Vulkan.',
+      en: '2D/3D game engine and simulation suite. Built the SwiftPiano real-time 88-key synth with custom GLSL bloom shaders and live MIDI transcription.',
+    },
+    projects: ['SwiftPiano'],
+  },
 };
 
 const TECH_MARQUEE_ITEMS = Object.keys(TECH_CATALOG);

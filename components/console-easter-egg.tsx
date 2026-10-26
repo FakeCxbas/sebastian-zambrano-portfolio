@@ -42,10 +42,12 @@ export function ConsoleEasterEgg() {
           { Proyecto: 'TechView', Tipo: 'Visión Artificial Asistiva', Stack: 'Python, OpenCV, YOLOv8, Raspberry Pi' },
           { Proyecto: 'Taller Jeldes', Tipo: 'App Móvil Operativa', Stack: 'Flutter, Dart, IA aplicada' },
           { Proyecto: 'MxCorreo', Tipo: 'Saneamiento Masivo de Datos', Stack: 'Python, Tkinter, SQLite' },
+          { Proyecto: 'OmniNote STEM', Tipo: 'Motor Vectorial de Cálculo & Notas', Stack: 'C++20, Qt 6, OpenGL, SQLite, Wacom' },
+          { Proyecto: 'SwiftPiano', Tipo: 'Sintetizador 2D & Shaders Reactivos', Stack: 'Godot 4, GDScript, Vulkan, MIDI' },
           { Proyecto: 'San Viernes', Tipo: 'Software PC & Móvil', Stack: 'React, TypeScript, Electron, Capacitor' },
           { Proyecto: 'SmartDocs', Tipo: 'Gestión Documental & OCR', Stack: 'React, TypeScript, Tesseract.js' },
         ]);
-        console.log('%c💡 Tip: Puedes ejecutar proyectos("ContaNova") o proyectos("TechView") para abrir su ficha técnica directamente.', 'color: #38bdf8; font-style: italic;');
+        console.log('%c💡 Tip: Puedes ejecutar proyectos("ContaNova") o proyectos("OmniNote STEM") para abrir su ficha técnica directamente.', 'color: #38bdf8; font-style: italic;');
         return 'Lista de proyectos cargada.';
       };
 
@@ -53,6 +55,7 @@ export function ConsoleEasterEgg() {
         console.log('%c⚡ MATRIZ DE STACK TÉCNICO:', 'color: #c6fa78; font-weight: bold;');
         console.log('%c• Frontend:      %cReact, Next.js, TypeScript, Tailwind CSS, Vite', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
         console.log('%c• Backend & BD:  %cPython, FastAPI, PostgreSQL, SQLite', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
+        console.log('%c• C++ & Motores: %cC++20, Qt 6, OpenGL, Godot 4, GDScript', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
         console.log('%c• Móvil & Desk:  %cFlutter, Electron, Capacitor', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
         console.log('%c• IA & Embedded: %cOpenCV, YOLOv8, Raspberry Pi', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
         console.log('%c• DevOps & OS:   %cLinux, Docker, Git, GitHub Actions', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
