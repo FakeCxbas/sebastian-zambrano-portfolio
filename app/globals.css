@@ -398,6 +398,31 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   transform: translateX(2px);
 }
 
+.project-github-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #d4e0ce;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.74rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.project-github-action:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.project-github-action svg {
+  fill: currentColor;
+}
+
 /* Tech Badges */
 .tech-badge-container {
   display: flex;
@@ -1749,6 +1774,36 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
 .modal-action-btn.ghost:hover {
   color: #f4f6ee;
   background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-action-btn.github {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f4f6ee;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.modal-action-btn.github:hover {
+  background: #ffffff;
+  color: #0b0e0c;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+.modal-action-btn.github svg {
+  fill: currentColor;
+}
+
+.modal-proprietary-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  color: #9baa96;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
 }
 
 /* Card Code Action Button */

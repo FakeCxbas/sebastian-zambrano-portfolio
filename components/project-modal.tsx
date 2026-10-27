@@ -15,8 +15,9 @@ import {
   Copy,
   Check,
   Terminal,
+  Lock,
 } from 'lucide-react';
-import { TechBadge } from './tech-icons';
+import { TechBadge, GithubIcon } from './tech-icons';
 import { useLanguage } from '@/lib/i18n';
 
 export interface CodeSnippet {
@@ -38,6 +39,8 @@ export interface ProjectDetail {
   image: string;
   stack: string[];
   url?: string;
+  githubUrl?: string;
+  isProprietary?: boolean;
   period: string;
   role: string;
   clientOrContext: string;
@@ -61,6 +64,7 @@ export const PROJECTS_DETAILS: Record<string, ProjectDetail> = {
     image: '/projects/contanova.png',
     stack: ['React', 'TypeScript', 'PostgreSQL', 'Tailwind CSS', 'API SRI Ecuador', 'Vite'],
     url: 'https://contanova.org',
+    isProprietary: true,
     period: '2025 — Actualidad',
     role: 'Arquitecto & Desarrollador Fullstack',
     clientOrContext: 'Electromecánica Bolívar & Pequeños Comercios',
@@ -209,6 +213,7 @@ export class SRISignerService {
     badgeVariant: 'internal',
     image: '/projects/jeldes.png',
     stack: ['Flutter', 'Dart', 'OpenAI API / IA aplicada', 'Supabase', 'Cloud Storage'],
+    isProprietary: true,
     period: '2025 — 2026',
     role: 'Desarrollador Flutter & Diseñador de Sistema',
     clientOrContext: 'Taller Mecánico Jeldes (15 usuarios)',
@@ -357,6 +362,7 @@ class OfflineSyncRepository {
     badgeVariant: 'award',
     image: '/projects/techview-dashboard.jpg',
     stack: ['Python', 'OpenCV', 'YOLOv8', 'Raspberry Pi 5', 'PyTTSx3', 'Linux Embedded'],
+    githubUrl: 'https://github.com/FakeCxbas/TechView',
     period: 'Enero 2026',
     role: 'Desarrollador Principal de Software & Visión Artificial',
     clientOrContext: 'Proyecto de Titulación / Innovación Tecnológica (Equipo de 3)',
@@ -472,6 +478,7 @@ class VisualAssistPipeline:
     badgeVariant: 'production',
     image: '/projects/mxcorreo.png',
     stack: ['Python', 'Tkinter / CustomTkinter', 'dnspython', 'SQLite', 'Pandas'],
+    isProprietary: true,
     period: '2025',
     role: 'Desarrollador de Software',
     clientOrContext: 'Actuariosa Consultoría',
@@ -590,6 +597,7 @@ class DNSMXValidator:
     badgeVariant: 'production',
     image: '/projects/billar.png',
     stack: ['React', 'TypeScript', 'Electron', 'Capacitor', 'SQLite / Node.js', 'ESC/POS'],
+    isProprietary: true,
     period: '2025 — 2026',
     role: 'Desarrollador Fullstack & Soporte en Sitio',
     clientOrContext: 'Locales Comerciales San Viernes & Billar Club',
@@ -711,6 +719,7 @@ export class BillarTimerEngine {
     image: '/projects/smartdocs-dashboard.png',
     stack: ['React', 'TypeScript', 'Tesseract.js (WASM)', 'IndexedDB', 'Tailwind CSS'],
     url: 'https://smartdocs-phi.vercel.app',
+    githubUrl: 'https://github.com/FakeCxbas/SmartDocs',
     period: '2025',
     role: 'Desarrollador Frontend & Especialista en OCR',
     clientOrContext: 'Proyecto por Encargo / Digitalización',
@@ -808,6 +817,7 @@ self.onmessage = async (e: MessageEvent) => {
     badgeVariant: 'production',
     image: '/projects/strawberry-dashboard.jpg',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Local Storage / State Sync'],
+    isProprietary: true,
     period: '2025',
     role: 'Desarrollador Frontend & Diseñador UI/UX',
     clientOrContext: 'Emprendimiento Gastronómico de Postres',
@@ -930,6 +940,7 @@ export class OrderBuilder {
     badgeVariant: 'demo',
     image: '/projects/actuariosa.png',
     stack: ['React', 'TypeScript', 'CSS Modules / Modern UI', 'WhatsApp Business API'],
+    githubUrl: 'https://github.com/FakeCxbas/ActuariosaWeb',
     period: '2025',
     role: 'Desarrollador Web & Diseñador',
     clientOrContext: 'Actuariosa Consultora',
@@ -1021,6 +1032,7 @@ export class ActuarialQuoteService {
     badgeVariant: 'production',
     image: '/projects/omninote.png',
     stack: ['C++20', 'Qt 6', 'OpenGL', 'Poppler-Qt6', 'SQLite3', 'Wacom'],
+    githubUrl: 'https://github.com/FakeCxbas/OmniNote',
     period: '2026',
     role: 'Arquitectura de Software & Desarrollo del Motor Nativo',
     clientOrContext: 'Entorno Personal & Académico de Ingeniería (UEES)',
@@ -1092,6 +1104,7 @@ struct BinaryOpNode : public MathExpressionParser::ASTNode {
     badgeVariant: 'production',
     image: '/projects/swiftpiano.png',
     stack: ['Godot 4', 'GDScript', 'GLSL Shaders', 'Vulkan', 'MIDI', 'Salamander Piano'],
+    githubUrl: 'https://github.com/FakeCxbas/SwiftPiano',
     period: '2026',
     role: 'Diseño de Motor de Audio, Shaders GLSL y Desarrollo en GDScript',
     clientOrContext: 'Proyecto Creativo & Herramienta Musical Open Source',
@@ -1766,6 +1779,28 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                   <ExternalLink size={15} />
                   <span>{isEn ? 'Visit Live System ↗' : 'Visitar sistema en vivo ↗'}</span>
                 </a>
+              )}
+
+              {detail.githubUrl && (
+                <a
+                  href={detail.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-action-btn github"
+                >
+                  <GithubIcon size={15} />
+                  <span>{isEn ? 'View on GitHub ↗' : 'Ver en GitHub ↗'}</span>
+                </a>
+              )}
+
+              {detail.isProprietary && (
+                <div
+                  className="modal-proprietary-indicator"
+                  title={isEn ? 'Commercial enterprise codebase (Confidential)' : 'Código comercial propietario (Confidencial)'}
+                >
+                  <Lock size={13} />
+                  <span>{isEn ? 'Proprietary Code' : 'Código Comercial'}</span>
+                </div>
               )}
 
               {activeTab === 'details' ? (
