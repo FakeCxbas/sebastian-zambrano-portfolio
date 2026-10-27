@@ -125,7 +125,11 @@ function CvContent() {
               <strong className="cv-skill-cat">
                 {isEn ? 'Software & Systems Development:' : 'Desarrollo de Software & Sistemas:'}
               </strong>
-              <span>React, TypeScript, Python, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.</span>
+              <span>
+                {isEn
+                  ? 'React, TypeScript, Python, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, Ecuadorian SRI electronic invoicing, point-of-sale (POS) systems, and inventory management.'
+                  : 'React, TypeScript, Python, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.'}
+              </span>
             </div>
           </div>
         </section>
