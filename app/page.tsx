@@ -79,6 +79,7 @@ const projects: Project[] = [
     text: 'Gafas de asistencia visual para personas con discapacidad visual con detección de obstáculos en tiempo real y advertencias por voz. Mención de honor en graduación.',
     stack: 'Python / OpenCV / YOLOv8 / Raspberry Pi / Linux Embebido',
     aside: 'Mi aporte: núcleo de software embebido e IA.',
+    githubUrl: 'https://github.com/FakeCxbas/TechView',
     originalIndex: 3,
     caseStudy: {
       problemEs: 'Personas con discapacidad visual severa enfrentan riesgos cotidianos al desplazarse debido a obstáculos aéreos o en movimiento que el bastón no detecta.',
@@ -106,6 +107,7 @@ const projects: Project[] = [
     text: 'Almacenamiento, búsqueda, OCR en cliente con Tesseract.js (WebAssembly), edición, historial de versiones y uso compartido privado sin transferencia de datos a terceros.',
     stack: 'React / TypeScript / Tesseract.js',
     url: 'https://smartdocs-phi.vercel.app',
+    githubUrl: 'https://github.com/FakeCxbas/SmartDocs',
     originalIndex: 5,
   },
   {
@@ -123,6 +125,7 @@ const projects: Project[] = [
     category: 'web',
     text: 'Propuesta de demostración para consultoría actuarial con servicios, preguntas frecuentes y solicitudes de cotización por WhatsApp y correo. Proyecto de propuesta y demostración.',
     stack: 'React / TypeScript / CSS adaptable',
+    githubUrl: 'https://github.com/FakeCxbas/ActuariosaWeb',
     originalIndex: 7,
   },
   {
@@ -131,6 +134,7 @@ const projects: Project[] = [
     category: 'desktop',
     text: 'Entorno nativo en C++20 y Qt 6 para cálculo y física: trazo vectorial Catmull-Rom con Wacom, bloques de código, graficador de funciones y almacenamiento SQLite.',
     stack: 'C++20 / Qt 6 / OpenGL / Poppler-Qt6 / SQLite3 / Wacom',
+    githubUrl: 'https://github.com/FakeCxbas/OmniNote',
     originalIndex: 8,
     caseStudy: {
       problemEs: 'Lienzos de notas genéricos con latencia de lápiz perceptible, sin soporte sub-píxel Wacom con rechazo de palma, bloques de código ni graficador matemático analítico.',
@@ -149,6 +153,7 @@ const projects: Project[] = [
     category: 'desktop',
     text: 'Sintetizador interactivo de piano de 88 teclas con mapeo QWERTY completo, audio polifónico Salamander Grand Piano, shaders de halo aditivo y transcriptor MIDI.',
     stack: 'Godot 4 / GDScript / Shaders GLSL / Vulkan / Salamander Piano / MIDI',
+    githubUrl: 'https://github.com/FakeCxbas/SwiftPiano',
     originalIndex: 9,
     caseStudy: {
       problemEs: 'Simuladores de piano virtuales limitados a pocas octavas, con latencia de audio perceptible y sin una experiencia visual fluida para estudio de ritmo y partituras.',

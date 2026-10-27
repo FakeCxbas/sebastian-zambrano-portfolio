@@ -335,6 +335,45 @@ export function CommandPalette() {
         },
       },
       {
+        id: 'act-repo-omninote',
+        title: isEn ? 'OmniNote STEM Repository' : 'Repositorio OmniNote STEM',
+        subtitle: 'github.com/FakeCxbas/OmniNote · C++20 / Qt 6 / OpenGL',
+        category: 'actions',
+        icon: GithubIcon,
+        badge: 'C++20',
+        keywords: ['omninote', 'c++', 'qt', 'opengl', 'repo', 'github'],
+        action: () => {
+          window.open('https://github.com/FakeCxbas/OmniNote', '_blank');
+          setIsOpen(false);
+        },
+      },
+      {
+        id: 'act-repo-swiftpiano',
+        title: isEn ? 'SwiftPiano Repository' : 'Repositorio SwiftPiano',
+        subtitle: 'github.com/FakeCxbas/SwiftPiano · Godot 4 / Vulkan / Shaders',
+        category: 'actions',
+        icon: GithubIcon,
+        badge: 'Godot 4',
+        keywords: ['swiftpiano', 'godot', 'midi', 'shaders', 'repo', 'github'],
+        action: () => {
+          window.open('https://github.com/FakeCxbas/SwiftPiano', '_blank');
+          setIsOpen(false);
+        },
+      },
+      {
+        id: 'act-repo-techview',
+        title: isEn ? 'TechView Repository' : 'Repositorio TechView',
+        subtitle: 'github.com/FakeCxbas/TechView · Python / OpenCV / YOLOv8',
+        category: 'actions',
+        icon: GithubIcon,
+        badge: 'AI / Python',
+        keywords: ['techview', 'opencv', 'yolo', 'python', 'repo', 'github'],
+        action: () => {
+          window.open('https://github.com/FakeCxbas/TechView', '_blank');
+          setIsOpen(false);
+        },
+      },
+      {
         id: 'act-linkedin',
         title: 'LinkedIn (Sebastián Zambrano)',
         subtitle: isEn ? 'Connect professionally and view recommendations' : 'Conectar en red profesional y trayectoria',

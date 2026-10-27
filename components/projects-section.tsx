@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ProjectPreview } from '@/components/project-preview';
 import { ProjectModal } from '@/components/project-modal';
-import { TechBadge } from '@/components/tech-icons';
+import { TechBadge, GithubIcon } from '@/components/tech-icons';
 import { useLanguage } from '@/lib/i18n';
 import { Layers, Globe, Monitor, Smartphone, Cpu, ExternalLink, Code2, Sparkles } from 'lucide-react';
 
@@ -25,6 +25,7 @@ export interface Project {
   text: string;
   stack: string;
   url?: string;
+  githubUrl?: string;
   aside?: string;
   originalIndex: number;
   caseStudy?: CaseStudyData;
@@ -277,7 +278,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                   ))}
                 </div>
 
-                {/* Acciones de pie de tarjeta: Ficha & Código y Visitar */}
+                {/* Acciones de pie de tarjeta: Ficha & Código, GitHub y Visitar */}
                 <div className="project-footer-actions">
                   <button
                     type="button"
@@ -291,6 +292,20 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
                     <Code2 size={13} style={{ color: theme.accent }} />
                     <span>{locale === 'en' ? 'Specs & Code' : 'Ficha & Código'}</span>
                   </button>
+
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-github-action"
+                      onClick={(e) => e.stopPropagation()}
+                      title={locale === 'en' ? `Open ${title} repository on GitHub` : `Abrir repositorio de ${title} en GitHub`}
+                    >
+                      <GithubIcon size={13} />
+                      <span>GitHub</span>
+                    </a>
+                  )}
 
                   {project.url && !project.url.includes('github.com') && (
                     <a
