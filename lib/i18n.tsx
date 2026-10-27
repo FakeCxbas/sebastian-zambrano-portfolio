@@ -94,6 +94,7 @@ export interface Translations {
       educationSubitems?: {
         title: string;
         desc: string;
+        logo?: string;
       }[];
     }[];
   };
@@ -270,18 +271,21 @@ export const translations: Record<Locale, Translations> = {
           badge: 'Actual · Consultoría',
           badgeType: 'active',
           title: 'Actuariosa',
+          logo: '/branding/actuariosa-logo.png',
           description: 'Desarrollo de herramientas internas de automatización en Python, saneamiento de bases de datos masivas (más de 132.000 registros procesados) y apoyo analítico actuarial.',
         },
         {
           date: 'FEB. — ABR. 2026',
           badge: 'Operaciones & Facturación',
           title: 'Electromecánica Bolívar',
+          logo: '/branding/electromecanica-bolivar.png',
           description: 'Atención directa al cliente, venta de repuestos automotrices, facturación e inventarios. La experiencia práctica que inspiró la creación de ContaNova.',
         },
         {
           date: 'FEB. — ABR. 2025',
           badge: 'Prácticas Profesionales',
           title: 'Apol S.A.',
+          logo: '/branding/apol-logo.png',
           description: 'Prácticas de asistencia administrativa y apoyo a gerencia: coordinación de reuniones, gestión documental, bases de datos y reportes ejecutivos.',
         },
         {
@@ -294,10 +298,12 @@ export const translations: Record<Locale, Translations> = {
             {
               title: 'Ingeniería en Ciencias de la Computación · UEES',
               desc: 'En curso desde mayo de 2026 en Universidad Espíritu Santo. Modalidad virtual nocturna.',
+              logo: '/branding/uees-logo.png',
             },
             {
               title: 'Bachiller en Informática · Instituto Coello',
               desc: 'Graduado en marzo de 2026. Mención de honor en proyecto de graduación. Tutoría voluntaria de Matemáticas, Física y Computación (2023–2025).',
+              logo: '/branding/instituto-coello.png',
             },
           ],
         },
@@ -474,18 +480,21 @@ export const translations: Record<Locale, Translations> = {
           badge: 'Current · Consulting',
           badgeType: 'active',
           title: 'Actuariosa',
+          logo: '/branding/actuariosa-logo.png',
           description: 'Engineered internal Python automation suites, conducted data sanitation on over 132,000 corporate records, and assisted in actuarial analytical modeling.',
         },
         {
           date: 'FEB. — APR. 2026',
           badge: 'Operations & Billing',
           title: 'Electromecánica Bolívar',
+          logo: '/branding/electromecanica-bolivar.png',
           description: 'Direct customer service, auto parts retail, inventory reconciliation, and billing. The hands-on operational friction that inspired ContaNova.',
         },
         {
           date: 'FEB. — APR. 2025',
           badge: 'Professional Internship',
           title: 'Apol S.A.',
+          logo: '/branding/apol-logo.png',
           description: 'Executive assistance and administrative operations: meeting scheduling, corporate documentation, database organization, and executive reporting.',
         },
         {
@@ -498,10 +507,12 @@ export const translations: Record<Locale, Translations> = {
             {
               title: 'Computer Science Engineering · UEES',
               desc: 'Enrolled since May 2026 at Universidad Espíritu Santo. Evening virtual program.',
+              logo: '/branding/uees-logo.png',
             },
             {
               title: 'High School Diploma in Informatics · Instituto Coello',
               desc: 'Graduated March 2026 with Honorable Mention in capstone AI project. Volunteer tutor for Math, Physics, and CS (2023–2025).',
+              logo: '/branding/instituto-coello.png',
             },
           ],
         },
