@@ -474,7 +474,7 @@ class VisualAssistPipeline:
     type: 'HERRAMIENTA DE ESCRITORIO & AUTOMATIZACIÓN',
     category: 'desktop',
     tagline: 'Software portable en Python para depuración, saneamiento y validación DNS masiva de bases de datos.',
-    badge: '+132.000 Registros Procesados',
+    badge: '+136.000 Registros Procesados',
     badgeVariant: 'production',
     image: '/projects/mxcorreo.png',
     stack: ['Python', 'Tkinter / CustomTkinter', 'dnspython', 'SQLite', 'Pandas'],
@@ -495,9 +495,9 @@ class VisualAssistPipeline:
     challenges:
       'Evitar el bloqueo por rate-limiting en resolvedores DNS al comprobar miles de dominios en pocos minutos, implementando backoff exponencial y pools de conexiones concurrentes.',
     impactMetrics: [
-      { label: 'Registros saneados', value: '+132.000' },
+      { label: 'Registros saneados', value: '136.602' },
+      { label: 'Negocios únicos con RUC', value: '42.648' },
       { label: 'Reducción de rebotes', value: '> 85%' },
-      { label: 'Velocidad de procesamiento', value: '500 reg/min' },
     ],
     accentColor: '#f59e0b',
     snippet: {
@@ -506,12 +506,12 @@ class VisualAssistPipeline:
       authorWatermark: 'Sebastián Zambrano · Desarrollador de Software',
       decisionTitle: 'Caché de Dominios en Memoria y Concurrencia con ThreadPool',
       decisionNote:
-        'En bases de datos de 132.000 filas, hasta el 80% de los contactos comparten servidores corporativos o proveedores masivos (@gmail, @hotmail, etc.). Implementar un diccionario de memoización para registros MX redujo en un 78% las consultas de red externas, previniendo baneos de IP por flooding y acelerando la auditoría a 500 registros por minuto.',
+        'En bases de datos de 136.602 filas, hasta el 80% de los contactos comparten servidores corporativos o proveedores masivos (@gmail, @hotmail, etc.). Implementar un diccionario de memoización para registros MX redujo en un 78% las consultas de red externas, previniendo baneos de IP por flooding y acelerando la auditoría a 500 registros por minuto.',
       code: `"""
 @file: dns_mx_validator.py
 @author: Sebastián Zambrano (@FakeCxbas)
 @description: Validador multihilo concurrente de registros DNS MX
-              para depuración y saneamiento de +132.000 correos.
+              para depuración y saneamiento de 136.602 correos.
 """
 
 import re
@@ -1227,21 +1227,21 @@ export const PROJECTS_DETAILS_EN: Record<string, Partial<ProjectDetail>> = {
     clientOrContext: 'Actuariosa (Actuarial Consultancy)',
     period: '2024',
     problem:
-      'A legacy contact dataset of over 132,000 corporate records contained syntax errors, duplicates, outdated domains, and invalid email formatting, crippling B2B outreach efforts.',
+      'A legacy contact dataset of over 136,000 corporate records contained syntax errors, duplicates, outdated domains, and invalid email formatting, crippling B2B outreach efforts.',
     solution:
       'Developed a lightweight, standalone Python desktop utility with multi-threaded domain syntax parsing, MX record validation, deduplication algorithms, and interactive SQLite caching.',
     architectureHighlights: [
       'Multi-threaded DNS MX query worker pool to verify active mail exchanges without triggering spam traps.',
-      'Deduplication and normalization pipeline processing 132k+ records in under 4 minutes.',
+      'Deduplication and normalization pipeline processing 136k+ records in under 4 minutes.',
       'Local SQLite database cache ensuring instant repeatability and zero external server dependency.',
       'Structured CSV/Excel export partitioned by deliverability confidence scores.',
     ],
     challenges:
       'Preventing DNS rate-limiting and thread starvation while executing hundreds of simultaneous MX domain lookups.',
     impactMetrics: [
-      { label: 'Records sanitized', value: '+132,000' },
+      { label: 'Records sanitized', value: '136,602' },
+      { label: 'Validated businesses', value: '42,648' },
       { label: 'Bounce rate reduction', value: '-85%' },
-      { label: 'Processing time', value: '< 4 minutes' },
     ],
   },
   'San Viernes & Billar Club': {

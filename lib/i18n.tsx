@@ -183,7 +183,7 @@ export const translations: Record<Locale, Translations> = {
         'MxCorreo': {
           name: 'MxCorreo',
           type: 'AUTOMATIZACIÓN · WINDOWS',
-          text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 132.000 registros procesados para Actuariosa, con detección de duplicados e informes.',
+          text: 'Aplicación portable para importar, depurar y clasificar contactos. Más de 136.600 registros procesados para Actuariosa, con detección de duplicados e informes.',
         },
         'San Viernes & Billar Club': {
           name: 'San Viernes & Billar Club',
@@ -231,7 +231,7 @@ export const translations: Record<Locale, Translations> = {
       metric1Number: '+5',
       metric1Title: 'Sistemas desplegados',
       metric1Desc: 'ContaNova, Billar Club, Jeldes, MxCorreo y Strawberry',
-      metric2Number: '132k+',
+      metric2Number: '136k+',
       metric2Title: 'Registros procesados',
       metric2Desc: 'Automatización y depuración con Python',
       metric3Number: '2026',
@@ -272,7 +272,7 @@ export const translations: Record<Locale, Translations> = {
           badgeType: 'active',
           title: 'Actuariosa',
           logo: '/branding/actuariosa-logo.png',
-          description: 'Desarrollo de herramientas internas de automatización en Python, saneamiento de bases de datos masivas (más de 132.000 registros procesados) y apoyo analítico actuarial.',
+          description: 'Desarrollo de herramientas internas de automatización en Python, saneamiento de bases de datos masivas (más de 136.000 registros procesados y 42.648 empresas validadas) y apoyo analítico actuarial.',
         },
         {
           date: 'FEB. — ABR. 2026',
@@ -392,7 +392,7 @@ export const translations: Record<Locale, Translations> = {
         'MxCorreo': {
           name: 'MxCorreo',
           type: 'AUTOMATION · WINDOWS UTILITY',
-          text: 'Portable Python tool for contact cleaning and domain validation. Processed over 132,000 corporate records for Actuariosa with deduplication and reporting.',
+          text: 'Portable Python tool for contact cleaning and domain validation. Processed over 136,600 corporate records for Actuariosa with deduplication and reporting.',
         },
         'San Viernes & Billar Club': {
           name: 'San Viernes & Billar Club',
@@ -440,7 +440,7 @@ export const translations: Record<Locale, Translations> = {
       metric1Number: '+5',
       metric1Title: 'Live Systems',
       metric1Desc: 'ContaNova, Billar Club, Jeldes, MxCorreo & Strawberry',
-      metric2Number: '132k+',
+      metric2Number: '136k+',
       metric2Title: 'Records Processed',
       metric2Desc: 'Python automated cleaning and validation',
       metric3Number: '2026',
@@ -481,7 +481,7 @@ export const translations: Record<Locale, Translations> = {
           badgeType: 'active',
           title: 'Actuariosa',
           logo: '/branding/actuariosa-logo.png',
-          description: 'Engineered internal Python automation suites, conducted data sanitation on over 132,000 corporate records, and assisted in actuarial analytical modeling.',
+          description: 'Engineered internal Python automation suites, conducted data sanitation on over 136,000 corporate records (42,648 unique validated businesses), and assisted in actuarial analytical modeling.',
         },
         {
           date: 'FEB. — APR. 2026',

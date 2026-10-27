@@ -44,8 +44,8 @@ export const TECH_CATALOG: Record<string, TechDetail> = {
     name: 'Python',
     category: { es: 'Backend & Datos', en: 'Backend & Data' },
     summary: {
-      es: 'Mi herramienta principal para procesamiento masivo de datos (depuración de +132k registros de correo en MxCorreo), microservicios y visión artificial con YOLOv8.',
-      en: 'My go-to language for high-volume data cleaning (+132k corporate emails in MxCorreo), backend microservices, and YOLOv8 computer vision.',
+      es: 'Mi herramienta principal para procesamiento masivo de datos (depuración de +136k registros de correo en MxCorreo), microservicios y visión artificial con YOLOv8.',
+      en: 'My go-to language for high-volume data cleaning (+136k corporate emails in MxCorreo), backend microservices, and YOLOv8 computer vision.',
     },
     projects: ['MxCorreo', 'TechView', 'Actuariosa'],
   },

@@ -210,13 +210,13 @@ function CvContent() {
             <ul className="cv-bullets">
               {isEn ? (
                 <>
-                  <li>Engineered <strong>MxCorreo</strong> in Python: batch deduplication, syntax checking, and multi-threaded DNS/MX domain validation across 132,000+ corporate records.</li>
+                  <li>Engineered <strong>MxCorreo</strong> in Python: batch deduplication, syntax checking, and multi-threaded DNS/MX domain validation across 136,000+ corporate records (auditing 42,648 active verified businesses).</li>
                   <li>Developed the corporate landing proposal in React and TypeScript with integrated quotation workflows via WhatsApp and Email.</li>
                   <li>Analytical data preparation for actuarial studies and business intelligence.</li>
                 </>
               ) : (
                 <>
-                  <li>Construcción de scripts y herramientas de automatización con Python (MxCorreo) para depuración y validación DNS/SMTP de más de 132.000 registros de correo.</li>
+                  <li>Construcción de scripts y herramientas de automatización con Python (MxCorreo) para depuración y validación DNS/SMTP de más de 136.000 registros de correo (42.648 empresas únicas con RUC).</li>
                   <li>Desarrollo de la propuesta web corporativa institucional e integración de canales de cotización en línea.</li>
                   <li>Apoyo analítico en el procesamiento de bases de datos para estudios actuariales y comerciales.</li>
                 </>
