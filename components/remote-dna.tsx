@@ -11,8 +11,8 @@ export function RemoteDna() {
   const cards = [
     {
       icon: Clock,
-      badge: isEn ? 'UTC-5 · Guayaquil, Ecuador' : 'UTC-5 · Guayaquil, Ecuador',
-      title: isEn ? 'UTC-5 with workday overlap across the Americas' : 'UTC-5 con solapamiento laboral con equipos de América',
+      badge: isEn ? 'UTC-5 · Guayaquil' : 'UTC-5 · Guayaquil',
+      title: isEn ? 'Real-time workday overlap across the Americas' : 'Solapamiento laboral UTC-5 con toda América',
       desc: isEn
         ? 'Consistent real-time overlap with engineering and product teams across the Americas. Ecuador timezone (UTC-5) maintains direct daily coverage during business hours.'
         : 'Solapamiento laboral en tiempo real con equipos en América. La zona horaria de Ecuador (UTC-5) asegura cobertura directa durante la jornada de trabajo.',
@@ -21,8 +21,8 @@ export function RemoteDna() {
     },
     {
       icon: GitBranch,
-      badge: isEn ? 'Verifiable Collaboration' : 'Evidencia Verificable',
-      title: isEn ? 'Bilingual READMEs, clear PRs & automated testing' : 'READMEs bilingües, PRs claros y pruebas',
+      badge: isEn ? 'Verifiable Evidence' : 'Evidencia Verificable',
+      title: isEn ? 'Bilingual READMEs, clear PRs & test coverage' : 'READMEs bilingües, PRs claros y pruebas',
       desc: isEn
         ? 'Clean git history with atomic commits, contextual PR descriptions, issue tracking, bilingual setup guides, and automated testing (Vitest, Playwright).'
         : 'Repositorios con commits atómicos, issues documentados, pull requests con contexto de negocio, guías bilingües de instalación y pruebas automatizadas (Vitest, Playwright).',
@@ -31,7 +31,7 @@ export function RemoteDna() {
     },
     {
       icon: Briefcase,
-      badge: isEn ? 'Business & Operations' : 'Operación & Negocio Real',
+      badge: isEn ? 'Real Business Ops' : 'Operación & Negocio Real',
       title: isEn ? 'Hands-on operational understanding' : 'Comprensión operativa de negocios reales',
       desc: isEn
         ? 'Experience gathering requirements, training users, managing counter inventory, and supporting small businesses directly. I build software that solves concrete operational bottlenecks.'
@@ -42,7 +42,7 @@ export function RemoteDna() {
     {
       icon: Languages,
       badge: isEn ? 'Spanish & English' : 'Español & Inglés',
-      title: isEn ? 'Technical English (B1 Intermediate)' : 'Inglés técnico intermedio (B1)',
+      title: isEn ? 'Technical English for async teams (B1)' : 'Inglés técnico para equipos globales (B1)',
       desc: isEn
         ? 'Solid technical reading comprehension for documentation and RFCs, clear written communication for commits, pull requests, issues, and asynchronous teamwork.'
         : 'Sólida lectura técnica de documentación, especificaciones y librerías; redacción clara en inglés de commits, issues, PRs y comunicación asíncrona de equipo.',

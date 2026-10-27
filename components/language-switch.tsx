@@ -1,15 +1,13 @@
 'use client';
 
 import React from 'react';
-import { useLanguage, Locale } from '@/lib/i18n';
-import { Globe } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n';
 
 export function LanguageSwitch() {
   const { locale, setLocale } = useLanguage();
 
   return (
     <div className="language-switch-container" role="group" aria-label="Seleccionar idioma / Select language">
-      <Globe size={13} className="lang-globe-icon" aria-hidden="true" />
       <button
         type="button"
         className={`lang-option ${locale === 'es' ? 'is-active' : ''}`}
