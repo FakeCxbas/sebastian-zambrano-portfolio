@@ -1204,6 +1204,19 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   padding-top: 0;
   border-top: 0;
 }
+.education-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.education-header-row h3 {
+  margin: 0;
+}
+.education-item-logo {
+  width: 24px;
+  height: 24px;
+}
 
 /* Contact Cards Grid */
 .contact-cards-grid {

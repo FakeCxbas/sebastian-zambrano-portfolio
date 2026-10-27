@@ -382,7 +382,7 @@ function PortfolioView() {
                       {item.logo && (
                         <img
                           src={item.logo}
-                          alt="ESORIA logo"
+                          alt={`${item.title} logo`}
                           className="timeline-item-logo"
                           width={28}
                           height={28}
@@ -405,7 +405,18 @@ function PortfolioView() {
 
                     {item.educationSubitems && item.educationSubitems.map((sub, sIdx) => (
                       <div key={sIdx} className="education-subitem">
-                        <h3>{sub.title}</h3>
+                        <div className="education-header-row">
+                          {sub.logo && (
+                            <img
+                              src={sub.logo}
+                              alt={`${sub.title} logo`}
+                              className="timeline-item-logo education-item-logo"
+                              width={24}
+                              height={24}
+                            />
+                          )}
+                          <h3>{sub.title}</h3>
+                        </div>
                         <p>{sub.desc}</p>
                       </div>
                     ))}
