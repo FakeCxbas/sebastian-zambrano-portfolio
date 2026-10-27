@@ -37,6 +37,13 @@ function CvContent() {
         <div className="cv-nav-content">
           <Link href="/" className="cv-back-link">
             <ArrowLeft size={16} />
+            <img
+              src="/sz-monogram.svg"
+              alt="SZ"
+              width={18}
+              height={18}
+              style={{ borderRadius: '4px', display: 'inline-block', verticalAlign: 'middle' }}
+            />
             <span>{isEn ? 'Back to Portfolio' : 'Volver al Portafolio'}</span>
           </Link>
           

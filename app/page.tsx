@@ -178,7 +178,13 @@ function PortfolioView() {
       <header className="topbar">
         <div className="topbar-inner">
           <a className="brand" href="#inicio" aria-label="Sebastián Zambrano, inicio">
-            sz<span>.</span>
+            <img
+              src="/sz-monogram.svg"
+              alt="Sebastián Zambrano"
+              width={38}
+              height={38}
+              className="brand-isotype"
+            />
           </a>
 
           <div className="topbar-actions">
@@ -494,7 +500,10 @@ function PortfolioView() {
       </main>
 
       <footer className="footer">
-        <span>{t.footer.copyright}</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+          <img src="/sz-monogram.svg" alt="SZ" width={16} height={16} style={{ borderRadius: '4px' }} />
+          {t.footer.copyright}
+        </span>
         <span>{t.footer.tagline}</span>
         <a href="#inicio">{t.footer.backToTop}</a>
       </footer>

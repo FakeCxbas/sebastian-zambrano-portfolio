@@ -509,6 +509,13 @@ export function CommandPalette() {
           </div>
 
           <span className="cmd-footer-branding">
+            <img
+              src="/sz-monogram.svg"
+              alt="SZ"
+              width={14}
+              height={14}
+              style={{ borderRadius: '3px', display: 'inline-block', verticalAlign: 'middle', marginRight: '6px' }}
+            />
             sz<span>.</span>dev
           </span>
         </div>

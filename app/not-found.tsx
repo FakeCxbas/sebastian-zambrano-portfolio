@@ -5,26 +5,19 @@ import { useState, useEffect, useRef } from 'react';
 
 function SzLogo({ size = 16 }: { size?: number }) {
   return (
-    <svg
-      viewBox="0 0 40 40"
+    <img
+      src="/sz-monogram.svg"
       width={size}
       height={size}
+      alt="SZ"
       aria-hidden="true"
-      style={{ flexShrink: 0, display: 'inline-block', verticalAlign: 'middle' }}
-    >
-      <rect width="40" height="40" rx="9" fill="rgba(198, 250, 120, 0.12)" stroke="rgba(198, 250, 120, 0.35)" strokeWidth="1.5" />
-      <text
-        x="7"
-        y="27"
-        fill="#f8fafc"
-        fontFamily="var(--font-geist-sans), Arial, sans-serif"
-        fontSize="21"
-        fontWeight="850"
-        letterSpacing="-0.06em"
-      >
-        sz<tspan fill="#c6fa78">.</tspan>
-      </text>
-    </svg>
+      style={{
+        flexShrink: 0,
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        borderRadius: size > 20 ? '6px' : '3px',
+      }}
+    />
   );
 }
 
