@@ -126,7 +126,7 @@ export function CommandPalette() {
       {
         id: 'p-mxcorreo',
         title: 'MxCorreo',
-        subtitle: isEn ? 'High-volume data cleaning & verification (+132k rows)' : 'Saneamiento y clasificación masiva de datos (+132k filas)',
+        subtitle: isEn ? 'High-volume data cleaning & verification (+136k rows)' : 'Saneamiento y clasificación masiva de datos (+136k filas)',
         category: 'projects',
         badge: 'Desktop · Python / SQLite',
         icon: Code2,

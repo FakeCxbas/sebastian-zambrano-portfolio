@@ -68,8 +68,8 @@ const projects: Project[] = [
       roleEn: 'Built portable Python utility with multithreaded DNS/MX resolver, in-memory domain cache, RFC 5322 normalization, and export reports.',
       usersEs: 'Utilizado en Actuariosa para saneamiento y auditoría masiva de datos.',
       usersEn: 'Used at Actuariosa actuarial consultancy for high-volume data cleaning and auditing.',
-      outcomeEs: 'Más de 132.000 registros procesados en total; el primer lote saneó 36.040 registros y 24.604 direcciones únicas sin rebote.',
-      outcomeEn: '132,000+ total records processed; initial batch audited 36,040 rows and 24,604 unique verified addresses with > 85% bounce drop.',
+      outcomeEs: '136.602 registros procesados en total; saneamiento final de 42.648 negocios únicos activos con RUC y 3.496 descartes por disolución.',
+      outcomeEn: '136,602 total records processed; audited 42,648 unique verified businesses with active tax IDs and 3,496 inactive discards.',
     },
   },
   {
