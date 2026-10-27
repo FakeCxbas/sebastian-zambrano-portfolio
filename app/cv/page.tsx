@@ -73,13 +73,31 @@ function CvContent() {
               : 'Desarrollador de Software · Soporte Técnico & Seguridad Electrónica (CCTV)'}
           </div>
           
-          <div className="cv-contact-info">
-            <span><MapPin size={13} /> Guayaquil, Ecuador (UTC-5)</span>
-            <a href="mailto:sebastianzambrano2818@gmail.com"><Mail size={13} /> sebastianzambrano2818@gmail.com</a>
-            <a href="https://wa.me/593998134331" target="_blank" rel="noopener noreferrer"><Phone size={13} /> +593 99 813 4331</a>
-            <a href="https://sebastianzambrano.dev" target="_blank" rel="noopener noreferrer"><Globe size={13} /> sebastianzambrano.dev</a>
-            <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer"><GithubIcon size={13} /> github.com/FakeCxbas</a>
-            <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer"><LinkedinIcon size={13} /> LinkedIn</a>
+          <div className="cv-contact-grid">
+            <span className="cv-contact-item">
+              <MapPin size={13} className="cv-contact-icon" />
+              <span>Guayaquil, Ecuador (UTC-5)</span>
+            </span>
+            <a href="mailto:sebastianzambrano2818@gmail.com" className="cv-contact-item">
+              <Mail size={13} className="cv-contact-icon" />
+              <span>sebastianzambrano2818@gmail.com</span>
+            </a>
+            <a href="https://wa.me/593998134331" target="_blank" rel="noopener noreferrer" className="cv-contact-item">
+              <Phone size={13} className="cv-contact-icon" />
+              <span>+593 99 813 4331</span>
+            </a>
+            <a href="https://sebastianzambrano.dev" target="_blank" rel="noopener noreferrer" className="cv-contact-item">
+              <Globe size={13} className="cv-contact-icon" />
+              <span>sebastianzambrano.dev</span>
+            </a>
+            <a href="https://github.com/FakeCxbas" target="_blank" rel="noopener noreferrer" className="cv-contact-item">
+              <GithubIcon size={13} className="cv-contact-icon" />
+              <span>github.com/FakeCxbas</span>
+            </a>
+            <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer" className="cv-contact-item">
+              <LinkedinIcon size={13} className="cv-contact-icon" />
+              <span>in/sebastián-zambrano</span>
+            </a>
           </div>
         </header>
 
