@@ -2368,11 +2368,11 @@ body {
 .language-switch-container {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
-  padding: 4px 10px;
+  padding: 3px 6px;
   backdrop-filter: blur(12px);
   transition: all 0.25s ease;
 }
@@ -2381,11 +2381,6 @@ body {
   border-color: rgba(198, 250, 120, 0.4);
   background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 0 16px rgba(198, 250, 120, 0.12);
-}
-
-.lang-globe-icon {
-  color: #94a3b8;
-  margin-right: 2px;
 }
 
 .lang-option {
@@ -3293,6 +3288,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 38px;
   margin-bottom: 18px;
 }
 
@@ -3305,6 +3301,7 @@ body {
   color: var(--card-accent);
   background: var(--card-bg-accent);
   border: 1px solid var(--card-border-accent);
+  flex-shrink: 0;
 }
 
 .remote-card-badge {
@@ -3312,6 +3309,7 @@ body {
   font-size: 0.65rem;
   color: #94a3b8;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .remote-card-title {
@@ -3319,8 +3317,11 @@ body {
   font-weight: 600;
   color: #f8fafc;
   line-height: 1.35;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   letter-spacing: -0.02em;
+  min-height: 2.85em;
+  display: flex;
+  align-items: flex-start;
 }
 
 .remote-card-desc {
