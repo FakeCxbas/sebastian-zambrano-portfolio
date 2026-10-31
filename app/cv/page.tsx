@@ -145,8 +145,8 @@ function CvContent() {
               </strong>
               <span>
                 {isEn
-                  ? 'React, TypeScript, Python, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, Ecuadorian SRI electronic invoicing, point-of-sale (POS) systems, and inventory management.'
-                  : 'React, TypeScript, Python, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.'}
+                  ? 'React, TypeScript, Python, Go, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, V4L2 kernel streaming, Ecuadorian SRI electronic invoicing, POS systems, and inventory control.'
+                  : 'React, TypeScript, Python, Go, C++20, Qt 6, PostgreSQL, Flutter, Godot 4, Next.js, Electron, streaming kernel V4L2, facturación electrónica SRI (Ecuador), sistemas de punto de venta (POS) y control de inventarios.'}
               </span>
             </div>
           </div>
@@ -312,6 +312,13 @@ function CvContent() {
             {isEn
               ? 'Real-time 88-key piano synthesizer with complete QWERTY mapping, polyphonic Salamander Grand Piano sample pool, custom GLSL bloom shaders, and live MIDI transcription.'
               : 'Sintetizador de 88 notas en Godot 4 con mapeo QWERTY completo, audio polifónico Salamander Grand Piano, shaders GLSL de halo aditivo y transcriptor MIDI.'}
+          </div>
+
+          <div className="cv-project-entry">
+            <strong>DroidStream ({isEn ? 'Low-Latency Linux Virtual Webcam' : 'Cámara Web Virtual para Linux'}):</strong>{' '}
+            {isEn
+              ? 'Pure Go V4L2 device controller (ioctl VIDIOC_S_FMT) and Android Kotlin client (CameraX, TCP_NODELAY, adaptive frame discarding) streaming video over USB/Wi-Fi to /dev/video* loopback.'
+              : 'Receptor CLI en Go sin CGO con control nativo V4L2 (ioctl VIDIOC_S_FMT) y cliente Android en Kotlin (CameraX, TCP_NODELAY, descarte adaptativo) para transmisión de video por USB/Wi-Fi a /dev/video*.'}
           </div>
         </section>
 
