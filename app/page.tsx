@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ProjectsSection, Project } from '@/components/projects-section';
+import { ServicesSection } from '@/components/services-section';
 import { HeroVisual, MotionLayer, TechMarquee } from '@/components/motion-layer';
 import { StatusBadge } from '@/components/status-badge';
 import { CopyEmailButton } from '@/components/copy-email-button';
@@ -253,6 +254,9 @@ function PortfolioView() {
 
         {/* Sección de Proyectos */}
         <ProjectsSection projects={projects} />
+
+        {/* Sección de Servicios y Precios */}
+        <ServicesSection />
 
         {/* Sección Sobre Mí */}
         <section className="about section" id="sobre-mi">
