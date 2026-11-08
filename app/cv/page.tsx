@@ -303,8 +303,8 @@ function CvContent() {
           <div className="cv-project-entry">
             <strong>OmniNote STEM ({isEn ? 'Native C++20 / Qt 6 Vector Engine' : 'Motor Vectorial C++20 / Qt 6'}):</strong>{' '}
             {isEn
-              ? 'High-performance GPU-accelerated technical canvas with Wacom digitizer sub-pixel inking, recursive-descent math AST parser, and SQLite WAL storage.'
-              : 'Entorno de cálculo y lienzo vectorial de alto rendimiento en C++20 y Qt 6: entrada Wacom sub-píxel de baja latencia, parser matemático recursivo y persistencia SQLite.'}
+              ? 'High-performance GPU-accelerated technical canvas with Wacom digitizer sub-pixel inking, recursive-descent math AST parser, and SQLite WAL storage. Core canvas engine and unit test suite selected and indexed internationally by the XERJ Open-Source AI Project (2026) as reference implementation for coding agents.'
+              : 'Entorno de cálculo y lienzo vectorial de alto rendimiento en C++20 y Qt 6: entrada Wacom sub-píxel de baja latencia, parser matemático recursivo y persistencia SQLite. Motor de dibujo y suite de pruebas unitarias seleccionado e indexado internacionalmente por el proyecto open-source XERJ Corpus Hub (2026) como arquitectura modular de referencia para agentes de código.'}
           </div>
 
           <div className="cv-project-entry">
@@ -327,6 +327,25 @@ function CvContent() {
           <h2 className="cv-section-title">
             {isEn ? 'Education & Honors' : 'Educación & Reconocimientos'}
           </h2>
+          <div className="cv-edu-item">
+            <div className="cv-job-header">
+              <div>
+                <strong>
+                  {isEn
+                    ? 'International Open-Source Selection — XERJ Project'
+                    : 'Reconocimiento Técnico Internacional Open-Source — XERJ Project'}
+                </strong>
+                <div>
+                  {isEn
+                    ? 'OmniNote STEM C++ core canvas architecture and unit testing suite selected and indexed for autonomous coding agents'
+                    : 'Arquitectura modular en C++ y suite de pruebas unitarias de OmniNote STEM seleccionada e indexada como código de referencia para agentes de programación'}
+                </div>
+              </div>
+              <span className="cv-job-dates">
+                {isEn ? 'November 2026' : 'Noviembre 2026'}
+              </span>
+            </div>
+          </div>
           <div className="cv-edu-item">
             <div className="cv-job-header">
               <div>
