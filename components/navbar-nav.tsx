@@ -21,9 +21,10 @@ export function NavbarNav() {
   const navRef = useRef<HTMLElement>(null);
   const linksRef = useRef<Map<string, HTMLAnchorElement>>(new Map());
 
-  // Pastilla de 3 casillas principales (Proyectos, Sobre mí, Trayectoria)
+  // Pastilla de casillas principales (Proyectos, Servicios, Sobre mí, Trayectoria)
   const navItems: NavItem[] = [
     { id: 'proyectos', href: '#proyectos', label: t.nav.projects },
+    { id: 'servicios', href: '#servicios', label: t.nav.services },
     { id: 'sobre-mi', href: '#sobre-mi', label: t.nav.about },
     { id: 'trayectoria', href: '#trayectoria', label: t.nav.experience },
   ];
@@ -52,7 +53,7 @@ export function NavbarNav() {
 
   // Observar qué sección está visible en la pantalla
   useEffect(() => {
-    const sectionIds = ['inicio', 'proyectos', 'sobre-mi', 'trayectoria', 'contacto'];
+    const sectionIds = ['inicio', 'proyectos', 'servicios', 'sobre-mi', 'trayectoria', 'contacto'];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);

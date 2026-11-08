@@ -7,6 +7,7 @@ export type Locale = 'es' | 'en';
 export interface Translations {
   nav: {
     projects: string;
+    services: string;
     about: string;
     experience: string;
     contact: string;
@@ -98,6 +99,25 @@ export interface Translations {
       }[];
     }[];
   };
+  services: {
+    eyebrow: string;
+    headingPart1: string;
+    headingPart2: string;
+    description: string;
+    guaranteeTitle: string;
+    guaranteeDesc: string;
+    items: {
+      id: string;
+      title: string;
+      tag: string;
+      price: string;
+      deliveryTime: string;
+      description: string;
+      stack: string[];
+      deliverables: string[];
+      cta: string;
+    }[];
+  };
   contact: {
     eyebrow: string;
     headingPart1: string;
@@ -126,6 +146,7 @@ export const translations: Record<Locale, Translations> = {
   es: {
     nav: {
       projects: 'Proyectos',
+      services: 'Servicios',
       about: 'Sobre mí',
       experience: 'Trayectoria',
       contact: 'Contacto ↗',
@@ -309,8 +330,69 @@ export const translations: Record<Locale, Translations> = {
         },
       ],
     },
+    services: {
+      eyebrow: '04 / SERVICIOS DE DESARROLLO A MEDIDA',
+      headingPart1: 'Soluciones de software directo con',
+      headingPart2: 'precios transparentes y entrega ágil.',
+      description: 'Sin intermediarios ni costes inflados de agencia. Desarrollo personalizado con arquitectura moderna (Next.js, TypeScript, PostgreSQL), código 100% de tu propiedad y garantía de soporte.',
+      guaranteeTitle: 'Garantía de Confianza & Términos Claros',
+      guaranteeDesc: 'Hitos definidos: 50% de anticipo y 50% contra entrega funcional desplegada. Transferencia íntegra del código fuente en tu repositorio GitHub y 15 días de soporte técnico post-lanzamiento para corrección de incidencias sin costo adicional.',
+      items: [
+        {
+          id: 'web-landing',
+          title: 'Web Corporativa & Landing de Alto Rendimiento',
+          tag: 'Presencia & Conversión',
+          price: '$190 USD',
+          deliveryTime: 'Entrega: 3 a 5 días hábiles',
+          description: 'Sitio web moderno desarrollado con Next.js y Tailwind CSS. Cero plantillas lentas o código inflado. Optimizado para Core Web Vitals (100/100 en rendimiento), responsive y estructurado para captar clientes.',
+          stack: ['Next.js', 'React 19', 'TypeScript', 'Tailwind CSS', 'Vercel / Cloudflare'],
+          deliverables: [
+            'Diseño responsivo móvil y desktop de alta fidelidad',
+            'Optimización técnica 100/100 Core Web Vitals',
+            'Formulario de contacto funcional o integración WhatsApp',
+            'SEO técnico y metadatos para redes sociales',
+            'Propiedad total del código fuente en GitHub'
+          ],
+          cta: 'Cotizar sitio web ↗'
+        },
+        {
+          id: 'admin-dashboard',
+          title: 'Panel Administrativo & Dashboard a Medida',
+          tag: 'Control & Operaciones',
+          price: '$390 USD',
+          deliveryTime: 'Entrega: 7 a 10 días hábiles',
+          description: 'Portal web seguro para gestionar operaciones, clientes, inventarios o métricas en tiempo real. Conectado a tu base de datos relacional para sustituir hojas de cálculo desorganizadas.',
+          stack: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Supabase', 'shadcn/ui'],
+          deliverables: [
+            'Autenticación segura de usuarios y roles protegidos',
+            'Tablas interactivas con filtros, búsqueda y paginación',
+            'Gráficos y métricas operativas actualizadas en tiempo real',
+            'Exportación automatizada de datos a CSV y Excel',
+            '15 días de garantía técnica y corrección de incidencias'
+          ],
+          cta: 'Cotizar dashboard ↗'
+        },
+        {
+          id: 'fullstack-mvp',
+          title: 'MVP Full-Stack & Plataforma SaaS v1.0',
+          tag: 'Producto Completo',
+          price: '$690 USD',
+          deliveryTime: 'Entrega: 2 a 3 semanas',
+          description: 'De tu idea o prototipo a una aplicación real lista para usuarios finales y pagos. Arquitectura full-stack completa con base de datos relacional, flujos de autenticación y pasarelas de cobro.',
+          stack: ['Next.js', 'TypeScript', 'PostgreSQL / Supabase', 'Stripe / Webhooks', 'REST / tRPC'],
+          deliverables: [
+            'Modelado completo de base de datos relacional (PostgreSQL)',
+            'Integración de pasarela de pagos / suscripciones (Stripe)',
+            'Flujos de usuario, emails transaccionales y roles',
+            'Pipeline automatizado de despliegue continuo (CI/CD)',
+            'Traspaso total de repositorio + 15 días de soporte post-lanzamiento'
+          ],
+          cta: 'Cotizar MVP completo ↗'
+        }
+      ]
+    },
     contact: {
-      eyebrow: '04 / HABLEMOS',
+      eyebrow: '05 / HABLEMOS',
       headingPart1: 'Cuéntame qué',
       headingPart2: 'tienes en mente.',
       description: 'Disponible para puestos de desarrollador de software remoto (tiempo completo) o proyectos a medida. Respuesta ágil asegurada.',
@@ -335,6 +417,7 @@ export const translations: Record<Locale, Translations> = {
   en: {
     nav: {
       projects: 'Projects',
+      services: 'Services',
       about: 'About',
       experience: 'Experience',
       contact: 'Contact ↗',
@@ -518,8 +601,69 @@ export const translations: Record<Locale, Translations> = {
         },
       ],
     },
+    services: {
+      eyebrow: '04 / CUSTOM DEVELOPMENT SERVICES',
+      headingPart1: 'Direct software engineering with',
+      headingPart2: 'transparent pricing and rapid delivery.',
+      description: 'Zero agency overhead or inflated retainer fees. Custom development built with a production-grade stack (Next.js, TypeScript, PostgreSQL), full source code ownership, and post-launch warranty.',
+      guaranteeTitle: 'Confidence Guarantee & Transparent Terms',
+      guaranteeDesc: 'Milestone-based delivery: 50% deposit and 50% upon functional deployment. 100% full source code ownership transferred to your GitHub organization, plus 15 days of bug-fix warranty and launch support.',
+      items: [
+        {
+          id: 'web-landing',
+          title: 'High-Performance Corporate Website & Landing',
+          tag: 'Presence & Conversion',
+          price: '$190 USD',
+          deliveryTime: 'Turnaround: 3 to 5 business days',
+          description: 'Modern web architecture built with Next.js and Tailwind CSS. Zero slow templates or bloated builders. Tuned for 100/100 Core Web Vitals, seamless mobile responsiveness, and SEO conversion.',
+          stack: ['Next.js', 'React 19', 'TypeScript', 'Tailwind CSS', 'Vercel / Cloudflare'],
+          deliverables: [
+            'Mobile & desktop responsive high-fidelity design',
+            '100/100 Core Web Vitals performance optimization',
+            'Functional lead capture form or direct WhatsApp bridge',
+            'Technical SEO schema and OpenGraph social metadata',
+            'Full source code repository handover on GitHub'
+          ],
+          cta: 'Order Website ↗'
+        },
+        {
+          id: 'admin-dashboard',
+          title: 'Custom Admin Dashboard & Operations Portal',
+          tag: 'Control & Operations',
+          price: '$390 USD',
+          deliveryTime: 'Turnaround: 7 to 10 business days',
+          description: 'Secure, tailored internal web portal to oversee team operations, client data, inventory, and analytics. Powered by PostgreSQL to eliminate scattered spreadsheets.',
+          stack: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Supabase', 'shadcn/ui'],
+          deliverables: [
+            'Role-based access control (RBAC) and secure authentication',
+            'Interactive data tables with search, sorting, and pagination',
+            'Real-time operational KPIs and interactive analytics charts',
+            'Automated CSV and Excel data export pipelines',
+            '15-day post-launch technical warranty and bug fixes'
+          ],
+          cta: 'Order Dashboard ↗'
+        },
+        {
+          id: 'fullstack-mvp',
+          title: 'Full-Stack MVP & Custom SaaS v1.0',
+          tag: 'Complete Product',
+          price: '$690 USD',
+          deliveryTime: 'Turnaround: 2 to 3 weeks',
+          description: 'From raw concept or wireframe to a live web platform ready for paying customers. Production-grade full-stack architecture with database schema, business logic, and billing.',
+          stack: ['Next.js', 'TypeScript', 'PostgreSQL / Supabase', 'Stripe / Webhooks', 'REST / tRPC'],
+          deliverables: [
+            'Relational database schema architecture (PostgreSQL)',
+            'Stripe payment & subscription billing integration',
+            'User onboarding flows, transactional emails, and access tiers',
+            'Automated CI/CD deployment to production (Vercel/Cloudflare)',
+            'Complete repository handover + 15 days launch support'
+          ],
+          cta: 'Order Full-Stack MVP ↗'
+        }
+      ]
+    },
     contact: {
-      eyebrow: '04 / GET IN TOUCH',
+      eyebrow: '05 / GET IN TOUCH',
       headingPart1: "Let's build something",
       headingPart2: 'exceptional together.',
       description: 'Available for full-time remote developer positions or custom business software engineering projects. Rapid response guaranteed.',
