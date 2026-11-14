@@ -381,7 +381,7 @@ export function CommandPalette() {
         icon: LinkedinIcon,
         badge: 'External',
         action: () => {
-          window.open('https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/', '_blank');
+          window.open('https://www.linkedin.com/in/sebastianzambranoinga', '_blank');
           setIsOpen(false);
         },
       },

@@ -470,7 +470,7 @@ function PortfolioView() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/"
+                  href="https://www.linkedin.com/in/sebastianzambranoinga"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-btn linkedin-btn"

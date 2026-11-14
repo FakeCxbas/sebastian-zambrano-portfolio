@@ -97,7 +97,7 @@ const jsonLd = {
   },
   sameAs: [
     'https://github.com/FakeCxbas',
-    'https://www.linkedin.com/in/sebastián-paul-zambrano-inga-7700633ab/',
+    'https://www.linkedin.com/in/sebastianzambranoinga',
   ],
   knowsAbout: [
     'React',
