@@ -94,9 +94,9 @@ function CvContent() {
               <GithubIcon size={13} className="cv-contact-icon" />
               <span>github.com/FakeCxbas</span>
             </a>
-            <a href="https://www.linkedin.com/in/sebasti%C3%A1n-paul-zambrano-inga-7700633ab/" target="_blank" rel="noopener noreferrer" className="cv-contact-item">
+            <a href="https://www.linkedin.com/in/sebastianzambranoinga" target="_blank" rel="noopener noreferrer" className="cv-contact-item">
               <LinkedinIcon size={13} className="cv-contact-icon" />
-              <span>in/sebastián-zambrano</span>
+              <span>in/sebastianzambranoinga</span>
             </a>
           </div>
         </header>
