@@ -104,8 +104,13 @@ export interface Translations {
     headingPart1: string;
     headingPart2: string;
     description: string;
+    popularBadge: string;
     guaranteeTitle: string;
     guaranteeDesc: string;
+    guaranteePillars: {
+      title: string;
+      desc: string;
+    }[];
     items: {
       id: string;
       title: string;
@@ -347,8 +352,23 @@ export const translations: Record<Locale, Translations> = {
       headingPart1: 'Soluciones de software directo con',
       headingPart2: 'precios transparentes y entrega ágil.',
       description: 'Sin intermediarios ni costes inflados de agencia. Desarrollo personalizado con arquitectura moderna (Next.js, TypeScript, PostgreSQL), código 100% de tu propiedad y garantía de soporte.',
+      popularBadge: 'MÁS SOLICITADO',
       guaranteeTitle: 'Garantía de Confianza & Términos Claros',
       guaranteeDesc: 'Hitos definidos: 50% de anticipo y 50% contra entrega funcional desplegada. Transferencia íntegra del código fuente en tu repositorio GitHub y 15 días de soporte técnico post-lanzamiento para corrección de incidencias sin costo adicional.',
+      guaranteePillars: [
+        {
+          title: 'Hitos 50% / 50%',
+          desc: 'Anticipo al acordar requerimientos y saldo restante contra despliegue funcional validado en producción.',
+        },
+        {
+          title: 'Código 100% Propietario',
+          desc: 'Transferencia total del repositorio GitHub a tu organización con derechos de autor y sin ataduras.',
+        },
+        {
+          title: '15 Días de Garantía',
+          desc: 'Soporte técnico post-lanzamiento para corrección de incidencias y ajustes menores sin costo adicional.',
+        },
+      ],
       items: [
         {
           id: 'web-landing',
@@ -630,8 +650,23 @@ export const translations: Record<Locale, Translations> = {
       headingPart1: 'Direct software engineering with',
       headingPart2: 'transparent pricing and rapid delivery.',
       description: 'Zero agency overhead or inflated retainer fees. Custom development built with a production-grade stack (Next.js, TypeScript, PostgreSQL), full source code ownership, and post-launch warranty.',
+      popularBadge: 'MOST POPULAR',
       guaranteeTitle: 'Confidence Guarantee & Transparent Terms',
       guaranteeDesc: 'Milestone-based delivery: 50% deposit and 50% upon functional deployment. 100% full source code ownership transferred to your GitHub organization, plus 15 days of bug-fix warranty and launch support.',
+      guaranteePillars: [
+        {
+          title: '50% / 50% Milestones',
+          desc: 'Deposit upon scope agreement and remaining balance only upon verified live deployment in production.',
+        },
+        {
+          title: '100% Source Code Ownership',
+          desc: 'Full repository handover directly to your GitHub organization with zero vendor lock-in.',
+        },
+        {
+          title: '15-Day Technical Warranty',
+          desc: 'Post-launch support for bug fixes, edge-case tuning, and deployment assistance at zero extra cost.',
+        },
+      ],
       items: [
         {
           id: 'web-landing',
