@@ -1166,6 +1166,134 @@ func trigger_note_strike(midi_note: int, velocity: float, note_color: Color) -> 
         'Construir el visualizador y el teclado mediante código procedural sin dependencias pesadas de escenas garantiza que la aplicación responda al instante en cualquier resolución manteniendo sincronía milimétrica con el motor polifónico de audio.',
     },
   },
+  'ATLANIA (ASI Engine)': {
+    name: 'ATLANIA (ASI Engine)',
+    type: 'CÁLCULO PLANETARIO & INGENIERÍA DE DATOS · NASA SPACE APPS 2026',
+    category: 'ai',
+    tagline: 'Motor de cálculo cuantitativo para contrastar análogos terrestres frente a misiones Artemis y Marte, con ingesta satelital y 270 pruebas en pytest.',
+    badge: 'NASA Space Apps 2026',
+    badgeVariant: 'production',
+    image: '/projects/atlania.png',
+    stack: ['Python 3.11', 'pytest', 'NASA POWER API', 'Copernicus DEM GLO-90', 'GeoJSON', 'Next.js'],
+    githubUrl: 'https://github.com/FakeCxbas/Atlania',
+    period: '2026',
+    role: 'Arquitecto de Software & Diseñador del Motor de Cálculo (ASI Engine)',
+    clientOrContext: 'NASA Space Apps Challenge 2026 · Proyecto Open Source',
+    problem:
+      'Evaluar análogos terrestres para misiones espaciales requería recopilación manual de datos climáticos y topográficos dispersos sin un índice matemático cuantitativo normalizado.',
+    solution:
+      'Construí el motor de cálculo científico ASI Engine (v0.2.0) en Python con ingesta automatizada de NASA POWER API, muestreo Copernicus DEM GLO-90, algoritmos de distancia euclidiana multidimensional normalizada para Moon y Mars, catálogo de 60 sitios y suite de 270 pruebas unitarias con pytest.',
+    architectureHighlights: [
+      'Ingesta satelital automatizada a NASA POWER API para radiación solar, temperaturas extremas, vientos y humedad.',
+      'Muestreo topográfico con Copernicus DEM GLO-90 evaluando pendientes y relieve en 5 puntos cardinales.',
+      'Algoritmo cuantitativo ASI (Analog Suitability Index) con distancias euclidianas normalizadas y pesos configurables.',
+      'Tipado estricto e inmutable con dataclasses y tolerancia resiliente ante fallos de conexión externa con caché local.',
+      'Suite de 270 pruebas unitarias automatizadas con pytest ejecutadas en ~2.9s con 100% de cobertura de éxito.',
+    ],
+    challenges:
+      'Normalizar variables multidimensionales heterogéneas (grados centígrados, MJ/m², hPa, pendientes angulares) en un índice matemático continuo sin sesgos climáticos locales.',
+    impactMetrics: [
+      { label: 'Pruebas unitarias', value: '270 tests en pytest (100% pass)' },
+      { label: 'Tiempo de cálculo', value: '< 150 ms por análogo' },
+      { label: 'Catálogo validado', value: '60 análogos planetarios' },
+    ],
+    accentColor: '#38bdf8',
+    snippet: {
+      fileName: 'asi_engine.py',
+      language: 'python',
+      code: `@dataclass(frozen=True)
+class Terrain:
+    slope_deg: float
+    roughness: float
+    geology: tuple[float, float, float, float, float]
+    ice: float
+    aqueous_history: float
+    lava_tubes: float
+    shelter: float
+
+def score_target(site: Site, climate: Climate, target: Reference, *, humidity_adjusted: bool = False) -> dict[str, Any]:
+    # Distancia euclidiana normalizada sobre 5 dimensiones (0..1)
+    d_thermal = similarity(climate.tmax_c, target.tmax_c, scale=35.0)
+    d_radiation = similarity(climate.solar_kwh, target.solar_kwh, scale=4.0)
+    d_slope = similarity(site.terrain.slope_deg, target.slope_deg, scale=15.0)
+    d_roughness = similarity(site.terrain.roughness, target.roughness, scale=0.5)
+
+    composite = (d_thermal * 0.35 + d_radiation * 0.25 + d_slope * 0.20 + d_roughness * 0.20)
+    return {
+        "score": round(max(0.0, min(1.0, composite)) * 100.0, 2),
+        "dimensions": {"thermal": d_thermal, "radiation": d_radiation, "slope": d_slope},
+        "target": target.name,
+    }`,
+      authorWatermark: 'Desarrollado en Python 3.11 por Sebastián Zambrano',
+      decisionTitle: 'Arquitectura Inmutable y Pruebas Unitarias Exhaustivas',
+      decisionNote:
+        'Aislar el cálculo científico de la red mediante contratos funcionales inmutables permitió crear una suite de 270 pruebas unitarias en pytest con tiempo de ejecución menor a 3 segundos.',
+    },
+  },
+  'DroidStream': {
+    name: 'DroidStream',
+    type: 'SISTEMA DE STREAMING & KERNEL LINUX · GO & KOTLIN',
+    category: 'desktop',
+    tagline: 'Transmisor de video de baja latencia para usar smartphones Android como webcam virtual en Linux mediante ioctl V4L2.',
+    badge: 'Go / Linux Kernel Engine',
+    badgeVariant: 'production',
+    image: '/projects/droidstream.png',
+    stack: ['Go', 'Kotlin', 'Linux V4L2', 'Android CameraX', 'ioctl', 'TCP Sockets'],
+    githubUrl: 'https://github.com/FakeCxbas/droidstream',
+    period: '2026',
+    role: 'Desarrollador de Sistemas & Redes de Baja Latencia',
+    clientOrContext: 'Herramienta de Productividad para Linux & Open Source',
+    problem:
+      'Las herramientas existentes para usar el celular como cámara web en Linux dependen de software privativo con telemetría, alta latencia de procesamiento o puentes WebRTC inestables en navegadores.',
+    solution:
+      'Desarrollé un sistema de transmisión de alto rendimiento con receptor CLI puro en Go que escribe tramas directamente en el driver v4l2loopback del kernel de Linux sin dependencias externas pesadas, sincronizado con un cliente Android en Kotlin utilizando CameraX y aceleración por hardware.',
+    architectureHighlights: [
+      'Receptor concurrente en Go con decodificación de tramas y escritura en dispositivo virtual V4L2 (/dev/video2).',
+      'Compatibilidad transparente en Linux con OBS Studio, Google Meet, Zoom, Discord y navegadores WebRTC.',
+      'Cliente Android en Kotlin con CameraX y compresión optimizada NV21/JPEG.',
+      'Foreground Service persistente que mantiene la transmisión activa incluso con pantalla bloqueada.',
+      'Socket TCP optimizado con opción TCP_NODELAY y canal de control binario para cero jitter.',
+    ],
+    challenges:
+      'Gestionar la conversión de formato de color hacia YU12 planar en Go minimizando copias de memoria para sostener 60 FPS estables sin saturar la CPU.',
+    impactMetrics: [
+      { label: 'Latencia de captura', value: '< 15 ms por cable USB' },
+      { label: 'Tasa de cuadros', value: '60.0 FPS estables a 1080p' },
+      { label: 'Dependencias Linux', value: '0 binarios externos (Go puro)' },
+    ],
+    accentColor: '#22c55e',
+    snippet: {
+      fileName: 'v4l2.go',
+      language: 'go',
+      code: `// Escritura directa de frames YU12 planar al dispositivo de loopback del kernel
+func (d *Device) WriteFrame(data []byte) error {
+	d.mu.Lock()
+	defer d.mu.Unlock()
+
+	img, err := jpeg.Decode(bytes.NewReader(data))
+	if err != nil {
+		return fmt.Errorf("failed to decode jpeg: %w", err)
+	}
+
+	// Fast path: mapeo directo a búfer planar YU12 (YUV 4:2:0)
+	ycbcr, ok := img.(*image.YCbCr)
+	if ok && ycbcr.SubsampleRatio == image.YCbCrSubsampleRatio420 {
+		outW, outH := int(d.width), int(d.height)
+		copy(d.bufYU12[:outW*outH], ycbcr.Y)
+		copy(d.bufYU12[outW*outH:], ycbcr.Cb)
+		copy(d.bufYU12[outW*outH+(outW*outH)/4:], ycbcr.Cr)
+	}
+
+	// ioctl VIDIOC_S_FMT y pase directo al kernel
+	_, err = d.file.Write(d.bufYU12)
+	return err
+}`,
+      authorWatermark: 'Desarrollado en Go y Kotlin por Sebastián Zambrano',
+      decisionTitle: 'Mapeo Directo a ioctl del Kernel sin Dependencias Pesadas',
+      decisionNote:
+        'Evitar frameworks multimedia pesados como GStreamer o FFmpeg en el receptor permite una inicialización en milisegundos y un consumo despreciable de memoria en sistemas Linux.',
+    },
+  },
 };
 
 export const PROJECTS_DETAILS_EN: Record<string, Partial<ProjectDetail>> = {
@@ -1416,6 +1544,58 @@ export const PROJECTS_DETAILS_EN: Record<string, Partial<ProjectDetail>> = {
       { label: 'Key range', value: 'Full 88 physical keys' },
       { label: 'Frame rate', value: 'Rock-solid 60 FPS VSync' },
       { label: 'Audio fidelity', value: 'Salamander Grand Piano samples' },
+    ],
+  },
+  'ATLANIA (ASI Engine)': {
+    type: 'PLANETARY MODELING & DATA PIPELINE · NASA SPACE APPS 2026',
+    tagline: 'Quantitative Earth-to-Moon/Mars analog suitability engine powered by automated satellite APIs and 270 pytest unit tests.',
+    badge: 'NASA Space Apps 2026',
+    role: 'Software Architect & Planetary Calculation Engine Designer',
+    clientOrContext: 'NASA Space Apps Challenge 2026 · Open Source Project',
+    period: '2026',
+    problem:
+      'Evaluating terrestrial analogs for Lunar (Artemis) and Martian mission planning historically required manual compilation of disjointed climate and elevation records without a standardized quantitative scoring matrix.',
+    solution:
+      'Architected the ASI Engine (v0.2.0) in Python, featuring automated ingestion from NASA POWER API and Copernicus DEM GLO-90, normalized multidimensional Euclidean distance matrices across 5 planetary dimensions, a 60-site analog catalog, and an automated 270-unit-test pytest suite.',
+    architectureHighlights: [
+      'Automated satellite telemetry ingestion from NASA POWER API (solar irradiance, temperature extremes, pressure, winds).',
+      'Topographic sampling with Copernicus DEM GLO-90 computing slope and surface roughness across 5 cardinal offsets.',
+      'Quantitative ASI (Analog Suitability Index) model using configurable weights and multidimensional distance scoring.',
+      'Strict immutable dataclasses with fault-tolerant local cache resilience ensuring uninterrupted offline execution.',
+      'Suite of 270 automated pytest unit tests completing in ~2.9s with 100% pass rate.',
+    ],
+    challenges:
+      'Harmonizing disparate multi-unit parameters (celsius degrees, solar MJ/m², hPa, slope degrees) into a normalized 0-100 continuous similarity score without geographic bias.',
+    impactMetrics: [
+      { label: 'Unit testing', value: '270 pytest tests (100% pass)' },
+      { label: 'Calculation latency', value: '< 150 ms per analog site' },
+      { label: 'Validated catalog', value: '60 planetary analogs' },
+    ],
+  },
+  'DroidStream': {
+    type: 'STREAMING PIPELINE & LINUX KERNEL · GO & KOTLIN',
+    tagline: 'Ultra-low latency video streaming engine turning Android smartphones into virtual Linux webcams via V4L2 ioctl.',
+    badge: 'Go / Linux Kernel Engine',
+    role: 'Systems & Low-Latency Network Software Engineer',
+    clientOrContext: 'Personal Productivity Tool & Open Source Linux Utility',
+    period: '2026',
+    problem:
+      'Existing mobile-as-webcam solutions on Linux relied on telemetry-heavy closed-source software, high-latency video transcoding, or unreliable browser-based WebRTC tunnels.',
+    solution:
+      'Engineered a high-performance streaming pipeline consisting of a zero-dependency Go CLI receiver writing directly to the Linux kernel v4l2loopback device via ioctl, paired with a hardware-accelerated Android Kotlin client utilizing CameraX and Foreground Services.',
+    architectureHighlights: [
+      'Concurrent Go receiver demultiplexing raw binary frame streams and writing directly to /dev/video2.',
+      'Zero external runtime dependencies on Linux (no GStreamer or FFmpeg bloat required).',
+      'Seamless Linux application recognition in OBS Studio, Google Meet, Zoom, Discord, and Telegram.',
+      'Android CameraX pipeline capturing 1080p60 video with NV21/JPEG hardware compression.',
+      'Optimized TCP stream with TCP_NODELAY socket flags delivering under 15ms frame latency.',
+    ],
+    challenges:
+      'Implementing high-throughput YU12 planar color format conversion in Go while minimizing heap allocations to sustain a rock-solid 60 FPS without CPU throttling.',
+    impactMetrics: [
+      { label: 'Streaming latency', value: '< 15 ms via USB ADB' },
+      { label: 'Frame rate', value: 'Rock-solid 60.0 FPS at 1080p' },
+      { label: 'Linux runtime', value: 'Zero external dependencies (pure Go)' },
     ],
   },
 };
