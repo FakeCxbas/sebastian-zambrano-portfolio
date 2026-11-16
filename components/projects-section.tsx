@@ -82,6 +82,16 @@ const PROJECT_THEMES: Record<string, { accent: string; glow: string; border: str
     glow: 'rgba(236, 72, 153, 0.25)',
     border: 'rgba(236, 72, 153, 0.4)',
   },
+  'ATLANIA (ASI Engine)': {
+    accent: '#38bdf8',
+    glow: 'rgba(56, 189, 248, 0.3)',
+    border: 'rgba(56, 189, 248, 0.45)',
+  },
+  'DroidStream': {
+    accent: '#22c55e',
+    glow: 'rgba(34, 197, 94, 0.25)',
+    border: 'rgba(34, 197, 94, 0.4)',
+  },
 };
 
 export function ProjectsSection({ projects }: { projects: Project[] }) {

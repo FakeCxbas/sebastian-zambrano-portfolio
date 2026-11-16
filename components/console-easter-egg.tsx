@@ -39,6 +39,8 @@ export function ConsoleEasterEgg() {
 
         console.table([
           { Proyecto: 'ContaNova', Tipo: 'Facturación & Gestión Comercial', Stack: 'React, TypeScript, PostgreSQL' },
+          { Proyecto: 'ATLANIA (ASI Engine)', Tipo: 'Cálculo Planetario & Satelital', Stack: 'Python 3.11, pytest, NASA POWER, Copernicus DEM' },
+          { Proyecto: 'DroidStream', Tipo: 'Streaming Virtual Webcam Linux', Stack: 'Go, Kotlin, Linux V4L2, CameraX, ioctl' },
           { Proyecto: 'TechView', Tipo: 'Visión Artificial Asistiva', Stack: 'Python, OpenCV, YOLOv8, Raspberry Pi' },
           { Proyecto: 'Taller Jeldes', Tipo: 'App Móvil Operativa', Stack: 'Flutter, Dart, IA aplicada' },
           { Proyecto: 'MxCorreo', Tipo: 'Saneamiento Masivo de Datos', Stack: 'Python, Tkinter, SQLite' },
@@ -47,17 +49,17 @@ export function ConsoleEasterEgg() {
           { Proyecto: 'San Viernes', Tipo: 'Software PC & Móvil', Stack: 'React, TypeScript, Electron, Capacitor' },
           { Proyecto: 'SmartDocs', Tipo: 'Gestión Documental & OCR', Stack: 'React, TypeScript, Tesseract.js' },
         ]);
-        console.log('%c💡 Tip: Puedes ejecutar proyectos("ContaNova") o proyectos("OmniNote STEM") para abrir su ficha técnica directamente.', 'color: #38bdf8; font-style: italic;');
+        console.log('%c💡 Tip: Puedes ejecutar proyectos("ATLANIA (ASI Engine)") o proyectos("DroidStream") para abrir su ficha técnica directamente.', 'color: #38bdf8; font-style: italic;');
         return 'Lista de proyectos cargada.';
       };
 
       globalWindow.skills = () => {
         console.log('%c⚡ MATRIZ DE STACK TÉCNICO:', 'color: #c6fa78; font-weight: bold;');
         console.log('%c• Frontend:      %cReact, Next.js, TypeScript, Tailwind CSS, Vite', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
-        console.log('%c• Backend & BD:  %cPython, FastAPI, PostgreSQL, SQLite', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
-        console.log('%c• C++ & Motores: %cC++20, Qt 6, OpenGL, Godot 4, GDScript', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
-        console.log('%c• Móvil & Desk:  %cFlutter, Electron, Capacitor', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
-        console.log('%c• IA & Embedded: %cOpenCV, YOLOv8, Raspberry Pi', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
+        console.log('%c• Backend & BD:  %cPython 3.11, Go, FastAPI, PostgreSQL, SQLite, pytest (270+ tests)', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
+        console.log('%c• C++ & Motores: %cC++20, Qt 6, OpenGL, Godot 4, GDScript, GLSL Shaders', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
+        console.log('%c• Móvil & Desk:  %cFlutter, Android (Kotlin / CameraX), Electron, Capacitor', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
+        console.log('%c• Sistemas & IA: %cLinux V4L2 Kernel ioctl, OpenCV, YOLOv8, Raspberry Pi', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
         console.log('%c• DevOps & OS:   %cLinux, Docker, Git, GitHub Actions', 'color: #38bdf8; font-weight: bold;', 'color: #f1f5f2;');
         return 'Skills desplegadas.';
       };

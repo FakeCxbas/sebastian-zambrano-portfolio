@@ -424,15 +424,51 @@ export const GithubIcon = GitHubIcon;
 export const LinkedinIcon = LinkedInIcon;
 export const NextJsIcon = NextjsIcon;
 
-export function DefaultCodeIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+export function GoIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="none" stroke="#C6FA78" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <path fill="#00ADD8" d="M35.6 50.1c-1.4 2.1-3.4 3.7-5.9 4.7-2.6 1-5.4 1.5-8.5 1.5-4.1 0-7.8-.9-11.1-2.7-3.3-1.8-5.9-4.3-7.8-7.5-1.9-3.2-2.9-7-2.9-11.2 0-4.3 1-8.1 3-11.3 2-3.2 4.7-5.7 8.2-7.4 3.5-1.7 7.4-2.6 11.8-2.6 3.6 0 6.9.7 9.8 2.1 2.9 1.4 5.2 3.3 6.9 5.8l-8.4 6.7c-2.2-2.9-5-4.3-8.3-4.3-2.6 0-4.8.6-6.7 1.9-1.9 1.3-3.3 3-4.3 5.3-1 2.3-1.5 4.8-1.5 7.6 0 4.1 1.1 7.4 3.3 9.9 2.2 2.5 5.1 3.7 8.7 3.7 2.1 0 3.9-.4 5.4-1.2 1.5-.8 2.8-1.9 3.8-3.3l4.8 4.9zm45.9-28.7v42.5h-9.9v-5.6c-2 2-4.3 3.6-6.9 4.7-2.6 1.1-5.5 1.7-8.6 1.7-3.9 0-7.4-.9-10.4-2.7-3-1.8-5.4-4.3-7.2-7.5-1.8-3.2-2.6-7-2.6-11.4 0-4.3.9-8.1 2.6-11.4 1.8-3.2 4.2-5.7 7.2-7.5 3-1.8 6.5-2.7 10.4-2.7 3.1 0 6 .6 8.6 1.7 2.6 1.1 4.9 2.7 6.9 4.7V21.4h9.9zm-10.1 21.6c0-2.8-.5-5.3-1.5-7.5-1-2.2-2.4-4-4.2-5.3-1.8-1.3-4-1.9-6.5-1.9-2.5 0-4.7.6-6.5 1.9-1.8 1.3-3.2 3.1-4.2 5.3-1 2.2-1.5 4.7-1.5 7.5 0 2.8.5 5.3 1.5 7.5 1 2.2 2.4 4 4.2 5.3 1.8 1.3 4 1.9 6.5 1.9 2.5 0 4.7-.6 6.5-1.9 1.8-1.3 3.2-3.1 4.2-5.3 1-2.2 1.5-4.7 1.5-7.5zm43.3-8.8l-8.5 7.1c-1.8-2.2-4.1-3.3-6.8-3.3-2 0-3.6.6-4.9 1.8-1.3 1.2-1.9 2.7-1.9 4.6 0 1.6.5 2.9 1.6 3.9 1.1 1 2.9 2 5.5 3.1 3.5 1.5 6.2 3.1 8 4.9 1.8 1.8 2.7 4.1 2.7 7 0 3.3-1.2 6-3.6 8.1-2.4 2.1-5.6 3.2-9.6 3.2-3.7 0-7-.9-9.8-2.6-2.8-1.7-4.8-4.1-6-7.2l8.7-6.2c1.4 2.8 3.8 4.2 7.1 4.2 2.2 0 4-.5 5.3-1.6 1.3-1.1 1.9-2.5 1.9-4.2 0-1.6-.6-3-1.8-4-1.2-1-3-2.1-5.4-3.2-3.4-1.5-6-3.1-7.7-4.8-1.7-1.7-2.6-3.9-2.6-6.7 0-3.1 1.2-5.7 3.5-7.7 2.3-2 5.3-3 9-3 3.4 0 6.4.8 8.9 2.4 2.5 1.5 4.4 3.6 5.8 6.3z"/>
     </svg>
   );
 }
 
+export function KotlinIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <defs>
+        <linearGradient id="kotlin-grad-ic" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#C757BC"/>
+          <stop offset="50%" stopColor="#D16069"/>
+          <stop offset="100%" stopColor="#7F52FF"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#kotlin-grad-ic)" d="M128 0H0v128h128L63.5 63.5 128 0zM0 128l63.5-64.5L128 128H0z"/>
+    </svg>
+  );
+}
+
+export function PytestIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <path fill="#0A9EDC" d="M64 4L12 34v60l52 30 52-30V34L64 4zm36 82.5L64 107.2 28 86.5V41.5L64 20.8l36 20.7v45z"/>
+      <path fill="#0A9EDC" d="M64 36l-24 14v28l24 14 24-14V50L64 36zm14 36.3L64 80.5 50 72.3V55.7L64 47.5l14 8.2v16.6z"/>
+    </svg>
+  );
+}
+
+export function NasaIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 128 128" width={size} height={size} className={className} aria-hidden="true">
+      <circle cx="64" cy="64" r="60" fill="#0B3D91"/>
+      <path fill="#FC3D21" d="M22 76l54-44-12 58 42-26"/>
+      <circle cx="48" cy="40" r="3" fill="#ffffff"/>
+      <circle cx="82" cy="36" r="2" fill="#ffffff"/>
+      <circle cx="38" cy="80" r="2.5" fill="#ffffff"/>
+      <circle cx="92" cy="74" r="3" fill="#ffffff"/>
+      <path fill="none" stroke="#ffffff" strokeWidth="3" d="M20 64c24-18 64-18 88 0s-20 34-44 34c-18 0-32-6-44-16"/>
+    </svg>
+  );
+}
 
 export interface TechMeta {
   name: string;
@@ -624,6 +660,26 @@ export function getTechMeta(rawName: string): TechMeta {
   // OpenGL / Vulkan / Shaders
   if (norm.includes('opengl') || norm.includes('vulkan') || norm.includes('shader') || norm.includes('glsl')) {
     return { name: rawName, color: '#5586A4', hoverBg: '#5586A418', glow: '#5586A435', Icon: DefaultCodeIcon };
+  }
+  // Go / Golang
+  if (norm === 'go' || norm.startsWith('go ') || norm.endsWith(' go') || norm.includes('golang') || norm.includes('/ go') || norm.includes('go /')) {
+    return { name: rawName, color: '#00ADD8', hoverBg: '#00ADD818', glow: '#00ADD835', Icon: GoIcon };
+  }
+  // Kotlin
+  if (norm.includes('kotlin')) {
+    return { name: rawName, color: '#7F52FF', hoverBg: '#7F52FF18', glow: '#7F52FF35', Icon: KotlinIcon };
+  }
+  // Pytest / Unit Testing
+  if (norm.includes('pytest') || norm.includes('testing')) {
+    return { name: rawName, color: '#0A9EDC', hoverBg: '#0A9EDC18', glow: '#0A9EDC35', Icon: PytestIcon };
+  }
+  // NASA / Copernicus / Satelital
+  if (norm.includes('nasa') || norm.includes('copernicus') || norm.includes('satelit') || norm.includes('geo')) {
+    return { name: rawName, color: '#0B3D91', hoverBg: '#0B3D9118', glow: '#0B3D9135', Icon: NasaIcon };
+  }
+  // V4L2 / Linux Kernel / CameraX
+  if (norm.includes('v4l2') || norm.includes('ioctl') || norm.includes('camerax') || norm.includes('loopback')) {
+    return { name: rawName, color: '#FCC624', hoverBg: '#FCC62418', glow: '#FCC62435', Icon: LinuxIcon };
   }
 
   // Fallback

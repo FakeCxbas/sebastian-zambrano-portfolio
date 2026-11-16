@@ -221,6 +221,34 @@ export function CommandPalette() {
           setIsOpen(false);
         },
       },
+      {
+        id: 'p-atlania',
+        title: 'ATLANIA (ASI Engine)',
+        subtitle: isEn ? 'Planetary analog similarity engine with 270 pytest unit tests' : 'Motor científico de análogos planetarios y 270 pruebas en pytest',
+        category: 'projects',
+        badge: 'AI / NASA · Python 3.11 / pytest',
+        icon: Code2,
+        keywords: ['atlania', 'asi', 'nasa', 'space apps', 'python', 'pytest', 'satelital', 'dem', 'luna', 'marte'],
+        action: () => {
+          window.dispatchEvent(new CustomEvent('portfolio:open-project', { detail: { projectName: 'ATLANIA (ASI Engine)' } }));
+          document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
+          setIsOpen(false);
+        },
+      },
+      {
+        id: 'p-droidstream',
+        title: 'DroidStream',
+        subtitle: isEn ? 'Ultra-low latency virtual webcam engine for Linux' : 'Transmisor de video de baja latencia para cámara web virtual en Linux',
+        category: 'projects',
+        badge: 'Systems · Go / Kotlin / V4L2',
+        icon: Code2,
+        keywords: ['droidstream', 'webcam', 'go', 'golang', 'kotlin', 'android', 'v4l2', 'linux', 'camerax'],
+        action: () => {
+          window.dispatchEvent(new CustomEvent('portfolio:open-project', { detail: { projectName: 'DroidStream' } }));
+          document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
+          setIsOpen(false);
+        },
+      },
     ];
 
     const navigation: PaletteItem[] = [
@@ -370,6 +398,32 @@ export function CommandPalette() {
         keywords: ['techview', 'opencv', 'yolo', 'python', 'repo', 'github'],
         action: () => {
           window.open('https://github.com/FakeCxbas/TechView', '_blank');
+          setIsOpen(false);
+        },
+      },
+      {
+        id: 'act-repo-atlania',
+        title: isEn ? 'ATLANIA Repository' : 'Repositorio ATLANIA',
+        subtitle: 'github.com/FakeCxbas/Atlania · Python 3.11 / pytest / NASA POWER',
+        category: 'actions',
+        icon: GithubIcon,
+        badge: 'Python / NASA',
+        keywords: ['atlania', 'nasa', 'python', 'pytest', 'repo', 'github'],
+        action: () => {
+          window.open('https://github.com/FakeCxbas/Atlania', '_blank');
+          setIsOpen(false);
+        },
+      },
+      {
+        id: 'act-repo-droidstream',
+        title: isEn ? 'DroidStream Repository' : 'Repositorio DroidStream',
+        subtitle: 'github.com/FakeCxbas/droidstream · Go / Kotlin / Linux V4L2',
+        category: 'actions',
+        icon: GithubIcon,
+        badge: 'Go / Linux',
+        keywords: ['droidstream', 'go', 'kotlin', 'v4l2', 'repo', 'github'],
+        action: () => {
+          window.open('https://github.com/FakeCxbas/droidstream', '_blank');
           setIsOpen(false);
         },
       },

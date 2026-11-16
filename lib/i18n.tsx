@@ -243,6 +243,18 @@ export const translations: Record<Locale, Translations> = {
           type: 'SINTETIZADOR 2D & SIMULADOR · GODOT 4',
           text: 'Sintetizador interactivo de 88 notas con mapeo QWERTY completo, muestras de audio Salamander Grand Piano, shaders de halo aditivo y transcriptor MIDI en tiempo real.',
         },
+        'ATLANIA (ASI Engine)': {
+          name: 'ATLANIA (ASI Engine)',
+          type: 'CÁLCULO PLANETARIO & INGENIERÍA DE DATOS · NASA SPACE APPS 2026',
+          text: 'Motor científico para contrastar análogos terrestres frente a misiones lunares y marcianas. Ingesta satelital de NASA POWER, Copernicus DEM GLO-90 y suite de 270 pruebas unitarias en pytest con 100% de éxito.',
+          aside: 'NASA Space Apps Challenge 2026.',
+        },
+        'DroidStream': {
+          name: 'DroidStream',
+          type: 'SISTEMA DE STREAMING & KERNEL LINUX · GO & KOTLIN',
+          text: 'Transmisor de video de ultra baja latencia (< 15 ms) que convierte teléfonos Android en webcams virtuales en Linux vía v4l2loopback, receptor concurrente en Go con ioctl directo y captura CameraX.',
+          aside: 'Cámara virtual nativa para Linux.',
+        },
       },
     },
     about: {
@@ -513,6 +525,18 @@ export const translations: Record<Locale, Translations> = {
           name: 'SwiftPiano',
           type: '2D SYNTHESIZER & SIMULATOR · GODOT 4',
           text: 'Full 88-key piano synthesizer with complete QWERTY mapping, polyphonic Salamander Grand Piano sample pool, real-time 2D HDR bloom shaders, and live MIDI transcription.',
+        },
+        'ATLANIA (ASI Engine)': {
+          name: 'ATLANIA (ASI Engine)',
+          type: 'PLANETARY MODELING & DATA PIPELINE · NASA SPACE APPS 2026',
+          text: 'Quantitative similarity engine comparing Earth analog terrains against Lunar and Martian mission profiles. Automated NASA POWER API and Copernicus DEM GLO-90 ingestion with 270 pytest unit tests at 100% pass rate.',
+          aside: 'NASA Space Apps Challenge 2026.',
+        },
+        'DroidStream': {
+          name: 'DroidStream',
+          type: 'STREAMING PIPELINE & LINUX KERNEL · GO & KOTLIN',
+          text: 'Ultra-low latency (< 15 ms) video streaming engine transforming Android devices into virtual Linux webcams via v4l2loopback, concurrent Go demux receiver with direct ioctl writes, and CameraX.',
+          aside: 'Native virtual webcam for Linux.',
         },
       },
     },

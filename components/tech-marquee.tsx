@@ -47,7 +47,7 @@ export const TECH_CATALOG: Record<string, TechDetail> = {
       es: 'Mi herramienta principal para procesamiento masivo de datos (depuración de +136k registros de correo en MxCorreo), microservicios y visión artificial con YOLOv8.',
       en: 'My go-to language for high-volume data cleaning (+136k corporate emails in MxCorreo), backend microservices, and YOLOv8 computer vision.',
     },
-    projects: ['MxCorreo', 'TechView', 'Actuariosa'],
+    projects: ['ATLANIA (ASI Engine)', 'MxCorreo', 'TechView', 'Actuariosa'],
   },
   'Flutter': {
     name: 'Flutter',
@@ -146,7 +146,25 @@ export const TECH_CATALOG: Record<string, TechDetail> = {
       es: 'Mi sistema operativo diario. Manejo terminal Bash, scripts de automatización, servicios systemd y administración remota por SSH.',
       en: 'My daily workstation operating system. Regular use of Bash scripting, systemd service management, and SSH server operations.',
     },
-    projects: ['Entorno Diario', 'Servidores de Producción'],
+    projects: ['DroidStream', 'Entorno Diario', 'Servidores de Producción'],
+  },
+  'Go': {
+    name: 'Go',
+    category: { es: 'Sistemas & Redes', en: 'Systems & Networking' },
+    summary: {
+      es: 'Lenguaje concurrente y eficiente. Construí el receptor CLI de DroidStream para escribir video directamente en el dispositivo V4L2 del kernel Linux sin latencia.',
+      en: 'High-performance concurrent language. Built the DroidStream CLI receiver writing video streams directly to the Linux kernel V4L2 device with near-zero latency.',
+    },
+    projects: ['DroidStream'],
+  },
+  'pytest': {
+    name: 'pytest',
+    category: { es: 'Testing & Automatización', en: 'Testing & QA' },
+    summary: {
+      es: 'Framework de pruebas automatizadas. Diseñé una suite rigurosa de 270 pruebas unitarias con 100% de éxito para el motor científico ATLANIA de la NASA.',
+      en: 'Automated testing framework. Engineered a rigorous 270-unit-test suite with 100% pass rate for the NASA Space Apps ATLANIA scientific engine.',
+    },
+    projects: ['ATLANIA (ASI Engine)'],
   },
   'Git': {
     name: 'Git',

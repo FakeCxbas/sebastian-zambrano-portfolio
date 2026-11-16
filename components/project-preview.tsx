@@ -74,6 +74,20 @@ const previews = [
     short: '88 teclas, shaders y audio real.',
     color: '#ec4899',
   },
+  {
+    name: 'ATLANIA (ASI Engine)',
+    image: '/projects/atlania.png',
+    kind: 'Motor de cálculo planetario · NASA Space Apps 2026',
+    short: 'Análogos lunares/marcianos y 270 tests.',
+    color: '#38bdf8',
+  },
+  {
+    name: 'DroidStream',
+    image: '/projects/droidstream.png',
+    kind: 'Streaming virtual webcam · Go & Android V4L2',
+    short: 'Cámara móvil a Linux con < 15ms.',
+    color: '#22c55e',
+  },
 ];
 
 export function ProjectPreview({ index, name }: { index?: number; name?: string }) {
