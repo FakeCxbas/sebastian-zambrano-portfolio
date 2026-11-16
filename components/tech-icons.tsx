@@ -470,6 +470,15 @@ export function NasaIcon({ size = 15, className = '' }: { size?: number; classNa
   );
 }
 
+export function DefaultCodeIcon({ size = 15, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="none" stroke="#C6FA78" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
+    </svg>
+  );
+}
+
 export interface TechMeta {
   name: string;
   color: string;
