@@ -458,6 +458,19 @@ function PortfolioView() {
                           <h3>{sub.title}</h3>
                         </div>
                         <p>{sub.desc}</p>
+                        {sub.credentialUrl && (
+                          <div className="education-credential-wrap">
+                            <a
+                              href={sub.credentialUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="education-credential-link"
+                              title={sub.credentialLabel || 'Ver credencial'}
+                            >
+                              <span>{sub.credentialLabel || (locale === 'en' ? 'View Certificate ↗' : 'Ver certificado ↗')}</span>
+                            </a>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>

@@ -1218,6 +1218,38 @@ body{background:radial-gradient(circle at 18% 10%,rgba(198,250,120,0.045) 0%,tra
   height: 24px;
 }
 
+.education-credential-wrap {
+  margin-top: 10px;
+}
+
+.education-credential-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #c6fa78;
+  background: rgba(198, 250, 120, 0.08);
+  border: 1px solid rgba(198, 250, 120, 0.25);
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.education-credential-link:hover {
+  background: #c6fa78;
+  color: #0b0e0c;
+  border-color: #c6fa78;
+  box-shadow: 0 4px 14px rgba(198, 250, 120, 0.25);
+}
+
+.education-credential-link:focus-visible {
+  outline: 2px solid #c6fa78;
+  outline-offset: 2px;
+}
+
 /* Contact Cards Grid */
 .contact-cards-grid {
   display: grid;

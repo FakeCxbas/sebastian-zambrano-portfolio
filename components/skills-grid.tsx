@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Layout, Cpu, Boxes, Briefcase } from 'lucide-react';
+import { MonitorSmartphone, Server, Terminal, Handshake } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n';
 import {
   ReactIcon,
@@ -11,6 +11,8 @@ import {
   JavaScriptIcon,
   TailwindIcon,
   PythonIcon,
+  GoIcon,
+  KotlinIcon,
   OpenCvIcon,
   YoloIcon,
   PostgresIcon,
@@ -52,13 +54,14 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     titleEs: 'Desarrollo Frontend & Móvil',
     titleEn: 'Frontend & Mobile Engineering',
-    headerIcon: Layout,
+    headerIcon: MonitorSmartphone,
     accentColor: '#38BDF8',
     items: [
       { name: 'React 19', color: '#61DAFB', icon: ReactIcon },
       { name: 'TypeScript', color: '#3178C6', icon: TypeScriptIcon },
       { name: 'Next.js', color: '#FFFFFF', icon: NextjsIcon },
       { name: 'Flutter', color: '#42A5F5', icon: FlutterIcon },
+      { name: 'Kotlin', color: '#7F52FF', icon: KotlinIcon },
       { name: 'Dart', color: '#0175C2', icon: DartIcon },
       { name: 'Tailwind & CSS', color: '#38BDF8', icon: TailwindIcon },
     ],
@@ -66,10 +69,11 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     titleEs: 'Backend, Datos & IA',
     titleEn: 'Backend, Data & AI',
-    headerIcon: Cpu,
+    headerIcon: Server,
     accentColor: '#10B981',
     items: [
       { name: 'Python', color: '#3776AB', icon: PythonIcon },
+      { name: 'Go', color: '#00ADD8', icon: GoIcon },
       { name: 'C++', color: '#00599C', icon: CppIcon },
       { name: 'Qt 6', color: '#41CD52', icon: QtIcon },
       { name: 'PostgreSQL', color: '#336791', icon: PostgresIcon },
@@ -82,7 +86,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     titleEs: 'Herramientas & Entornos',
     titleEn: 'Tooling & Infrastructure',
-    headerIcon: Boxes,
+    headerIcon: Terminal,
     accentColor: '#A78BFA',
     items: [
       { name: 'Git', color: '#F05032', icon: GitIcon },
@@ -98,7 +102,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   {
     titleEs: 'Negocio, Remoto & Soporte',
     titleEn: 'Business, Remote & Operations',
-    headerIcon: Briefcase,
+    headerIcon: Handshake,
     accentColor: '#F59E0B',
     items: [
       { name: 'Facturación SRI', enName: 'SRI Electronic Invoicing', color: '#10B981', icon: SriIcon },

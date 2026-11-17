@@ -95,6 +95,8 @@ export interface Translations {
         title: string;
         desc: string;
         logo?: string;
+        credentialUrl?: string;
+        credentialLabel?: string;
       }[];
     }[];
   };
@@ -319,6 +321,39 @@ export const translations: Record<Locale, Translations> = {
             },
           ],
         },
+        {
+          date: 'CERTIFICACIONES & WORKSHOPS',
+          badge: 'Certificados & Eventos',
+          badgeType: 'edu',
+          title: 'Certificaciones, Hackathons & Conferencias',
+          description: 'Acreditaciones oficiales, participación en desafíos globales de ingeniería y asistencia a conferencias tech.',
+          educationSubitems: [
+            {
+              title: 'Galactic Problem Solver · NASA Space Apps Challenge 2026',
+              desc: 'Certificado de mérito global emitido por NASA por el desarrollo del motor de similitud planetaria ATLANIA (ASI Engine v0.2.0), resolviendo desafíos espaciales con telemetría satelital (Noviembre 2026).',
+              logo: '/branding/atlania-logo.png',
+              credentialUrl: '/certificates/nasa-space-apps-2026.pdf',
+              credentialLabel: 'Ver certificado oficial (PDF) ↗',
+            },
+            {
+              title: 'DevDays Guayaquil 2026 · Conferencia Tech & Workshops',
+              desc: 'Asistencia y participación en conferencias y workshops presenciales sobre ingeniería de software, arquitecturas cloud, microservicios y comunidades de desarrollo en Guayaquil.',
+              logo: '/sz-monogram.svg',
+            },
+            {
+              title: 'Workshop: Inteligencia Artificial para Todos · UEES',
+              desc: 'Constancia oficial emitida por la Universidad Espíritu Santo (UEES) sobre tendencias de IA generativa, automatización de procesos y el futuro del trabajo técnico (Septiembre 2026).',
+              logo: '/branding/uees-logo.png',
+              credentialUrl: '/certificates/uees-ai-workshop-2026.pdf',
+              credentialLabel: 'Ver constancia oficial (PDF) ↗',
+            },
+            {
+              title: 'Selección Internacional Open-Source · XERJ Project 2026',
+              desc: 'Arquitectura modular en C++20 y suite de pruebas de OmniNote STEM seleccionada e indexada internacionalmente como código de referencia para agentes autónomos de programación (Noviembre 2026).',
+              logo: '/sz-monogram.svg',
+            },
+          ],
+        },
       ],
     },
     contact: {
@@ -537,6 +572,39 @@ export const translations: Record<Locale, Translations> = {
               title: 'High School Diploma in Informatics · Instituto Coello',
               desc: 'Graduated March 2026 with Honorable Mention in capstone AI project. Volunteer tutor for Math, Physics, and CS (2023–2025).',
               logo: '/branding/instituto-coello.png',
+            },
+          ],
+        },
+        {
+          date: 'CERTIFICATIONS & WORKSHOPS',
+          badge: 'Certificates & Events',
+          badgeType: 'edu',
+          title: 'Certifications, Hackathons & Tech Conferences',
+          description: 'Official technical accreditations, global engineering challenges, and tech conference workshops.',
+          educationSubitems: [
+            {
+              title: 'Galactic Problem Solver · NASA Space Apps Challenge 2026',
+              desc: 'Global merit certificate presented by NASA for engineering the ATLANIA planetary analog similarity engine (ASI Engine v0.2.0), solving space exploration challenges with satellite telemetry (November 2026).',
+              logo: '/branding/atlania-logo.png',
+              credentialUrl: '/certificates/nasa-space-apps-2026.pdf',
+              credentialLabel: 'View official certificate (PDF) ↗',
+            },
+            {
+              title: 'DevDays Guayaquil 2026 · Tech Conference & Workshops',
+              desc: 'Participated in in-person technical workshops and conference sessions focused on modern software engineering, cloud architectures, microservices, and local developer communities in Guayaquil.',
+              logo: '/sz-monogram.svg',
+            },
+            {
+              title: 'Workshop: Artificial Intelligence for All · UEES',
+              desc: 'Official credential issued by Universidad Espíritu Santo (UEES) on generative AI trends, process automation, and the evolving future of technical software roles (September 2026).',
+              logo: '/branding/uees-logo.png',
+              credentialUrl: '/certificates/uees-ai-workshop-2026.pdf',
+              credentialLabel: 'View official credential (PDF) ↗',
+            },
+            {
+              title: 'International Open-Source Selection · XERJ Project 2026',
+              desc: 'OmniNote STEM modular C++20 engine and test suite selected and indexed internationally as a benchmark reference architecture for autonomous coding agents (November 2026).',
+              logo: '/sz-monogram.svg',
             },
           ],
         },
