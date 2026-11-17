@@ -322,11 +322,72 @@ function CvContent() {
           </div>
         </section>
 
-        {/* Educación & Reconocimientos */}
+        {/* Educación, Certificaciones & Reconocimientos */}
         <section className="cv-section">
           <h2 className="cv-section-title">
-            {isEn ? 'Education & Honors' : 'Educación & Reconocimientos'}
+            {isEn ? 'Education, Certifications & Honors' : 'Educación, Certificaciones & Reconocimientos'}
           </h2>
+
+          <div className="cv-edu-item">
+            <div className="cv-job-header">
+              <div>
+                <strong>
+                  {isEn
+                    ? 'NASA Space Apps Challenge 2026 — Galactic Problem Solver'
+                    : 'NASA Space Apps Challenge 2026 — Galactic Problem Solver'}
+                </strong>
+                <div>
+                  {isEn
+                    ? 'Official certificate of merit awarded by NASA for engineering the ATLANIA planetary analog similarity engine (ASI Engine v0.2.0) with NASA POWER and Copernicus DEM satellite telemetry.'
+                    : 'Certificado oficial de mérito otorgado por NASA por el desarrollo del motor de cálculo y similitud de análogos planetarios ATLANIA (ASI Engine v0.2.0) con telemetría satelital NASA POWER y Copernicus DEM.'}
+                </div>
+              </div>
+              <span className="cv-job-dates">
+                {isEn ? 'November 2026' : 'Noviembre 2026'}
+              </span>
+            </div>
+          </div>
+
+          <div className="cv-edu-item">
+            <div className="cv-job-header">
+              <div>
+                <strong>
+                  {isEn
+                    ? 'DevDays Guayaquil 2026 — Tech Conference & Workshops'
+                    : 'DevDays Guayaquil 2026 — Conferencias & Workshops Técnicos'}
+                </strong>
+                <div>
+                  {isEn
+                    ? 'Active attendance at software engineering conferences and in-person workshops on cloud architectures, microservices, and modern developer tooling in Guayaquil.'
+                    : 'Participación y asistencia presencial en conferencias y talleres de ingeniería de software sobre arquitecturas cloud, microservicios y herramientas modernas de desarrollo.'}
+                </div>
+              </div>
+              <span className="cv-job-dates">
+                {isEn ? 'October - November 2026' : 'Octubre - Noviembre 2026'}
+              </span>
+            </div>
+          </div>
+
+          <div className="cv-edu-item">
+            <div className="cv-job-header">
+              <div>
+                <strong>
+                  {isEn
+                    ? 'UEES Workshop: Artificial Intelligence for All — Trends & Future of Work'
+                    : 'UEES Workshop: Inteligencia Artificial para Todos — Tendencias & Futuro del Trabajo'}
+                </strong>
+                <div>
+                  {isEn
+                    ? 'Official accreditation issued by Universidad Espíritu Santo (UEES) covering generative AI trends, process automation, and modern developer workflows.'
+                    : 'Constancia oficial emitida por Universidad Espíritu Santo (UEES) sobre tendencias de IA generativa, automatización de procesos y flujos de desarrollo modernos.'}
+                </div>
+              </div>
+              <span className="cv-job-dates">
+                {isEn ? 'September 2026' : 'Septiembre 2026'}
+              </span>
+            </div>
+          </div>
+
           <div className="cv-edu-item">
             <div className="cv-job-header">
               <div>
