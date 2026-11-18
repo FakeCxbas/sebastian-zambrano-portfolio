@@ -13,7 +13,7 @@ import { GithubIcon, LinkedinIcon, CvFileIcon, WhatsAppIcon } from '@/components
 import { NavbarNav } from '@/components/navbar-nav';
 import { CommandPalette } from '@/components/command-palette';
 import { ConsoleEasterEgg } from '@/components/console-easter-egg';
-import { IntroOverlay } from '@/components/intro-overlay';
+import { HeroHeadline } from '@/components/hero-headline';
 import { MapPin } from 'lucide-react';
 
 const projects: Project[] = [
@@ -212,11 +212,10 @@ const projects: Project[] = [
 function PortfolioView() {
   const { t, locale } = useLanguage();
   const [timelineFilter, setTimelineFilter] = useState<'all' | 'work' | 'edu'>('all');
-  const [hasEntered, setHasEntered] = useState<boolean>(false);
+  const [isHeadlineComplete, setIsHeadlineComplete] = useState<boolean>(false);
 
   return (
-    <div className={`portfolio-app-wrapper ${hasEntered ? 'portfolio-entered' : 'portfolio-entering'}`}>
-      <IntroOverlay onComplete={() => setHasEntered(true)} />
+    <>
       <MotionLayer />
       <a className="skip" href="#contenido">
         {locale === 'en' ? 'Skip to content' : 'Saltar al contenido'}
@@ -259,19 +258,15 @@ function PortfolioView() {
           </div>
 
           <div className="hero-stage">
-            <div className="hero-heading-group">
-              <span className="hero-role">{t.hero.greeting}</span>
-              <h1>
-                {t.hero.headlinePart1}<br />
-                {t.hero.headlinePart2}<span className="period">.</span>
-              </h1>
-            </div>
+            <HeroHeadline onComplete={() => setIsHeadlineComplete(true)} />
 
             {/* Remote Engineer HUD & Interactive Story */}
-            <HeroVisual />
+            <div className={`hero-visual-wrapper ${isHeadlineComplete ? 'is-revealed' : 'is-hidden-init'}`}>
+              <HeroVisual />
+            </div>
           </div>
 
-          <div className="hero-bottom">
+          <div className={`hero-bottom ${isHeadlineComplete ? 'is-revealed' : 'is-hidden-init'}`}>
             <h2>
               {t.hero.subheadlinePart1}<br />
               <em>{t.hero.subheadlinePart2}</em>
@@ -579,7 +574,7 @@ function PortfolioView() {
         <span>{t.footer.tagline}</span>
         <a href="#inicio">{t.footer.backToTop}</a>
       </footer>
-    </div>
+    </>
   );
 }
 
