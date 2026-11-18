@@ -35,6 +35,12 @@ export interface Translations {
     hudSwitchToOrigin: string;
     hudExploreStory: string;
   };
+  intro?: {
+    line1: string;
+    line2: string;
+    line3: string;
+    skip: string;
+  };
   projects: {
     eyebrow: string;
     headingPart1: string;
@@ -155,6 +161,12 @@ export const translations: Record<Locale, Translations> = {
       hudSwitchToSpecs: 'Ver Especificaciones Técnicas ⚡',
       hudSwitchToOrigin: 'Ver Historia de Origen 📖',
       hudExploreStory: 'Conoce la historia',
+    },
+    intro: {
+      line1: 'Hola, soy Sebastián Zambrano.',
+      line2: 'Construyo software que resuelve problemas reales.',
+      line3: 'Sistemas Nativos · Aplicaciones Web · Inteligencia Artificial',
+      skip: 'Saltar intro [Esc]',
     },
     projects: {
       eyebrow: '01 / TRABAJO SELECCIONADO',
@@ -409,6 +421,12 @@ export const translations: Record<Locale, Translations> = {
       hudSwitchToSpecs: 'View Tech Specs ⚡',
       hudSwitchToOrigin: 'View Origin Story 📖',
       hudExploreStory: 'Read the story',
+    },
+    intro: {
+      line1: "Hi, I'm Sebastián Zambrano.",
+      line2: 'I build software that solves real problems.',
+      line3: 'Native Systems · Fullstack Web · Applied AI',
+      skip: 'Skip intro [Esc]',
     },
     projects: {
       eyebrow: '01 / SELECTED WORK',

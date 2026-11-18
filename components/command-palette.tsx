@@ -311,6 +311,20 @@ export function CommandPalette() {
 
     const actions: PaletteItem[] = [
       {
+        id: 'act-replay-intro',
+        title: isEn ? 'Replay Cinematic Intro' : 'Reproducir Intro Cinemática',
+        subtitle: isEn ? 'Play typewriter terminal entrance sequence' : 'Ver secuencia de arranque con máquina de escribir',
+        category: 'actions',
+        icon: Sparkles,
+        badge: 'Intro',
+        keywords: ['intro', 'animacion', 'animation', 'typewriter', 'reproducir', 'replay', 'terminal'],
+        action: () => {
+          window.dispatchEvent(new CustomEvent('portfolio:replay-intro'));
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setIsOpen(false);
+        },
+      },
+      {
         id: 'act-email',
         title: copiedEmail ? (isEn ? 'Email Copied!' : '¡Correo Copiado!') : (isEn ? 'Copy Email Address' : 'Copiar Correo Electrónico'),
         subtitle: 'sebastianzambrano2818@gmail.com',

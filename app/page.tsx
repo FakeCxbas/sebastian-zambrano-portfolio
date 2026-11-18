@@ -13,6 +13,7 @@ import { GithubIcon, LinkedinIcon, CvFileIcon, WhatsAppIcon } from '@/components
 import { NavbarNav } from '@/components/navbar-nav';
 import { CommandPalette } from '@/components/command-palette';
 import { ConsoleEasterEgg } from '@/components/console-easter-egg';
+import { IntroOverlay } from '@/components/intro-overlay';
 import { MapPin } from 'lucide-react';
 
 const projects: Project[] = [
@@ -211,9 +212,11 @@ const projects: Project[] = [
 function PortfolioView() {
   const { t, locale } = useLanguage();
   const [timelineFilter, setTimelineFilter] = useState<'all' | 'work' | 'edu'>('all');
+  const [hasEntered, setHasEntered] = useState<boolean>(false);
 
   return (
-    <>
+    <div className={`portfolio-app-wrapper ${hasEntered ? 'portfolio-entered' : 'portfolio-entering'}`}>
+      <IntroOverlay onComplete={() => setHasEntered(true)} />
       <MotionLayer />
       <a className="skip" href="#contenido">
         {locale === 'en' ? 'Skip to content' : 'Saltar al contenido'}
@@ -576,7 +579,7 @@ function PortfolioView() {
         <span>{t.footer.tagline}</span>
         <a href="#inicio">{t.footer.backToTop}</a>
       </footer>
-    </>
+    </div>
   );
 }
 
