@@ -4421,3 +4421,291 @@ body {
   }
 }
 
+/* ==========================================================================
+   Secuencia Cinemática de Entrada (Typewriter & Black Curtain Reveal)
+   ========================================================================== */
+
+.intro-cinematic-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(circle at center, #070a08 0%, #030403 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.75s ease;
+}
+
+.intro-cinematic-curtain.is-fading-out {
+  opacity: 0;
+  transform: scale(1.035);
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.intro-backdrop-catcher {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.intro-terminal-box {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  padding: 40px 36px;
+  background: rgba(12, 17, 13, 0.82);
+  border: 1px solid rgba(198, 250, 120, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
+              0 0 50px rgba(198, 250, 120, 0.06);
+  backdrop-filter: blur(24px);
+  z-index: 2;
+  animation: intro-box-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes intro-box-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.intro-sys-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(198, 250, 120, 0.08);
+  border: 1px solid rgba(198, 250, 120, 0.22);
+}
+
+.intro-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c6fa78;
+  box-shadow: 0 0 8px #c6fa78;
+  animation: intro-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes intro-ping {
+  0% { transform: scale(1); opacity: 0.9; }
+  75%, 100% { transform: scale(2.4); opacity: 0; }
+}
+
+.intro-line-1 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 14px;
+  min-height: 1.25em;
+}
+
+.intro-text-highlight {
+  color: #ffffff;
+  text-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
+}
+
+.intro-line-2 {
+  font-size: clamp(1.05rem, 2.3vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #b7c5b4;
+  margin-bottom: 26px;
+  min-height: 1.5em;
+}
+
+.intro-caret {
+  display: inline-block;
+  width: 3px;
+  height: 1.05em;
+  background: #c6fa78;
+  vertical-align: -2px;
+  margin-left: 5px;
+  box-shadow: 0 0 10px #c6fa78;
+  animation: intro-caret-blink 0.75s steps(2, start) infinite;
+}
+
+@keyframes intro-caret-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.intro-pillars-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-pillars-row.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-pillar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  color: #d6e0d3;
+  transition: all 0.25s ease;
+}
+
+.intro-pillar-badge:hover {
+  border-color: rgba(198, 250, 120, 0.4);
+  background: rgba(198, 250, 120, 0.08);
+  color: #ffffff;
+}
+
+.intro-pillar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c6fa78;
+}
+
+.intro-skip-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #8fa08e;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 3;
+}
+
+.intro-skip-btn:hover {
+  background: rgba(198, 250, 120, 0.14);
+  border-color: rgba(198, 250, 120, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.intro-skip-arrow {
+  transition: transform 0.2s ease;
+}
+
+.intro-skip-btn:hover .intro-skip-arrow {
+  transform: translateX(3px);
+}
+
+.intro-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+  background-size: 100% 3px, 6px 100%;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+/* Staggered Portfolio Entrance Animations */
+.portfolio-entered .topbar {
+  animation: intro-slide-down 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.portfolio-entered .hero .eyebrow {
+  animation: intro-rise-in 0.85s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.portfolio-entered .hero h1 {
+  animation: intro-rise-in 0.95s 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.portfolio-entered .hero-stage .personal-note {
+  animation: intro-rise-in 1s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.portfolio-entered .hero-bottom {
+  animation: intro-rise-in 1s 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.portfolio-entered .tech-marquee {
+  animation: intro-rise-in 1s 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes intro-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes intro-rise-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .intro-terminal-box {
+    padding: 28px 20px;
+  }
+  .intro-skip-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 6px 14px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-cinematic-curtain,
+  .intro-terminal-box,
+  .intro-caret,
+  .intro-pulse-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
