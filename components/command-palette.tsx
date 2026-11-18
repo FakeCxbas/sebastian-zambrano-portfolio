@@ -311,16 +311,16 @@ export function CommandPalette() {
 
     const actions: PaletteItem[] = [
       {
-        id: 'act-replay-intro',
-        title: isEn ? 'Replay Cinematic Intro' : 'Reproducir Intro Cinemática',
-        subtitle: isEn ? 'Play typewriter terminal entrance sequence' : 'Ver secuencia de arranque con máquina de escribir',
+        id: 'act-replay-headline',
+        title: isEn ? 'Replay Name Animation' : 'Reiniciar Animación de Nombre',
+        subtitle: isEn ? 'Watch name and role type in-situ' : 'Volver a ver cómo se escribe el nombre en el encabezado',
         category: 'actions',
         icon: Sparkles,
-        badge: 'Intro',
-        keywords: ['intro', 'animacion', 'animation', 'typewriter', 'reproducir', 'replay', 'terminal'],
+        badge: 'Hero',
+        keywords: ['animacion', 'animation', 'typewriter', 'reproducir', 'replay', 'nombre', 'name'],
         action: () => {
-          window.dispatchEvent(new CustomEvent('portfolio:replay-intro'));
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth' });
+          window.dispatchEvent(new CustomEvent('portfolio:replay-headline'));
           setIsOpen(false);
         },
       },
