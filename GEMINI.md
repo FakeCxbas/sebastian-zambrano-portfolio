@@ -32,3 +32,8 @@ Estas reglas aplican para TODAS las operaciones de Git en este proyecto (Portafo
 ## 4. Tono Humano, Sobrio y Cero Emojis de IA
 - NUNCA incluir emojis genéricos de IA (🚀, 💻, ⚡, 🛠️, 📊, 📍, 💼, 💡, etc.) en READMEs, commits, PRs ni descripciones.
 - Priorizar arquitectura limpia, pruebas reproducibles y explicaciones técnicas concretas.
+
+## 5. Estándares de Diseño y Motion Engineering
+- Para cualquier cambio o rework visual en el portafolio (`sebastianzambrano.dev`), es OBLIGATORIO seguir las directrices de [DESIGN.md](file:///home/fakecxbas/Proyectos/Portafolio/DESIGN.md).
+- Respetar estrictamente la estructura existente: sin alterar componentes, rutas, IDs de anclaje ni contenido bilingüe (`lib/i18n.ts`).
+- Aplicar la tríada: Google Modern Web Guidance (APIs nativas y rendimiento CWV), Impeccable (jerarquía tipográfica, espaciado 4px/8px, cero clichés de IA) y Emil Kowalski (microinteracciones <220ms, curvas ease-out, transform-origin anclado y prohibido scale(0)).
