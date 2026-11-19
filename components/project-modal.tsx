@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   X,
   ExternalLink,
@@ -1706,6 +1706,28 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
       : baseDetail
     : null;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isClosing, setIsClosing] = useState(false);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleRequestClose = useCallback(() => {
+    if (isClosing) return;
+    setIsClosing(true);
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsClosing(false);
+      onClose();
+    }, 140);
+  }, [isClosing, onClose]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const currentIndex = projectName ? projectKeys.indexOf(projectName) : -1;
   const prevProject = currentIndex > 0 ? projectKeys[currentIndex - 1] : null;
@@ -1730,7 +1752,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        handleRequestClose();
       } else if (e.key === 'ArrowLeft' && prevProject && onSelectProject) {
         onSelectProject(prevProject);
       } else if (e.key === 'ArrowRight' && nextProject && onSelectProject) {
@@ -1744,20 +1766,20 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
     };
-  }, [projectName, onClose, prevProject, nextProject, onSelectProject]);
+  }, [projectName, handleRequestClose, prevProject, nextProject, onSelectProject]);
 
   if (!detail) return null;
 
   return (
     <div
-      className="project-modal-backdrop"
-      onClick={onClose}
+      className={`project-modal-backdrop${isClosing ? ' is-closing' : ''}`}
+      onClick={handleRequestClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-project-title"
     >
       <div
-        className="project-modal-dialog"
+        className={`project-modal-dialog${isClosing ? ' is-closing' : ''}`}
         onClick={(e) => e.stopPropagation()}
         style={{ '--modal-accent': detail.accentColor } as React.CSSProperties}
       >
@@ -1796,7 +1818,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
             <button
               type="button"
               className="modal-close-btn"
-              onClick={onClose}
+              onClick={handleRequestClose}
               title="Cerrar (Esc)"
               aria-label="Cerrar modal"
             >
@@ -2009,7 +2031,7 @@ export function ProjectModal({ projectName, onClose, onSelectProject }: ProjectM
                 </button>
               )}
 
-              <button type="button" onClick={onClose} className="modal-action-btn ghost">
+              <button type="button" onClick={handleRequestClose} className="modal-action-btn ghost">
                 {isEn ? 'Close specs' : 'Cerrar ficha'}
               </button>
             </div>
