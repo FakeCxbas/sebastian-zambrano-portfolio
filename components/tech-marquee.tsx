@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { getTechMeta } from '@/components/tech-icons';
 import { useLanguage } from '@/lib/i18n';
-import { X, ExternalLink, Pause, Play } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 
 interface TechDetail {
   name: string;
@@ -221,7 +221,6 @@ export function TechMarquee() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const [displayedTech, setDisplayedTech] = useState<string | null>(null);
   const [isClosing, setIsClosing] = useState(false);
-  const [isManuallyPaused, setIsManuallyPaused] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -242,7 +241,7 @@ export function TechMarquee() {
     setDisplayedTech(item);
   };
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     if (isClosing || !displayedTech) return;
     setIsClosing(true);
     setSelectedTech(null);
@@ -252,8 +251,8 @@ export function TechMarquee() {
       setDisplayedTech(null);
       setIsClosing(false);
       closeTimeoutRef.current = null;
-    }, 160);
-  }, [isClosing, displayedTech]);
+    }, 220);
+  };
 
   const handleToggle = (item: string) => {
     if (selectedTech === item && !isClosing) {
@@ -289,36 +288,16 @@ export function TechMarquee() {
       window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('pointerdown', handlePointerDown);
     };
-  }, [displayedTech, isClosing, handleClose]);
+  }, [displayedTech, isClosing]);
 
   const activeDetail = displayedTech ? TECH_CATALOG[displayedTech] : null;
   const activeMeta = activeDetail ? getTechMeta(activeDetail.name) : null;
 
   return (
     <div className="tech-marquee-wrapper">
-      <div className="tech-marquee-controls">
-        <button
-          type="button"
-          className="marquee-pause-btn"
-          onClick={() => setIsManuallyPaused((p) => !p)}
-          aria-label={
-            isManuallyPaused
-              ? isEn
-                ? 'Resume technology ticker'
-                : 'Reanudar carrusel de tecnologías'
-              : isEn
-                ? 'Pause technology ticker'
-                : 'Pausar carrusel de tecnologías'
-          }
-        >
-          {isManuallyPaused ? <Play size={12} aria-hidden="true" /> : <Pause size={12} aria-hidden="true" />}
-          <span>{isManuallyPaused ? (isEn ? 'Resume' : 'Reanudar') : isEn ? 'Pause' : 'Pausar'}</span>
-        </button>
-      </div>
-
       {/* Tira que se desliza continuamente */}
       <div
-        className={`tech-marquee ${selectedTech || isManuallyPaused ? 'is-paused' : ''}`}
+        className={`tech-marquee ${selectedTech ? 'is-paused' : ''}`}
         aria-label={`Tecnologías: ${TECH_MARQUEE_ITEMS.join(', ')}`}
       >
         <div className="marquee-track" aria-hidden="true">
