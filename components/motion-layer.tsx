@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { getTechMeta } from '@/components/tech-icons';
 
 export function MotionLayer() {
   useEffect(() => {
@@ -33,8 +32,6 @@ export function MotionLayer() {
       <div id="scroll-progress" className="scroll-progress-bar" aria-hidden="true" />
       <div className="ambient-mesh-glow" aria-hidden="true">
         <div className="ambient-orb orb-1" />
-        <div className="ambient-orb orb-2" />
-        <div className="ambient-orb orb-3" />
       </div>
     </>
   );
