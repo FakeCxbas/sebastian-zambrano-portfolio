@@ -34,8 +34,12 @@ Estas reglas aplican para TODAS las operaciones de Git en este proyecto (Portafo
 - Priorizar arquitectura limpia, pruebas reproducibles y explicaciones técnicas concretas.
 
 ## 5. Estándares de Diseño y Motion Engineering
-- Para cualquier cambio o rework visual en el portafolio (`sebastianzambrano.dev`), es OBLIGATORIO seguir las directrices de [DESIGN.md](file:///home/fakecxbas/Proyectos/Portafolio/DESIGN.md).
+- Para cualquier cambio o rework visual en el portafolio (`sebastianzambrano.dev`), es OBLIGATORIO seguir las directrices de [DESIGN.md](file:///home/fakecxbas/Proyectos/Portafolio/DESIGN.md) y las reglas de diseño en `.agents/rules/frontend-design.md`.
 - Respetar estrictamente la estructura existente: sin alterar componentes, rutas, IDs de anclaje ni contenido bilingüe (`lib/i18n.ts`).
-- Las skills de diseño locales del workspace están disponibles en `.agents/skills/`:
+- La suite completa de skills de diseño y web está localizada en `.agents/skills/`:
   - `emil-motion-engineering`: microinteracciones $\le 220\text{ ms}$, curvas ease-out, transform-origin anclado, prohibición estricta de `scale(0)` y respeto a `prefers-reduced-motion`.
   - `impeccable-design-system`: jerarquía visual, espaciado 4px/8px, contraste WCAG 2.2 AA y eliminación de clichés visuales de IA (anti-slop).
+  - `frontend-design`: dirección estética personalizada, paletas semánticas y wireframing estructural.
+  - `modern-component-patterns`: arquitectura de componentes en React 19, Tailwind CSS y tokens de diseño.
+  - `web-design-guidelines`: ergonomía táctil, estados de foco y accesibilidad WCAG 2.2 AA.
+  - `modern-web-guidance`: estándares contemporáneos de Google Chrome para APIs web nativas, CSS moderno y Core Web Vitals (CWV).
