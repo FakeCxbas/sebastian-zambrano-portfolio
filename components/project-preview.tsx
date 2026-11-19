@@ -94,13 +94,23 @@ export function ProjectPreview({ index, name }: { index?: number; name?: string 
   const p = (name ? previews.find((item) => item.name === name) : null) || (index !== undefined ? previews[index] : null);
   if (!p) return null;
 
+  const isPriority = index === 0 || name === 'ContaNova';
+
   return (
     <div
       className={`project-cover ${p.image ? 'has-image' : 'identity-cover'} ${p.logo ? 'logo-cover' : ''}`}
       style={{ '--cover-accent': p.color } as React.CSSProperties}
     >
       {p.image ? (
-        <img src={p.image} alt={`${p.kind} de ${p.name}`} loading="lazy" width={1280} height={720} />
+        <img
+          src={p.image}
+          alt={`${p.kind} de ${p.name}`}
+          fetchPriority={isPriority ? 'high' : 'auto'}
+          loading={isPriority ? 'eager' : 'lazy'}
+          decoding="async"
+          width={1280}
+          height={720}
+        />
       ) : (
         <span className="cover-identity">
           <span className="identity-category">{p.kind}</span>
