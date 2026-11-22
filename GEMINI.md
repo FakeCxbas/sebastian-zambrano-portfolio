@@ -43,3 +43,9 @@ Estas reglas aplican para TODAS las operaciones de Git en este proyecto (Portafo
   - `modern-component-patterns`: arquitectura de componentes en React 19, Tailwind CSS y tokens de diseño.
   - `web-design-guidelines`: ergonomía táctil, estados de foco y accesibilidad WCAG 2.2 AA.
   - `modern-web-guidance`: estándares contemporáneos de Google Chrome para APIs web nativas, CSS moderno y Core Web Vitals (CWV).
+
+---
+
+## 6. Interconexión del Ecosistema (4 Pilares)
+- Consulta [ECOSISTEMA.md](file:///home/fakecxbas/Proyectos/Portafolio/ECOSISTEMA.md) para comprender la relación simbiótica entre **Portafolio**, **MejorarPerfilGitHub**, **Buscar Trabajo** y **Marca Personal**.
+- Portafolio es el escaparate web de producción; no debe contener lógica de búsqueda de empleo ni borradores de posts.
